@@ -1,0 +1,23 @@
+<section class="container section-space reviews-page">
+  <ui-section-title
+    eyebrow="Confianza"
+    title="Resenas de clientes"
+    description="Historias reales de pedidos entregados en Chia y Cajica."
+  />
+
+  <h1 class="sr-only">Resenas Delicias Bakery</h1>
+
+  <ui-card [hoverable]="false">
+    <p class="summary">Calificacion promedio: <strong>{{ averageRating }}/5</strong> basada en {{ reviews.length }} resenas.</p>
+  </ui-card>
+
+  <div class="reviews-grid">
+    @for (review of reviews; track review.name + review.date) {
+      <ui-card>
+        <p class="stars">{{ '*****'.slice(0, review.rating) }}</p>
+        <p class="text">"{{ review.text }}"</p>
+        <p class="meta">{{ review.name }} - {{ review.date | date: 'longDate' : undefined : 'es-CO' }}</p>
+      </ui-card>
+    }
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<div class="accordion">
+  @for (item of items; track item.question; let i = $index) {
+    <article class="accordion-item">
+      <button type="button" (click)="toggle(i)" [attr.aria-expanded]="openIndex() === i">
+        <span>{{ item.question }}</span>
+        <span>{{ openIndex() === i ? '-' : '+' }}</span>
+      </button>
+      @if (openIndex() === i) {
+        <div class="content">
+          <p>{{ item.answer }}</p>
+        </div>
+      }
+    </article>
+  }
+</div>

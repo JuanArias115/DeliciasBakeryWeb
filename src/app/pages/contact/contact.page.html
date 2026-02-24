@@ -1,0 +1,43 @@
+<section class="container section-space contact-page">
+  <ui-section-title
+    eyebrow="Contacto"
+    title="Cotiza tu pedido por WhatsApp"
+    description="Completa el formulario y abrimos WhatsApp con tu mensaje listo para enviar."
+  />
+
+  <h1 class="sr-only">Contacto Delicias Bakery</h1>
+
+  <div class="contact-grid">
+    <ui-card [hoverable]="false">
+      <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <ui-input id="name" label="Nombre" [control]="form.controls.name" placeholder="Tu nombre" />
+        <ui-input id="phone" label="Telefono" type="tel" [control]="form.controls.phone" placeholder="300 000 0000" />
+        <ui-input id="date" label="Fecha tentativa" type="date" [control]="form.controls.date" />
+        <ui-input
+          id="message"
+          label="Que deseas pedir"
+          [control]="form.controls.message"
+          [multiline]="true"
+          placeholder="Producto, cantidad, estilo y detalles"
+        />
+
+        <ui-button type="submit">Enviar por WhatsApp</ui-button>
+      </form>
+
+      @if (fallbackLink()) {
+        <p class="fallback">
+          Si no se abrio WhatsApp automaticamente,
+          <a [href]="fallbackLink()" target="_blank" rel="noopener noreferrer">haz clic aqui</a>.
+        </p>
+      }
+    </ui-card>
+
+    <ui-card [hoverable]="false">
+      <h2>Atencion directa</h2>
+      <p>Chia-Cajica, Cundinamarca</p>
+      <p>Pedidos por encargo con minimo 24h de anticipacion.</p>
+      <p><strong>WhatsApp:</strong> {{ config.whatsappDisplay }}</p>
+      <ui-button variant="secondary" [href]="directLink" target="_blank">Abrir WhatsApp</ui-button>
+    </ui-card>
+  </div>
+</section>

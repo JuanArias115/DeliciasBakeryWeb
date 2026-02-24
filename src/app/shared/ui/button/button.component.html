@@ -1,0 +1,13 @@
+@if (href) {
+  <a [href]="href" [target]="target" [class]="classes" rel="noopener noreferrer">
+    <ng-content />
+  </a>
+} @else if (routerLink) {
+  <a [routerLink]="routerLink" [class]="classes">
+    <ng-content />
+  </a>
+} @else {
+  <button [type]="type" [class]="classes">
+    <ng-content />
+  </button>
+}

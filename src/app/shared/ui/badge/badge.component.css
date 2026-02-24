@@ -1,0 +1,18 @@
+.badge {
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.6rem;
+}
+
+.badge-primary {
+  background: color-mix(in srgb, var(--color-primary) 18%, white);
+  color: var(--color-primary-strong);
+}
+
+.badge-neutral {
+  background: var(--color-beige-soft);
+  color: var(--color-coffee);
+}

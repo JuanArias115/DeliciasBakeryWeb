@@ -1,0 +1,28 @@
+.reviews-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary,
+.text,
+.meta {
+  margin: 0;
+}
+
+.reviews-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stars {
+  color: #f2b01e;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.45rem;
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.55rem;
+}

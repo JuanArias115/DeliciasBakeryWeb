@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prebuild": "npm run seo:generate",
     "build": "ng build",
+    "build:prod": "SITE_URL=https://deliciasbakerychia.com ng build --configuration production",
+    "seo:generate": "node scripts/generate-seo-files.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

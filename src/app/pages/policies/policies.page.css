@@ -1,0 +1,14 @@
+.policies {
+  display: grid;
+  gap: 1rem;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-top: 0.45rem;
+}

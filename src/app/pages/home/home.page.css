@@ -1,0 +1,157 @@
+.hero {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.hero-copy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.05;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.hero-copy p {
+  margin: 0;
+  max-width: 56ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.hero-copy small {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.hero-aside h2 {
+  font-family: var(--font-display);
+  margin: 0 0 0.4rem;
+}
+
+.hero-aside p {
+  margin: 0 0 0.6rem;
+}
+
+.hero-aside ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card-link {
+  display: block;
+  margin: -1rem -1rem 0;
+}
+
+img {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: block;
+  height: 170px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-body {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+.card-body p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.meta-row {
+  align-items: center;
+  display: flex;
+  gap: 0.45rem;
+  justify-content: space-between;
+}
+
+.price {
+  color: var(--color-coffee);
+  font-weight: 800;
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.step-index {
+  color: var(--color-primary-strong);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.steps p {
+  margin: 0.5rem 0 0;
+}
+
+.coverage-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.coverage h3 {
+  margin: 0 0 0.55rem;
+}
+
+.review-card {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.stars {
+  color: #f2b01e;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.review-text {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.review-meta {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.review-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 920px) {
+  .hero {
+    gap: 2rem;
+    grid-template-columns: 1.4fr 1fr;
+    padding-top: 2rem;
+  }
+}

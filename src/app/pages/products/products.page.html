@@ -1,0 +1,104 @@
+<section class="container section-space catalog-page">
+  <ui-section-title
+    eyebrow="Catalogo"
+    title="Productos por encargo"
+    description="Filtra por categoria u ocasion y cotiza en un clic por WhatsApp."
+  />
+
+  <h1 class="sr-only">Catalogo de Delicias Bakery</h1>
+
+  <section class="filters" aria-label="Filtros de catalogo">
+    <label>
+      Buscar
+      <input
+        type="search"
+        [value]="query()"
+        (input)="setQuery(($any($event.target)).value)"
+        placeholder="Ej: torta vintage, brownies"
+      />
+    </label>
+
+    <label>
+      Categoria
+      <select [value]="selectedCategory()" (change)="setCategory(($any($event.target)).value)">
+        <option value="all">Todas</option>
+        @for (category of categories; track category.value) {
+          <option [value]="category.value">{{ category.label }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      Ocasion
+      <select [value]="selectedOccasion()" (change)="setOccasion(($any($event.target)).value)">
+        <option value="all">Todas</option>
+        @for (occasion of occasions; track occasion) {
+          <option [value]="occasion">{{ occasion }}</option>
+        }
+      </select>
+    </label>
+  </section>
+
+  @if (loading()) {
+    <div class="grid">
+      @for (item of skeletonItems; track item) {
+        <article class="skeleton-card" aria-hidden="true"></article>
+      }
+    </div>
+  } @else {
+    <div class="result-row">
+      <p>{{ filteredProducts().length }} productos encontrados</p>
+    </div>
+
+    <div class="grid">
+      @for (product of filteredProducts(); track product.slug) {
+        <ui-card>
+          <a
+            class="image-link"
+            [routerLink]="'/productos/' + product.slug"
+            (click)="trackViewProduct(product.slug)"
+            [attr.aria-label]="'Ver detalle de ' + product.name"
+          >
+            <img
+              [src]="product.images[0]"
+              width="600"
+              height="450"
+              loading="lazy"
+              [alt]="'Foto de ' + product.name"
+            />
+          </a>
+
+          <div class="content">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+
+            <div class="tag-row">
+              @for (tag of product.tags; track tag) {
+                <ui-badge tone="neutral">{{ tag }}</ui-badge>
+              }
+            </div>
+
+            <div class="actions">
+              <ui-button variant="secondary" size="sm" [routerLink]="'/productos/' + product.slug">
+                Ver detalle
+              </ui-button>
+              <ui-button
+                size="sm"
+                [href]="productOrderLink(product.name)"
+                target="_blank"
+                (click)="trackWhatsApp(product.name)"
+              >
+                Pedir por WhatsApp
+              </ui-button>
+            </div>
+          </div>
+        </ui-card>
+      } @empty {
+        <ui-card [hoverable]="false">
+          <p>No hay resultados con esos filtros. Prueba otra busqueda.</p>
+        </ui-card>
+      }
+    </div>
+  }
+</section>

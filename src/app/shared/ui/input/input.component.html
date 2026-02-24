@@ -1,0 +1,13 @@
+<div class="field">
+  <label [for]="id">{{ label }}</label>
+
+  @if (!multiline) {
+    <input [id]="id" [type]="type" [placeholder]="placeholder" [formControl]="control" />
+  } @else {
+    <textarea [id]="id" [rows]="rows" [placeholder]="placeholder" [formControl]="control"></textarea>
+  }
+
+  @if (errorMessage) {
+    <small class="error">{{ errorMessage }}</small>
+  }
+</div>

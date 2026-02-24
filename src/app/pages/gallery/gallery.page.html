@@ -1,0 +1,25 @@
+<section class="container section-space">
+  <ui-section-title
+    eyebrow="Galeria"
+    title="Inspiracion estilo Instagram"
+    description="Disenos reales de nuestro trabajo en postres, tortas y detalles."
+  />
+
+  <h1 class="sr-only">Galeria Delicias Bakery</h1>
+
+  @if (loading()) {
+    <div class="gallery-grid">
+      @for (item of skeletonItems; track item) {
+        <div class="skeleton" aria-hidden="true"></div>
+      }
+    </div>
+  } @else {
+    <div class="gallery-grid">
+      @for (item of items; track item.src) {
+        <ui-card [padded]="false">
+          <img [src]="item.src" width="800" height="800" loading="lazy" [alt]="item.alt" />
+        </ui-card>
+      }
+    </div>
+  }
+</section>

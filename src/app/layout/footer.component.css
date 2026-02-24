@@ -1,0 +1,45 @@
+.footer {
+  background: linear-gradient(180deg, #fff5f7 0%, #f8eee8 100%);
+  border-top: 1px solid var(--color-border);
+  margin-top: 3rem;
+  padding: 2.4rem 0 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0 0 0.65rem;
+}
+
+p,
+ul,
+a {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+ul {
+  display: grid;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.skip-link {
+  background: var(--color-coffee);
+  border-radius: var(--radius-sm);
+  color: white;
+  left: 0.75rem;
+  padding: 0.5rem 0.65rem;
+  position: absolute;
+  top: -4rem;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+main {
+  min-height: calc(100vh - 220px);
+}

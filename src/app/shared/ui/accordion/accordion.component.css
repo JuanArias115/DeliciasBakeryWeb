@@ -1,0 +1,40 @@
+.accordion {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.accordion-item {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+button {
+  align-items: center;
+  background: white;
+  border: 0;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 35%, white);
+  outline-offset: -3px;
+}
+
+.content {
+  padding: 0 1rem 0.95rem;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin: 0;
+}

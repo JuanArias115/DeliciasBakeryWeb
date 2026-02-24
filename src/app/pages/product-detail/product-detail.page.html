@@ -1,0 +1,48 @@
+@if (product) {
+  <section class="container section-space detail-page">
+    <a routerLink="/productos" class="back-link">&larr; Volver al catalogo</a>
+
+    <div class="detail-grid">
+      <div class="media-col">
+        <img
+          [src]="product.images[0]"
+          width="900"
+          height="700"
+          [alt]="'Foto principal de ' + product.name"
+          fetchpriority="high"
+        />
+      </div>
+
+      <div class="info-col">
+        <h1>{{ product.name }}</h1>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+
+        <div class="tag-row">
+          @for (tag of product.tags; track tag) {
+            <ui-badge tone="neutral">{{ tag }}</ui-badge>
+          }
+        </div>
+
+        <ui-card [hoverable]="false">
+          <form class="order-form" novalidate>
+            <h2>Arma tu pedido</h2>
+            <ui-input id="qty" label="Cantidad" [control]="quantity" placeholder="1" />
+            <ui-input id="date" type="date" label="Fecha de entrega" [control]="date" />
+            <ui-input id="address" label="Direccion" [control]="address" placeholder="Barrio y direccion" />
+            <ui-input
+              id="note"
+              label="Mensaje adicional"
+              [control]="note"
+              [multiline]="true"
+              placeholder="Ejemplo: dedicatoria, colores, alergias"
+            />
+
+            <ui-button [href]="orderLink" target="_blank" (click)="trackClick()">Pedir por WhatsApp</ui-button>
+            <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
+          </form>
+        </ui-card>
+      </div>
+    </div>
+  </section>
+}

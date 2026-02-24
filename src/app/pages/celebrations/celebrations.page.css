@@ -1,0 +1,25 @@
+.celebrations {
+  display: grid;
+  gap: 1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-top: 0.45rem;
+}
+
+.cta-card {
+  display: grid;
+  gap: 0.6rem;
+}

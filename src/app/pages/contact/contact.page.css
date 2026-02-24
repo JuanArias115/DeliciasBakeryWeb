@@ -1,0 +1,40 @@
+.contact-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-top: 0.45rem;
+}
+
+.fallback {
+  margin-top: 0.75rem;
+}
+
+.fallback a {
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    align-items: start;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}

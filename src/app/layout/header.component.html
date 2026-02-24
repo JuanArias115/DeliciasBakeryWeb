@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="container nav-wrap">
+    <a class="brand" routerLink="/inicio" aria-label="Ir al inicio de Delicias Bakery">
+      <span class="brand-mark">DB</span>
+      <span>Delicias Bakery</span>
+    </a>
+
+    <button type="button" class="menu-btn" (click)="toggleMenu()" aria-label="Abrir menu">
+      {{ menuOpen() ? 'Cerrar' : 'Menu' }}
+    </button>
+
+    <nav [class.open]="menuOpen()" aria-label="Navegacion principal">
+      @for (item of links; track item.path) {
+        <a routerLinkActive="is-active" [routerLink]="item.path" (click)="closeMenu()">{{ item.label }}</a>
+      }
+      <ui-button variant="primary" size="sm" [href]="whatsappUrl" target="_blank">Pedir por WhatsApp</ui-button>
+    </nav>
+  </div>
+</header>

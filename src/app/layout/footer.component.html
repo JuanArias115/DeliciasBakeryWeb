@@ -1,0 +1,36 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <section>
+      <h3>Delicias Bakery</h3>
+      <p>{{ config.location }}</p>
+      <p>{{ config.baseOrderNotice }}</p>
+    </section>
+
+    <section>
+      <h3>Horarios</h3>
+      <ul>
+        @for (hour of config.businessHours; track hour) {
+          <li>{{ hour }}</li>
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a routerLink="/productos">Catalogo</a></li>
+        <li><a routerLink="/contacto">Contacto</a></li>
+        <li><a routerLink="/politicas">Politicas</a></li>
+        <li><a [href]="config.instagramUrl" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>WhatsApp</h3>
+      <a [href]="'https://wa.me/' + config.whatsappNumber" target="_blank" rel="noopener noreferrer">
+        {{ config.whatsappDisplay }}
+      </a>
+      <p>Pedidos por encargo, minimo 24h de anticipacion.</p>
+    </section>
+  </div>
+</footer>

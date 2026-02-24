@@ -1,0 +1,37 @@
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font: inherit;
+  padding: 0.75rem 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-primary-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 32%, white);
+  outline: none;
+}
+
+.error {
+  color: #a23f53;
+  font-size: 0.78rem;
+  font-weight: 600;
+}

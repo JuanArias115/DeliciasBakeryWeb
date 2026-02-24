@@ -1,0 +1,27 @@
+.wa-float {
+  align-items: center;
+  background: #25d366;
+  border-radius: 999px;
+  bottom: 1.1rem;
+  box-shadow: 0 14px 24px rgba(37, 211, 102, 0.35);
+  color: white;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 800;
+  height: 3.1rem;
+  justify-content: center;
+  position: fixed;
+  right: 1.1rem;
+  text-decoration: none;
+  width: 3.1rem;
+  z-index: 120;
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+}
+
+.wa-float:focus-visible {
+  outline: 3px solid color-mix(in srgb, #25d366 35%, white);
+  outline-offset: 3px;
+}

@@ -1,0 +1,124 @@
+<section class="hero container section-space">
+  <div class="hero-copy">
+    <p class="eyebrow">Pasteleria premium por encargo</p>
+    <h1>Delicias Bakery: postres que elevan cada celebracion</h1>
+    <p>
+      Endulzamos momentos especiales en Chia y Cajica con acabados elegantes, sabores memorables y
+      entregas puntuales.
+    </p>
+    <div class="hero-actions">
+      <ui-button [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
+        Pedir por WhatsApp
+      </ui-button>
+      <ui-button variant="secondary" routerLink="/productos">Ver catalogo</ui-button>
+    </div>
+    <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
+  </div>
+
+  <div class="hero-aside">
+    <ui-card [hoverable]="false">
+      <h2>Chia-Cajica</h2>
+      <p>Atencion cercana y personalizada para fechas especiales, regalos y eventos.</p>
+      <ul>
+        <li>Entrega local programada</li>
+        <li>Personalizacion de diseno</li>
+        <li>Respuesta rapida por WhatsApp</li>
+      </ul>
+    </ui-card>
+  </div>
+</section>
+
+<section class="container section-space">
+  <ui-section-title
+    eyebrow="Recomendados"
+    title="Destacados de la semana"
+    description="Los productos mas pedidos por nuestros clientes en Chia y Cajica."
+  />
+
+  <div class="product-grid">
+    @for (product of featuredProducts; track product.slug) {
+      <ui-card>
+        <a [routerLink]="'/productos/' + product.slug" class="card-link" [attr.aria-label]="product.name">
+          <img
+            [src]="product.images[0]"
+            width="600"
+            height="450"
+            loading="lazy"
+            [alt]="'Foto de ' + product.name"
+          />
+        </a>
+        <div class="card-body">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <div class="meta-row">
+            <span class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</span>
+            <ui-badge>{{ product.category }}</ui-badge>
+          </div>
+          <ui-button
+            size="sm"
+            [href]="productOrderLink(product)"
+            target="_blank"
+            (click)="trackWhatsApp('home_featured_' + product.slug)"
+          >
+            Pedir por WhatsApp
+          </ui-button>
+        </div>
+      </ui-card>
+    }
+  </div>
+</section>
+
+<section class="container section-space">
+  <ui-section-title eyebrow="Proceso" title="Como pedir" description="Un flujo simple para cotizar y confirmar." />
+
+  <div class="steps">
+    @for (step of steps; track step; let i = $index) {
+      <ui-card>
+        <span class="step-index">0{{ i + 1 }}</span>
+        <p>{{ step }}</p>
+      </ui-card>
+    }
+  </div>
+</section>
+
+<section class="container section-space coverage">
+  <ui-section-title
+    eyebrow="Logistica"
+    title="Cobertura y tiempos"
+    description="Atendemos en Chia y Cajica con agenda previa para garantizar calidad."
+  />
+
+  <div class="coverage-grid">
+    <ui-card [hoverable]="false">
+      <h3>Zona de entrega</h3>
+      <p>{{ config.location }}</p>
+      <p>Consultar zonas cercanas y costo de envio al confirmar pedido.</p>
+    </ui-card>
+    <ui-card [hoverable]="false">
+      <h3>Tiempo minimo</h3>
+      <p>24 horas de anticipacion para la mayoria de pedidos.</p>
+      <p>Fechas especiales: reserva con mayor antelacion.</p>
+    </ui-card>
+  </div>
+</section>
+
+<section class="container section-space">
+  <ui-section-title eyebrow="Clientes felices" title="Resenas reales" description="Lo que dicen quienes ya probaron." />
+
+  <ui-card [hoverable]="false">
+    <div class="review-card">
+      <p class="stars" aria-label="Calificacion">{{ '*****'.slice(0, review.rating) }}</p>
+      <p class="review-text">"{{ review.text }}"</p>
+      <p class="review-meta">{{ review.name }} - {{ review.date | date: 'longDate' : undefined : 'es-CO' }}</p>
+      <div class="review-actions">
+        <ui-button size="sm" variant="secondary" (click)="prevReview()">Anterior</ui-button>
+        <ui-button size="sm" variant="secondary" (click)="nextReview()">Siguiente</ui-button>
+      </div>
+    </div>
+  </ui-card>
+</section>
+
+<section class="container section-space">
+  <ui-section-title eyebrow="FAQ" title="Preguntas frecuentes" />
+  <ui-accordion [items]="faqs" />
+</section>
