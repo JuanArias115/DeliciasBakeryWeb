@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { AnalyticsService } from '../../core/services/analytics.service';
-import { WhatsAppService } from '../../core/services/whatsapp.service';
+import { getMinPrice } from '../../core/helpers/product-pricing.helper';
 import {
   OCCASIONS,
   PRODUCT_CATEGORIES,
@@ -38,6 +38,7 @@ export default class ProductsPage implements OnInit, OnDestroy {
   readonly selectedCategory = signal<'all' | ProductCategory>('all');
   readonly selectedOccasion = signal<'all' | string>('all');
   readonly loading = signal(true);
+  readonly getMinPrice = getMinPrice;
 
   readonly filteredProducts = computed(() => {
     const query = this.query().trim().toLowerCase();
@@ -59,10 +60,7 @@ export default class ProductsPage implements OnInit, OnDestroy {
 
   private timer?: ReturnType<typeof setTimeout>;
 
-  constructor(
-    private readonly whatsapp: WhatsAppService,
-    private readonly analytics: AnalyticsService
-  ) {}
+  constructor(private readonly analytics: AnalyticsService) {}
 
   ngOnInit(): void {
     this.timer = setTimeout(() => this.loading.set(false), 650);
@@ -84,19 +82,6 @@ export default class ProductsPage implements OnInit, OnDestroy {
 
   setOccasion(value: string): void {
     this.selectedOccasion.set(value);
-  }
-
-  productOrderLink(productName: string): string {
-    return this.whatsapp.createOrderLink({
-      product: productName,
-      quantity: '1',
-      date: 'DD/MM/AAAA',
-      address: 'Barrio y direccion'
-    });
-  }
-
-  trackWhatsApp(productName: string): void {
-    this.analytics.trackEvent('click_whatsapp', { source: 'catalog_card', product: productName });
   }
 
   trackViewProduct(slug: string): void {

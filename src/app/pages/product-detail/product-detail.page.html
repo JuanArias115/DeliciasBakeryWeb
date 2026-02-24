@@ -1,6 +1,9 @@
 @if (product) {
   <section class="container section-space detail-page">
-    <a routerLink="/productos" class="back-link">&larr; Volver al catalogo</a>
+    <a routerLink="/productos" class="back-link">
+      <ui-icon name="arrow-left" size="sm" />
+      <span>Volver al catalogo</span>
+    </a>
 
     <div class="detail-grid">
       <div class="media-col">
@@ -16,7 +19,10 @@
       <div class="info-col">
         <h1>{{ product.name }}</h1>
         <p class="description">{{ product.description }}</p>
-        <p class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+        <p class="price">{{ displayPrice | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+        @if (selectedSize?.serves) {
+          <p class="serves">Rinde aprox: {{ selectedSize?.serves }}</p>
+        }
 
         <div class="tag-row">
           @for (tag of product.tags; track tag) {
@@ -27,6 +33,28 @@
         <ui-card [hoverable]="false">
           <form class="order-form" novalidate>
             <h2>Arma tu pedido</h2>
+
+            @if (product.sizes?.length) {
+              <section class="size-section" aria-label="Selecciona tamano">
+                <h3>Tamano</h3>
+                <div class="size-grid">
+                  @for (size of product.sizes; track size.id) {
+                    <label class="size-option" [class.is-selected]="size.id === sizeId.value">
+                      <input type="radio" [formControl]="sizeId" [value]="size.id" [attr.name]="'size-' + product.slug" />
+                      <span class="size-label">{{ size.label }}</span>
+                      <span class="size-price">{{ size.price | currency: 'COP' : 'symbol' : '1.0-0' }}</span>
+                      @if (size.serves) {
+                        <small>{{ size.serves }}</small>
+                      }
+                      @if (size.note) {
+                        <small>{{ size.note }}</small>
+                      }
+                    </label>
+                  }
+                </div>
+              </section>
+            }
+
             <ui-input id="qty" label="Cantidad" [control]="quantity" placeholder="1" />
             <ui-input id="date" type="date" label="Fecha de entrega" [control]="date" />
             <ui-input id="address" label="Direccion" [control]="address" placeholder="Barrio y direccion" />
@@ -38,7 +66,9 @@
               placeholder="Ejemplo: dedicatoria, colores, alergias"
             />
 
-            <ui-button [href]="orderLink" target="_blank" (click)="trackClick()">Pedir por WhatsApp</ui-button>
+            <ui-button iconLeft="cart" [href]="orderLink" target="_blank" (click)="trackClick()">
+              Pedir por WhatsApp
+            </ui-button>
             <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
           </form>
         </ui-card>

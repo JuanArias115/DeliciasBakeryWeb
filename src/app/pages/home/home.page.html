@@ -7,10 +7,10 @@
       entregas puntuales.
     </p>
     <div class="hero-actions">
-      <ui-button [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
+      <ui-button iconLeft="whatsapp" [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
         Pedir por WhatsApp
       </ui-button>
-      <ui-button variant="secondary" routerLink="/productos">Ver catalogo</ui-button>
+      <ui-button variant="secondary" iconRight="arrow-right" routerLink="/productos">Ver catalogo</ui-button>
     </div>
     <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
   </div>
@@ -51,16 +51,11 @@
           <h3>{{ product.name }}</h3>
           <p>{{ product.description }}</p>
           <div class="meta-row">
-            <span class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</span>
+            <span class="price">Desde {{ getMinPrice(product) | currency: 'COP' : 'symbol' : '1.0-0' }}</span>
             <ui-badge>{{ product.category }}</ui-badge>
           </div>
-          <ui-button
-            size="sm"
-            [href]="productOrderLink(product)"
-            target="_blank"
-            (click)="trackWhatsApp('home_featured_' + product.slug)"
-          >
-            Pedir por WhatsApp
+          <ui-button size="sm" variant="secondary" iconRight="arrow-right" [routerLink]="'/productos/' + product.slug">
+            Ver detalle
           </ui-button>
         </div>
       </ui-card>
@@ -111,8 +106,8 @@
       <p class="review-text">"{{ review.text }}"</p>
       <p class="review-meta">{{ review.name }} - {{ review.date | date: 'longDate' : undefined : 'es-CO' }}</p>
       <div class="review-actions">
-        <ui-button size="sm" variant="secondary" (click)="prevReview()">Anterior</ui-button>
-        <ui-button size="sm" variant="secondary" (click)="nextReview()">Siguiente</ui-button>
+        <ui-button size="sm" variant="secondary" iconLeft="arrow-left" (click)="prevReview()">Anterior</ui-button>
+        <ui-button size="sm" variant="secondary" iconRight="arrow-right" (click)="nextReview()">Siguiente</ui-button>
       </div>
     </div>
   </ui-card>

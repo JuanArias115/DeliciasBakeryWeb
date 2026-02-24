@@ -13,7 +13,9 @@
       @for (item of links; track item.path) {
         <a routerLinkActive="is-active" [routerLink]="item.path" (click)="closeMenu()">{{ item.label }}</a>
       }
-      <ui-button variant="primary" size="sm" [href]="whatsappUrl" target="_blank">Pedir por WhatsApp</ui-button>
+      <ui-button class="nav-wa-cta" iconLeft="whatsapp" variant="primary" size="sm" [href]="whatsappUrl" target="_blank">
+        Pedir por WhatsApp
+      </ui-button>
     </nav>
   </div>
 </header>

@@ -1,4 +1,5 @@
 import { siteConfig } from '../config/site.config';
+import { getMinPrice } from '../helpers/product-pricing.helper';
 
 import { Product } from '../../models/product.model';
 
@@ -45,6 +46,8 @@ export function createLocalBusinessSchema(siteUrl: string): Record<string, unkno
 }
 
 export function createProductSchema(product: Product, canonicalUrl: string): Record<string, unknown> {
+  const price = getMinPrice(product);
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -60,7 +63,7 @@ export function createProductSchema(product: Product, canonicalUrl: string): Rec
     offers: {
       '@type': 'Offer',
       priceCurrency: 'COP',
-      price: product.priceFrom,
+      price,
       availability: 'https://schema.org/InStock',
       url: canonicalUrl
     }

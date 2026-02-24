@@ -1,13 +1,31 @@
 @if (href) {
   <a [href]="href" [target]="target" [class]="classes" rel="noopener noreferrer">
+    @if (iconLeft) {
+      <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
+    }
     <ng-content />
+    @if (iconRight) {
+      <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
+    }
   </a>
 } @else if (routerLink) {
   <a [routerLink]="routerLink" [class]="classes">
+    @if (iconLeft) {
+      <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
+    }
     <ng-content />
+    @if (iconRight) {
+      <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
+    }
   </a>
 } @else {
   <button [type]="type" [class]="classes">
+    @if (iconLeft) {
+      <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
+    }
     <ng-content />
+    @if (iconRight) {
+      <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
+    }
   </button>
 }

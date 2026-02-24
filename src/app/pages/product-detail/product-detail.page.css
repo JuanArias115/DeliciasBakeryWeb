@@ -1,5 +1,8 @@
 .back-link {
+  align-items: center;
   color: var(--color-coffee);
+  display: inline-flex;
+  gap: 0.35rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -38,6 +41,11 @@ small {
   margin: 0;
 }
 
+.serves {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 .price {
   color: var(--color-coffee);
   font-size: 1.25rem;
@@ -58,6 +66,57 @@ small {
 
 .order-form h2 {
   margin: 0;
+}
+
+.size-section {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.size-section h3 {
+  margin: 0;
+}
+
+.size-grid {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.size-option {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.8rem;
+  position: relative;
+}
+
+.size-option input {
+  left: 0.75rem;
+  opacity: 0;
+  position: absolute;
+  top: 0.75rem;
+}
+
+.size-option.is-selected {
+  border-color: var(--color-primary-strong);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, white);
+}
+
+.size-option:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, white);
+  outline-offset: 2px;
+}
+
+.size-label {
+  font-weight: 700;
+}
+
+.size-price {
+  color: var(--color-coffee);
+  font-weight: 800;
 }
 
 @media (min-width: 920px) {

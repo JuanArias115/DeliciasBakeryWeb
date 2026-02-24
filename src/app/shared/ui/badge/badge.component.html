@@ -1,1 +1,6 @@
-<span [class]="classes"><ng-content /></span>
+<span [class]="classes">
+  @if (icon) {
+    <ui-icon [name]="icon" size="sm" />
+  }
+  <ng-content />
+</span>

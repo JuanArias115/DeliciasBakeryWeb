@@ -89,6 +89,12 @@ nav a.is-active {
   background: color-mix(in srgb, var(--color-primary) 12%, white);
 }
 
+@media (max-width: 919px) {
+  .nav-wa-cta {
+    display: none;
+  }
+}
+
 @media (min-width: 920px) {
   .menu-btn {
     display: none;

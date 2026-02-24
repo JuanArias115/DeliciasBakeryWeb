@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 
 import { AnalyticsService } from '../core/services/analytics.service';
 import { WhatsAppService } from '../core/services/whatsapp.service';
+import { IconComponent } from '../shared/ui/icon/icon.component';
 
 @Component({
   selector: 'app-whatsapp-float',
+  imports: [IconComponent],
   templateUrl: './whatsapp-float.component.html',
   styleUrl: './whatsapp-float.component.css'
 })

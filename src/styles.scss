@@ -80,3 +80,86 @@ textarea {
   white-space: nowrap;
   width: 1px;
 }
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  height: 1em;
+  line-height: 1;
+  vertical-align: middle;
+  width: 1em;
+}
+
+fa-icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+fa-icon > svg {
+  display: block;
+  height: 1em;
+  width: 1em;
+}
+
+.icon-btn {
+  --icon-btn-size: 56px;
+  --icon-size: 32px;
+  align-items: center;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  height: var(--icon-btn-size);
+  justify-content: center;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  width: var(--icon-btn-size);
+}
+
+.icon-btn ui-icon {
+  align-items: center;
+  display: inline-flex;
+  height: var(--icon-size);
+  justify-content: center;
+  line-height: 0;
+  max-height: var(--icon-size);
+  max-width: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.icon-btn ui-icon .icon,
+.icon-btn ui-icon fa-icon,
+.icon-btn ui-icon fa-icon > svg {
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
+
+.icon-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary-strong) 35%, white);
+  outline-offset: 3px;
+}
+
+.fab-whatsapp {
+  background: #25d366;
+  box-shadow: 0 14px 24px rgba(37, 211, 102, 0.35);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .icon-btn {
+    --icon-btn-size: 56px;
+    --icon-size: 31px;
+  }
+}

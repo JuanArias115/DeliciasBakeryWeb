@@ -71,7 +71,7 @@
           <div class="content">
             <h2>{{ product.name }}</h2>
             <p>{{ product.description }}</p>
-            <p class="price">Desde {{ product.priceFrom | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+            <p class="price">Desde {{ getMinPrice(product) | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
 
             <div class="tag-row">
               @for (tag of product.tags; track tag) {
@@ -80,16 +80,13 @@
             </div>
 
             <div class="actions">
-              <ui-button variant="secondary" size="sm" [routerLink]="'/productos/' + product.slug">
-                Ver detalle
-              </ui-button>
               <ui-button
+                variant="secondary"
                 size="sm"
-                [href]="productOrderLink(product.name)"
-                target="_blank"
-                (click)="trackWhatsApp(product.name)"
+                iconRight="arrow-right"
+                [routerLink]="'/productos/' + product.slug"
               >
-                Pedir por WhatsApp
+                Ver detalle
               </ui-button>
             </div>
           </div>

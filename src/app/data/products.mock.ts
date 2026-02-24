@@ -8,6 +8,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'aniversario'],
     description: 'Torta alta decorada con piping vintage y tonos rosa pastel.',
     priceFrom: 125000,
+    sizes: [
+      { id: '6p', label: '6 porciones', price: 125000, serves: '6-8 porciones' },
+      { id: '10p', label: '10 porciones', price: 165000, serves: '10-12 porciones' },
+      { id: '15p', label: '15 porciones', price: 215000, serves: '15-18 porciones', note: 'Incluye topper basico' }
+    ],
+    defaultSizeId: '6p',
     images: ['https://picsum.photos/seed/torta-vintage/1200/900'],
     tags: ['Mas vendida', 'Personalizable'],
     featured: true
@@ -19,6 +25,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['detalle', 'cumpleanos'],
     description: 'Mini torta individual ideal para sorprender con mensaje corto.',
     priceFrom: 28000,
+    sizes: [
+      { id: 'bento', label: 'Bento (1-2 porciones)', price: 28000, serves: '1-2 porciones' },
+      { id: 'bento-premium', label: 'Bento Premium', price: 35000, note: 'Decoracion extra' },
+      { id: 'bento-duo', label: 'Bento Duo', price: 52000, serves: '2 mini cakes' }
+    ],
+    defaultSizeId: 'bento',
     images: ['https://picsum.photos/seed/bento/1200/900'],
     tags: ['Regalo', 'Tendencia'],
     featured: true
@@ -30,6 +42,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['regalo', 'empresarial'],
     description: 'Brownies fudgy con toppings surtidos y empaque premium.',
     priceFrom: 68000,
+    sizes: [
+      { id: 'x8', label: 'Caja x8', price: 52000 },
+      { id: 'x12', label: 'Caja x12', price: 68000 },
+      { id: 'x20', label: 'Caja x20', price: 105000, note: 'Incluye tarjeta personalizada' }
+    ],
+    defaultSizeId: 'x12',
     images: ['https://picsum.photos/seed/brownies/1200/900'],
     tags: ['Entrega rapida', 'Ideal oficina'],
     featured: true
@@ -41,6 +59,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'brunch'],
     description: 'Base crocante, crema suave y coulis natural de frutos rojos.',
     priceFrom: 78000,
+    sizes: [
+      { id: 'mini', label: 'Mini (4 porciones)', price: 78000, serves: '4 porciones' },
+      { id: 'mediana', label: 'Mediana (8 porciones)', price: 112000, serves: '8 porciones' },
+      { id: 'grande', label: 'Grande (12 porciones)', price: 148000, serves: '12 porciones' }
+    ],
+    defaultSizeId: 'mini',
     images: ['https://picsum.photos/seed/cheesecake/1200/900'],
     tags: ['Sin fondant', 'Clasico']
   },
@@ -51,6 +75,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'familiar'],
     description: 'Bizcocho humedo con crema batida y fruta fresca.',
     priceFrom: 98000,
+    sizes: [
+      { id: '6p', label: '6 porciones', price: 98000, serves: '6 porciones' },
+      { id: '10p', label: '10 porciones', price: 138000, serves: '10 porciones' },
+      { id: '15p', label: '15 porciones', price: 188000, serves: '15 porciones' }
+    ],
+    defaultSizeId: '6p',
     images: ['https://picsum.photos/seed/tresleches/1200/900'],
     tags: ['Suave', 'Favorita']
   },
@@ -61,6 +91,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['romantico', 'aniversario'],
     description: 'Fresas seleccionadas cubiertas con chocolate semiamargo.',
     priceFrom: 59000,
+    sizes: [
+      { id: 'x12', label: 'Caja x12', price: 59000 },
+      { id: 'x18', label: 'Caja x18', price: 79000 },
+      { id: 'x24', label: 'Caja x24', price: 99000, note: 'Incluye mini mensaje' }
+    ],
+    defaultSizeId: 'x12',
     images: ['https://picsum.photos/seed/fresas/1200/900'],
     tags: ['Entrega en frio', 'Elegante'],
     featured: true
@@ -72,6 +108,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'oficina'],
     description: 'Seis cupcakes con sabores de vainilla, chocolate y red velvet.',
     priceFrom: 38000,
+    sizes: [
+      { id: 'x6', label: 'Caja x6', price: 38000 },
+      { id: 'x12', label: 'Caja x12', price: 69000 },
+      { id: 'x24', label: 'Caja x24', price: 130000, note: 'Ideal para eventos' }
+    ],
+    defaultSizeId: 'x6',
     images: ['https://picsum.photos/seed/cupcakes6/1200/900'],
     tags: ['Porcion individual', 'Colores a eleccion']
   },
@@ -82,6 +124,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'evento'],
     description: 'Caja para celebraciones con decoracion tematica a tu gusto.',
     priceFrom: 69000,
+    sizes: [
+      { id: 'x12', label: 'Caja x12', price: 69000 },
+      { id: 'x18', label: 'Caja x18', price: 99000 },
+      { id: 'x24', label: 'Caja x24', price: 129000, note: 'Incluye mix de toppings' }
+    ],
+    defaultSizeId: 'x12',
     images: ['https://picsum.photos/seed/cupcakes12/1200/900'],
     tags: ['Eventos', 'Personalizable']
   },
@@ -92,6 +140,11 @@ export const PRODUCTS: Product[] = [
     occasion: ['sorpresa', 'cumpleanos'],
     description: 'Incluye mini postres, bebida y tarjeta personalizada.',
     priceFrom: 95000,
+    sizes: [
+      { id: 'classic', label: 'Clasica', price: 95000, serves: '1 persona' },
+      { id: 'premium', label: 'Premium', price: 125000, note: 'Incluye flores y globo' }
+    ],
+    defaultSizeId: 'classic',
     images: ['https://picsum.photos/seed/desayuno/1200/900'],
     tags: ['Con mensaje', 'Sorpresa']
   },
@@ -99,9 +152,15 @@ export const PRODUCTS: Product[] = [
     name: 'Mesa Dulce para 30 personas',
     slug: 'mesa-dulce-30-personas',
     category: 'catering',
-    occasion: ['boda', 'evento-corporativo'],
+    occasion: ['boda', 'corporativo'],
     description: 'Montaje de mesa dulce con postres variados y decoracion.',
     priceFrom: 420000,
+    sizes: [
+      { id: '30p', label: '30 personas', price: 420000, serves: '30 personas' },
+      { id: '50p', label: '50 personas', price: 620000, serves: '50 personas' },
+      { id: '80p', label: '80 personas', price: 890000, note: 'Incluye montaje extendido' }
+    ],
+    defaultSizeId: '30p',
     images: ['https://picsum.photos/seed/mesadulce/1200/900'],
     tags: ['Catering', 'Incluye montaje']
   },
@@ -112,6 +171,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['infantil', 'cumpleanos'],
     description: 'Torta decorada en buttercream con detalles de unicornio.',
     priceFrom: 145000,
+    sizes: [
+      { id: '8p', label: '8 porciones', price: 145000, serves: '8 porciones' },
+      { id: '12p', label: '12 porciones', price: 185000, serves: '12 porciones' },
+      { id: '18p', label: '18 porciones', price: 245000, note: 'Incluye figura basica' }
+    ],
+    defaultSizeId: '8p',
     images: ['https://picsum.photos/seed/unicornio/1200/900'],
     tags: ['Infantil', 'Colorida']
   },
@@ -122,6 +187,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['snack', 'regalo'],
     description: 'Galletas grandes con rellenos de nutella, arequipe y lotus.',
     priceFrom: 46000,
+    sizes: [
+      { id: 'x8', label: 'Caja x8', price: 46000 },
+      { id: 'x12', label: 'Caja x12', price: 64000 },
+      { id: 'x20', label: 'Caja x20', price: 98000 }
+    ],
+    defaultSizeId: 'x8',
     images: ['https://picsum.photos/seed/cookies8/1200/900'],
     tags: ['Recien horneadas', 'Crunchy']
   },
@@ -132,6 +203,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['romantico', 'san-valentin'],
     description: 'Torta en forma de corazon con mensaje personalizado.',
     priceFrom: 118000,
+    sizes: [
+      { id: '6p', label: '6 porciones', price: 118000 },
+      { id: '10p', label: '10 porciones', price: 156000 },
+      { id: '14p', label: '14 porciones', price: 199000, note: 'Incluye caja premium' }
+    ],
+    defaultSizeId: '6p',
     images: ['https://picsum.photos/seed/corazon/1200/900'],
     tags: ['Edicion especial', 'Romantica']
   },
@@ -142,6 +219,11 @@ export const PRODUCTS: Product[] = [
     occasion: ['detalle', 'evento'],
     description: 'Galletas de mantequilla decoradas por tematica y colores.',
     priceFrom: 55000,
+    sizes: [
+      { id: 'x10', label: 'Caja x10', price: 55000 },
+      { id: 'x20', label: 'Caja x20', price: 99000, note: 'Ideal souvenirs' }
+    ],
+    defaultSizeId: 'x10',
     images: ['https://picsum.photos/seed/galletasdecoradas/1200/900'],
     tags: ['Corporativo', 'Souvenir']
   },
@@ -152,6 +234,11 @@ export const PRODUCTS: Product[] = [
     occasion: ['familiar', 'domingo'],
     description: 'Postre frio en bandeja familiar con capa de merengue.',
     priceFrom: 52000,
+    sizes: [
+      { id: 'familiar', label: 'Familiar', price: 52000, serves: '6 porciones' },
+      { id: 'grande', label: 'Grande', price: 74000, serves: '10 porciones' }
+    ],
+    defaultSizeId: 'familiar',
     images: ['https://picsum.photos/seed/maracuya/1200/900'],
     tags: ['Fresco', 'Acido dulce']
   },
@@ -162,6 +249,12 @@ export const PRODUCTS: Product[] = [
     occasion: ['corporativo', 'reunion'],
     description: 'Servicio de coffee break con pasteleria fina para equipos.',
     priceFrom: 320000,
+    sizes: [
+      { id: '20p', label: '20 personas', price: 320000, serves: '20 personas' },
+      { id: '35p', label: '35 personas', price: 520000, serves: '35 personas' },
+      { id: '50p', label: '50 personas', price: 690000, note: 'Incluye personal de apoyo' }
+    ],
+    defaultSizeId: '20p',
     images: ['https://picsum.photos/seed/coffeebreak/1200/900'],
     tags: ['Empresas', 'Incluye logistica']
   }
