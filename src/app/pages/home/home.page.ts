@@ -9,10 +9,12 @@ import { WhatsAppService } from '../../core/services/whatsapp.service';
 import { FAQS } from '../../data/faqs.mock';
 import { PRODUCTS } from '../../data/products.mock';
 import { REVIEWS } from '../../data/reviews.mock';
+import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
 import { AccordionComponent } from '../../shared/ui/accordion/accordion.component';
 import { BadgeComponent } from '../../shared/ui/badge/badge.component';
 import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
+import { IconComponent } from '../../shared/ui/icon/icon.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
 
 @Component({
@@ -24,6 +26,7 @@ import { SectionTitleComponent } from '../../shared/ui/section-title/section-tit
     ButtonComponent,
     CardComponent,
     BadgeComponent,
+    IconComponent,
     SectionTitleComponent,
     AccordionComponent
   ],
@@ -39,6 +42,7 @@ export default class HomePage {
 
   readonly activeReview = signal(0);
   readonly getMinPrice = getMinPrice;
+  readonly productImageThumb = (image: string): string => cldSized(image, CLOUDINARY_WIDTHS.thumb);
 
   constructor(
     private readonly whatsapp: WhatsAppService,

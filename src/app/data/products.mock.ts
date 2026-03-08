@@ -1,63 +1,29 @@
+import { CLOUDINARY_WIDTHS, cldImage } from '../lib/cloudinary';
 import { Product } from '../models/product.model';
 
 export const PRODUCTS: Product[] = [
   {
-    name: 'Torta Vintage Rosas',
-    slug: 'torta-vintage-rosas',
-    category: 'tortas',
-    occasion: ['cumpleanos', 'aniversario'],
-    description: 'Torta alta decorada con piping vintage y tonos rosa pastel.',
-    priceFrom: 125000,
-    sizes: [
-      { id: '6p', label: '6 porciones', price: 125000, serves: '6-8 porciones' },
-      { id: '10p', label: '10 porciones', price: 165000, serves: '10-12 porciones' },
-      { id: '15p', label: '15 porciones', price: 215000, serves: '15-18 porciones', note: 'Incluye topper basico' }
-    ],
-    defaultSizeId: '6p',
-    images: ['https://picsum.photos/seed/torta-vintage/1200/900'],
-    tags: ['Mas vendida', 'Personalizable'],
-    featured: true
-  },
-  {
-    name: 'Mini Cake Bento',
-    slug: 'mini-cake-bento',
+    name: 'Alfajor Arequipe',
+    slug: 'alfajor-arequipe',
     category: 'postres',
-    occasion: ['detalle', 'cumpleanos'],
-    description: 'Mini torta individual ideal para sorprender con mensaje corto.',
-    priceFrom: 28000,
+    occasion: ['detalle', 'regalo'],
+    description: 'Alfajor suave relleno de arequipe, ideal para antojo o detalle.',
+    priceFrom: 18000,
     sizes: [
-      { id: 'bento', label: 'Bento (1-2 porciones)', price: 28000, serves: '1-2 porciones' },
-      { id: 'bento-premium', label: 'Bento Premium', price: 35000, note: 'Decoracion extra' },
-      { id: 'bento-duo', label: 'Bento Duo', price: 52000, serves: '2 mini cakes' }
+      { id: 'unidad', label: 'Unidad', price: 18000 },
+      { id: 'x4', label: 'Pack x4', price: 62000 },
+      { id: 'x8', label: 'Pack x8', price: 112000 }
     ],
-    defaultSizeId: 'bento',
-    images: ['https://picsum.photos/seed/bento/1200/900'],
-    tags: ['Regalo', 'Tendencia'],
-    featured: true
-  },
-  {
-    name: 'Caja Brownies Deluxe x12',
-    slug: 'caja-brownies-deluxe-12',
-    category: 'cajas',
-    occasion: ['regalo', 'empresarial'],
-    description: 'Brownies fudgy con toppings surtidos y empaque premium.',
-    priceFrom: 68000,
-    sizes: [
-      { id: 'x8', label: 'Caja x8', price: 52000 },
-      { id: 'x12', label: 'Caja x12', price: 68000 },
-      { id: 'x20', label: 'Caja x20', price: 105000, note: 'Incluye tarjeta personalizada' }
-    ],
-    defaultSizeId: 'x12',
-    images: ['https://picsum.photos/seed/brownies/1200/900'],
-    tags: ['Entrega rapida', 'Ideal oficina'],
-    featured: true
+    defaultSizeId: 'unidad',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/B9FBA254-1DFE-4084-8880-F2C30690F972_vbbrw9.jpg'],
+    tags: ['Regalo', 'Dulce']
   },
   {
     name: 'Cheesecake Frutos Rojos',
     slug: 'cheesecake-frutos-rojos',
     category: 'postres',
     occasion: ['cumpleanos', 'brunch'],
-    description: 'Base crocante, crema suave y coulis natural de frutos rojos.',
+    description: 'Base crocante, crema suave y topping de frutos rojos.',
     priceFrom: 78000,
     sizes: [
       { id: 'mini', label: 'Mini (4 porciones)', price: 78000, serves: '4 porciones' },
@@ -65,111 +31,65 @@ export const PRODUCTS: Product[] = [
       { id: 'grande', label: 'Grande (12 porciones)', price: 148000, serves: '12 porciones' }
     ],
     defaultSizeId: 'mini',
-    images: ['https://picsum.photos/seed/cheesecake/1200/900'],
-    tags: ['Sin fondant', 'Clasico']
-  },
-  {
-    name: 'Torta Tres Leches Premium',
-    slug: 'torta-tres-leches-premium',
-    category: 'tortas',
-    occasion: ['cumpleanos', 'familiar'],
-    description: 'Bizcocho humedo con crema batida y fruta fresca.',
-    priceFrom: 98000,
-    sizes: [
-      { id: '6p', label: '6 porciones', price: 98000, serves: '6 porciones' },
-      { id: '10p', label: '10 porciones', price: 138000, serves: '10 porciones' },
-      { id: '15p', label: '15 porciones', price: 188000, serves: '15 porciones' }
-    ],
-    defaultSizeId: '6p',
-    images: ['https://picsum.photos/seed/tresleches/1200/900'],
-    tags: ['Suave', 'Favorita']
-  },
-  {
-    name: 'Caja de Fresas con Chocolate',
-    slug: 'caja-fresas-chocolate',
-    category: 'detalles',
-    occasion: ['romantico', 'aniversario'],
-    description: 'Fresas seleccionadas cubiertas con chocolate semiamargo.',
-    priceFrom: 59000,
-    sizes: [
-      { id: 'x12', label: 'Caja x12', price: 59000 },
-      { id: 'x18', label: 'Caja x18', price: 79000 },
-      { id: 'x24', label: 'Caja x24', price: 99000, note: 'Incluye mini mensaje' }
-    ],
-    defaultSizeId: 'x12',
-    images: ['https://picsum.photos/seed/fresas/1200/900'],
-    tags: ['Entrega en frio', 'Elegante'],
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/77767B31-248E-4947-BB0E-6415F7E6859E_xpi9ak.jpg'],
+    tags: ['Clasico', 'Sin fondant'],
     featured: true
   },
   {
-    name: 'Cupcakes Surtidos x6',
-    slug: 'cupcakes-surtidos-6',
-    category: 'postres',
-    occasion: ['cumpleanos', 'oficina'],
-    description: 'Seis cupcakes con sabores de vainilla, chocolate y red velvet.',
-    priceFrom: 38000,
+    name: 'Box Regalo Amor',
+    slug: 'box-regalo-amor',
+    category: 'detalles',
+    occasion: ['romantico', 'aniversario', 'detalle'],
+    description: 'Detalle tipo box ideal para sorprender en fechas especiales.',
+    priceFrom: 65000,
     sizes: [
-      { id: 'x6', label: 'Caja x6', price: 38000 },
-      { id: 'x12', label: 'Caja x12', price: 69000 },
-      { id: 'x24', label: 'Caja x24', price: 130000, note: 'Ideal para eventos' }
+      { id: 'mini', label: 'Mini', price: 65000 },
+      { id: 'standard', label: 'Standard', price: 89000 },
+      { id: 'premium', label: 'Premium', price: 125000, note: 'Incluye tarjeta personalizada' }
     ],
-    defaultSizeId: 'x6',
-    images: ['https://picsum.photos/seed/cupcakes6/1200/900'],
-    tags: ['Porcion individual', 'Colores a eleccion']
+    defaultSizeId: 'standard',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/Amor_c3owyt.jpg'],
+    tags: ['Romantico', 'Regalo'],
+    featured: true
   },
   {
-    name: 'Cupcakes Surtidos x12',
-    slug: 'cupcakes-surtidos-12',
-    category: 'postres',
-    occasion: ['cumpleanos', 'evento'],
-    description: 'Caja para celebraciones con decoracion tematica a tu gusto.',
-    priceFrom: 69000,
+    name: 'Galletas Decoradas',
+    slug: 'galletas-decoradas',
+    category: 'detalles',
+    occasion: ['detalle', 'evento'],
+    description: 'Galletas decoradas perfectas para regalos, eventos y recuerdos.',
+    priceFrom: 55000,
     sizes: [
-      { id: 'x12', label: 'Caja x12', price: 69000 },
-      { id: 'x18', label: 'Caja x18', price: 99000 },
-      { id: 'x24', label: 'Caja x24', price: 129000, note: 'Incluye mix de toppings' }
+      { id: 'x10', label: 'Caja x10', price: 55000 },
+      { id: 'x20', label: 'Caja x20', price: 99000, note: 'Ideal souvenirs' }
+    ],
+    defaultSizeId: 'x10',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_epvu2z.jpg'],
+    tags: ['Personalizable', 'Detalle']
+  },
+  {
+    name: 'Caja Brownies (Cuadrícula)',
+    slug: 'caja-brownies-cuadricula',
+    category: 'cajas',
+    occasion: ['regalo', 'empresarial'],
+    description: 'Caja surtida de brownies, ideal para oficina o regalo.',
+    priceFrom: 68000,
+    sizes: [
+      { id: 'x8', label: 'Caja x8', price: 52000 },
+      { id: 'x12', label: 'Caja x12', price: 68000 },
+      { id: 'x20', label: 'Caja x20', price: 105000, note: 'Incluye tarjeta personalizada' }
     ],
     defaultSizeId: 'x12',
-    images: ['https://picsum.photos/seed/cupcakes12/1200/900'],
-    tags: ['Eventos', 'Personalizable']
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_fad3s5.jpg'],
+    tags: ['Ideal oficina', 'Entrega rapida'],
+    featured: true
   },
   {
-    name: 'Caja Desayuno Dulce',
-    slug: 'caja-desayuno-dulce',
-    category: 'cajas',
-    occasion: ['sorpresa', 'cumpleanos'],
-    description: 'Incluye mini postres, bebida y tarjeta personalizada.',
-    priceFrom: 95000,
-    sizes: [
-      { id: 'classic', label: 'Clasica', price: 95000, serves: '1 persona' },
-      { id: 'premium', label: 'Premium', price: 125000, note: 'Incluye flores y globo' }
-    ],
-    defaultSizeId: 'classic',
-    images: ['https://picsum.photos/seed/desayuno/1200/900'],
-    tags: ['Con mensaje', 'Sorpresa']
-  },
-  {
-    name: 'Mesa Dulce para 30 personas',
-    slug: 'mesa-dulce-30-personas',
-    category: 'catering',
-    occasion: ['boda', 'corporativo'],
-    description: 'Montaje de mesa dulce con postres variados y decoracion.',
-    priceFrom: 420000,
-    sizes: [
-      { id: '30p', label: '30 personas', price: 420000, serves: '30 personas' },
-      { id: '50p', label: '50 personas', price: 620000, serves: '50 personas' },
-      { id: '80p', label: '80 personas', price: 890000, note: 'Incluye montaje extendido' }
-    ],
-    defaultSizeId: '30p',
-    images: ['https://picsum.photos/seed/mesadulce/1200/900'],
-    tags: ['Catering', 'Incluye montaje']
-  },
-  {
-    name: 'Torta Infantil Tema Unicornio',
-    slug: 'torta-infantil-unicornio',
+    name: 'Torta Red Velvet',
+    slug: 'torta-red-velvet',
     category: 'tortas',
-    occasion: ['infantil', 'cumpleanos'],
-    description: 'Torta decorada en buttercream con detalles de unicornio.',
+    occasion: ['cumpleanos', 'familiar'],
+    description: 'Torta red velvet con acabado elegante en buttercream.',
     priceFrom: 145000,
     sizes: [
       { id: '8p', label: '8 porciones', price: 145000, serves: '8 porciones' },
@@ -177,15 +97,31 @@ export const PRODUCTS: Product[] = [
       { id: '18p', label: '18 porciones', price: 245000, note: 'Incluye figura basica' }
     ],
     defaultSizeId: '8p',
-    images: ['https://picsum.photos/seed/unicornio/1200/900'],
-    tags: ['Infantil', 'Colorida']
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg'],
+    tags: ['Favorita', 'Suave']
   },
   {
-    name: 'Cookies Rellenas x8',
-    slug: 'cookies-rellenas-8',
+    name: 'Tarta Frutos Rojos (Amor)',
+    slug: 'tarta-frutos-rojos-amor',
+    category: 'postres',
+    occasion: ['romantico', 'aniversario', 'detalle'],
+    description: 'Tarta con frutas frescas, perfecta para fechas especiales.',
+    priceFrom: 52000,
+    sizes: [
+      { id: 'mini', label: 'Mini', price: 52000 },
+      { id: 'mediana', label: 'Mediana', price: 79000 },
+      { id: 'grande', label: 'Grande', price: 112000 }
+    ],
+    defaultSizeId: 'mini',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_fanewu.jpg'],
+    tags: ['Romantico', 'Tendencia']
+  },
+  {
+    name: 'Galletas Chips',
+    slug: 'galletas-chips',
     category: 'postres',
     occasion: ['snack', 'regalo'],
-    description: 'Galletas grandes con rellenos de nutella, arequipe y lotus.',
+    description: 'Galletas tipo cookie con chips, perfectas para compartir.',
     priceFrom: 46000,
     sizes: [
       { id: 'x8', label: 'Caja x8', price: 46000 },
@@ -193,11 +129,26 @@ export const PRODUCTS: Product[] = [
       { id: 'x20', label: 'Caja x20', price: 98000 }
     ],
     defaultSizeId: 'x8',
-    images: ['https://picsum.photos/seed/cookies8/1200/900'],
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_ov2ddl.jpg'],
     tags: ['Recien horneadas', 'Crunchy']
   },
   {
-    name: 'Torta Corazon San Valentin',
+    name: 'Box Regalo Amor (Variante)',
+    slug: 'box-regalo-amor-2',
+    category: 'detalles',
+    occasion: ['romantico', 'detalle'],
+    description: 'Variante de box para regalo, ideal para sorprender.',
+    priceFrom: 65000,
+    sizes: [
+      { id: 'mini', label: 'Mini', price: 65000 },
+      { id: 'standard', label: 'Standard', price: 89000 }
+    ],
+    defaultSizeId: 'standard',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_mgvfpq.jpg'],
+    tags: ['Regalo', 'Amor']
+  },
+  {
+    name: 'Torta Corazón San Valentín',
     slug: 'torta-corazon-san-valentin',
     category: 'tortas',
     occasion: ['romantico', 'san-valentin'],
@@ -209,54 +160,36 @@ export const PRODUCTS: Product[] = [
       { id: '14p', label: '14 porciones', price: 199000, note: 'Incluye caja premium' }
     ],
     defaultSizeId: '6p',
-    images: ['https://picsum.photos/seed/corazon/1200/900'],
-    tags: ['Edicion especial', 'Romantica']
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/ChatGPT_Image_1_mar_2026_09_01_32_p.m._vnz10u.jpg'],
+    tags: ['Edicion especial', 'Romantica'],
+    featured: true
   },
   {
-    name: 'Box Galletas Decoradas x10',
-    slug: 'box-galletas-decoradas-10',
+    name: 'Rosas Rojas (Detalle)',
+    slug: 'rosas-rojas',
     category: 'detalles',
-    occasion: ['detalle', 'evento'],
-    description: 'Galletas de mantequilla decoradas por tematica y colores.',
-    priceFrom: 55000,
-    sizes: [
-      { id: 'x10', label: 'Caja x10', price: 55000 },
-      { id: 'x20', label: 'Caja x20', price: 99000, note: 'Ideal souvenirs' }
-    ],
-    defaultSizeId: 'x10',
-    images: ['https://picsum.photos/seed/galletasdecoradas/1200/900'],
-    tags: ['Corporativo', 'Souvenir']
+    occasion: ['romantico', 'aniversario'],
+    description: 'Detalle floral para complementar tus regalos y celebraciones.',
+    priceFrom: 0,
+    sizes: [{ id: 'detalle', label: 'Detalle', price: 0 }],
+    defaultSizeId: 'detalle',
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_ydpcfp.jpg'],
+    tags: ['Romantico']
   },
   {
-    name: 'Postre de Maracuya Familiar',
-    slug: 'postre-maracuya-familiar',
+    name: 'Tarta Limón',
+    slug: 'tarta-limon',
     category: 'postres',
     occasion: ['familiar', 'domingo'],
-    description: 'Postre frio en bandeja familiar con capa de merengue.',
+    description: 'Tarta de limón con base suave y sabor fresco.',
     priceFrom: 52000,
     sizes: [
       { id: 'familiar', label: 'Familiar', price: 52000, serves: '6 porciones' },
       { id: 'grande', label: 'Grande', price: 74000, serves: '10 porciones' }
     ],
     defaultSizeId: 'familiar',
-    images: ['https://picsum.photos/seed/maracuya/1200/900'],
+    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/12C7669D-9EAB-4330-80F4-4B451C6209F1_rtzsut.jpg'],
     tags: ['Fresco', 'Acido dulce']
-  },
-  {
-    name: 'Catering Coffee Break Premium',
-    slug: 'catering-coffee-break-premium',
-    category: 'catering',
-    occasion: ['corporativo', 'reunion'],
-    description: 'Servicio de coffee break con pasteleria fina para equipos.',
-    priceFrom: 320000,
-    sizes: [
-      { id: '20p', label: '20 personas', price: 320000, serves: '20 personas' },
-      { id: '35p', label: '35 personas', price: 520000, serves: '35 personas' },
-      { id: '50p', label: '50 personas', price: 690000, note: 'Incluye personal de apoyo' }
-    ],
-    defaultSizeId: '20p',
-    images: ['https://picsum.photos/seed/coffeebreak/1200/900'],
-    tags: ['Empresas', 'Incluye logistica']
   }
 ];
 

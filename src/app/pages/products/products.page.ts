@@ -9,10 +9,12 @@ import {
   PRODUCT_CATEGORIES,
   PRODUCTS
 } from '../../data/products.mock';
+import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
 import { ProductCategory } from '../../models/product.model';
 import { BadgeComponent } from '../../shared/ui/badge/badge.component';
 import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
+import { ProductImageComponent } from '../../shared/ui/product-image/product-image.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
 
 @Component({
@@ -23,6 +25,7 @@ import { SectionTitleComponent } from '../../shared/ui/section-title/section-tit
     CardComponent,
     ButtonComponent,
     BadgeComponent,
+    ProductImageComponent,
     SectionTitleComponent
   ],
   templateUrl: './products.page.html',
@@ -39,6 +42,7 @@ export default class ProductsPage implements OnInit, OnDestroy {
   readonly selectedOccasion = signal<'all' | string>('all');
   readonly loading = signal(true);
   readonly getMinPrice = getMinPrice;
+  readonly productImageThumb = (image: string): string => cldSized(image, CLOUDINARY_WIDTHS.thumb);
 
   readonly filteredProducts = computed(() => {
     const query = this.query().trim().toLowerCase();

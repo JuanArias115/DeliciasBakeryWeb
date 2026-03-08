@@ -1,6 +1,7 @@
 import { siteConfig } from '../config/site.config';
 import { getMinPrice } from '../helpers/product-pricing.helper';
 
+import { cldImage } from '../../lib/cloudinary';
 import { Product } from '../../models/product.model';
 
 export function createLocalBusinessSchema(siteUrl: string): Record<string, unknown> {
@@ -10,7 +11,7 @@ export function createLocalBusinessSchema(siteUrl: string): Record<string, unkno
     name: siteConfig.brandName,
     legalName: siteConfig.legalName,
     description: siteConfig.tagline,
-    image: 'https://picsum.photos/seed/delicias-logo/512/512',
+    image: cldImage('deliciasbakery/brand/logo-round', { width: 600 }),
     url: siteUrl,
     telephone: siteConfig.whatsappDisplay,
     areaServed: siteConfig.serviceAreas,

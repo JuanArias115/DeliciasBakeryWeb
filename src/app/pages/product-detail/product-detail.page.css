@@ -17,13 +17,6 @@
   gap: 1.2rem;
 }
 
-img {
-  border-radius: var(--radius-lg);
-  display: block;
-  object-fit: cover;
-  width: 100%;
-}
-
 .info-col {
   display: grid;
   gap: 0.7rem;

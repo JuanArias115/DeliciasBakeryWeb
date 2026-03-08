@@ -59,12 +59,12 @@
             (click)="trackViewProduct(product.slug)"
             [attr.aria-label]="'Ver detalle de ' + product.name"
           >
-            <img
-              [src]="product.images[0]"
-              width="600"
-              height="450"
-              loading="lazy"
+            <ui-product-image
+              variant="card"
+              [src]="productImageThumb(product.images[0])"
               [alt]="'Foto de ' + product.name"
+              [width]="600"
+              [height]="450"
             />
           </a>
 

@@ -7,11 +7,13 @@
 
     <div class="detail-grid">
       <div class="media-col">
-        <img
-          [src]="product.images[0]"
-          width="900"
-          height="700"
+        <ui-product-image
+          variant="detail"
+          [src]="productImageDetail(product.images[0])"
           [alt]="'Foto principal de ' + product.name"
+          [width]="1400"
+          [height]="1050"
+          loading="eager"
           fetchpriority="high"
         />
       </div>

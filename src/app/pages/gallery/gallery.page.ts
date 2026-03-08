@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 import { PRODUCTS } from '../../data/products.mock';
+import { CLOUDINARY_WIDTHS, cldImage, cldSized } from '../../lib/cloudinary';
 import { CardComponent } from '../../shared/ui/card/card.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
 
@@ -21,12 +22,21 @@ export default class GalleryPage implements OnInit, OnDestroy {
 
   readonly items: GalleryItem[] = [
     ...PRODUCTS.slice(0, 8).map((product) => ({
-      src: product.images[0],
+      src: cldSized(product.images[0], CLOUDINARY_WIDTHS.detail),
       alt: `Foto de ${product.name}`
     })),
-    { src: 'https://picsum.photos/seed/galeria-extra-1/1200/1200', alt: 'Caja de postres decorados' },
-    { src: 'https://picsum.photos/seed/galeria-extra-2/1200/1200', alt: 'Torta personalizada para evento' },
-    { src: 'https://picsum.photos/seed/galeria-extra-3/1200/1200', alt: 'Detalle dulce para regalo' }
+    {
+      src: cldImage('deliciasbakery/galeria/caja-postres-decorados-1', { width: CLOUDINARY_WIDTHS.detail }),
+      alt: 'Caja de postres decorados'
+    },
+    {
+      src: cldImage('deliciasbakery/galeria/torta-personalizada-evento-1', { width: CLOUDINARY_WIDTHS.detail }),
+      alt: 'Torta personalizada para evento'
+    },
+    {
+      src: cldImage('deliciasbakery/galeria/detalle-dulce-regalo-1', { width: CLOUDINARY_WIDTHS.detail }),
+      alt: 'Detalle dulce para regalo'
+    }
   ];
 
   private timer?: ReturnType<typeof setTimeout>;

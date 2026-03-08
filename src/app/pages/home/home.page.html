@@ -1,7 +1,11 @@
 <section class="hero container section-space">
   <div class="hero-copy">
-    <p class="eyebrow">Pasteleria premium por encargo</p>
-    <h1>Delicias Bakery: postres que elevan cada celebracion</h1>
+    <p class="eyebrow">Pasteleria por encargo</p>
+    <h1>
+      <span class="hero-title-top">Delicias Bakery:</span>
+      <span class="hero-title-bottom hero-title-gap">detalles que elevan</span>
+      <span class="hero-title-bottom">cada celebracion</span>
+    </h1>
     <p>
       Endulzamos momentos especiales en Chia y Cajica con acabados elegantes, sabores memorables y
       entregas puntuales.
@@ -10,17 +14,20 @@
       <ui-button iconLeft="whatsapp" [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
         Pedir por WhatsApp
       </ui-button>
-      <ui-button variant="secondary" iconRight="arrow-right" routerLink="/productos">Ver catalogo</ui-button>
+      <ui-button variant="secondary" iconLeft="cart" routerLink="/productos">Ver catalogo</ui-button>
     </div>
     <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
   </div>
 
   <div class="hero-aside">
     <ui-card [hoverable]="false">
-      <h2>Chia-Cajica</h2>
+      <h2 class="location-title">
+        <ui-icon name="location" size="sm" />
+        <span>Chia-Cajica</span>
+      </h2>
       <p>Atencion cercana y personalizada para fechas especiales, regalos y eventos.</p>
       <ul>
-        <li>Entrega local programada</li>
+        <li>Entregas a domicilio (pedidos bajo encargo)</li>
         <li>Personalizacion de diseno</li>
         <li>Respuesta rapida por WhatsApp</li>
       </ul>
@@ -40,7 +47,7 @@
       <ui-card>
         <a [routerLink]="'/productos/' + product.slug" class="card-link" [attr.aria-label]="product.name">
           <img
-            [src]="product.images[0]"
+            [src]="productImageThumb(product.images[0])"
             width="600"
             height="450"
             loading="lazy"

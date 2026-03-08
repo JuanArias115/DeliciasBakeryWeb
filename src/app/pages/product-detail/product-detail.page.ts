@@ -12,12 +12,14 @@ import { AnalyticsService } from '../../core/services/analytics.service';
 import { createProductSchema } from '../../core/services/schema.factory';
 import { SeoService } from '../../core/services/seo.service';
 import { WhatsAppService } from '../../core/services/whatsapp.service';
+import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
 import { Product, ProductSizeOption } from '../../models/product.model';
 import { BadgeComponent } from '../../shared/ui/badge/badge.component';
 import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
 import { IconComponent } from '../../shared/ui/icon/icon.component';
 import { InputComponent } from '../../shared/ui/input/input.component';
+import { ProductImageComponent } from '../../shared/ui/product-image/product-image.component';
 
 @Component({
   selector: 'app-product-detail-page',
@@ -29,7 +31,8 @@ import { InputComponent } from '../../shared/ui/input/input.component';
     ButtonComponent,
     BadgeComponent,
     IconComponent,
-    InputComponent
+    InputComponent,
+    ProductImageComponent
   ],
   templateUrl: './product-detail.page.html',
   styleUrl: './product-detail.page.css'
@@ -50,6 +53,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   readonly sizeId = new FormControl('', { nonNullable: true });
 
   readonly product = this.route.snapshot.data['product'] as Product | null;
+  readonly productImageDetail = (image: string): string => cldSized(image, CLOUDINARY_WIDTHS.detail);
 
   ngOnInit(): void {
     if (!this.product) {
@@ -65,7 +69,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       description: `${this.product.description} Disponible en Chia y Cajica. Pedidos por encargo con 24h de anticipacion.`,
       path,
       type: 'product',
-      image: this.product.images[0]
+      image: this.productImageDetail(this.product.images[0])
     });
 
     this.seo.setJsonLd('jsonld-product', createProductSchema(this.product, this.seo.buildCanonicalUrl(path)));

@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 import { environment } from '../../../environments/environment';
+import { cldImage } from '../../lib/cloudinary';
 
 export interface SeoConfig {
   title: string;
@@ -19,7 +20,7 @@ export class SeoService {
   private readonly meta = inject(Meta);
   private readonly document = inject(DOCUMENT);
 
-  private readonly defaultImage = 'https://picsum.photos/seed/delicias-og/1200/630';
+  private readonly defaultImage = cldImage('deliciasbakery/brand/og-default', { width: 1200 });
 
   apply(config: SeoConfig): void {
     const canonicalUrl = this.buildCanonicalUrl(config.path);

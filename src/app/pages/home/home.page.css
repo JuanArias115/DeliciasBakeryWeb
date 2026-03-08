@@ -17,6 +17,15 @@
   max-width: 18ch;
 }
 
+.hero-title-top,
+.hero-title-bottom {
+  display: block;
+}
+
+.hero-title-gap {
+  margin-top: 1.2rem;
+}
+
 .hero-copy p {
   margin: 0;
   max-width: 56ch;
@@ -26,6 +35,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+  margin-top: 0.35rem;
 }
 
 .hero-copy small {
@@ -36,6 +46,16 @@
 .hero-aside h2 {
   font-family: var(--font-display);
   margin: 0 0 0.4rem;
+}
+
+.location-title {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.45rem;
+}
+
+.location-title ui-icon {
+  color: #d63f45;
 }
 
 .hero-aside p {

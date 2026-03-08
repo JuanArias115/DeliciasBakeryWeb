@@ -27,16 +27,11 @@
 }
 
 .brand-mark {
-  align-items: center;
-  background: var(--color-primary);
+  border: 2px solid color-mix(in srgb, var(--color-primary) 25%, white);
   border-radius: 999px;
-  color: white;
-  display: inline-flex;
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 800;
+  display: block;
   height: 2rem;
-  justify-content: center;
+  object-fit: cover;
   width: 2rem;
 }
 
