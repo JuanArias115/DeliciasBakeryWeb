@@ -7,7 +7,7 @@ import { getMinPrice } from '../../core/helpers/product-pricing.helper';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { WhatsAppService } from '../../core/services/whatsapp.service';
 import { FAQS } from '../../data/faqs.mock';
-import { PRODUCTS } from '../../data/products.mock';
+import { PRODUCT_CATEGORY_LABELS, PRODUCTS } from '../../data/products.mock';
 import { REVIEWS } from '../../data/reviews.mock';
 import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
 import { AccordionComponent } from '../../shared/ui/accordion/accordion.component';
@@ -67,5 +67,9 @@ export default class HomePage {
 
   trackWhatsApp(source: string): void {
     this.analytics.trackEvent('click_whatsapp', { source });
+  }
+
+  categoryLabel(category: (typeof this.featuredProducts)[number]['category']): string {
+    return PRODUCT_CATEGORY_LABELS[category];
   }
 }

@@ -21,7 +21,7 @@
           placeholder="Producto, cantidad, estilo y detalles"
         />
 
-        <ui-button iconLeft="phone" type="submit">Enviar</ui-button>
+        <ui-button iconLeft="whatsapp" type="submit">Enviar por WhatsApp</ui-button>
       </form>
 
       @if (fallbackLink()) {
@@ -34,10 +34,11 @@
 
     <ui-card [hoverable]="false">
       <h2>Atencion directa</h2>
-      <p>Chia-Cajica, Cundinamarca</p>
-      <p>Pedidos por encargo con minimo 24h de anticipacion.</p>
+      <p>Chia - Cajica, Cundinamarca</p>
+      <p>Pedidos 100% por encargo.</p>
+      <p>Agenda con minimo 24 horas de anticipacion.</p>
       <p><strong>WhatsApp:</strong> {{ config.whatsappDisplay }}</p>
-      <ui-button variant="secondary" [href]="directLink" target="_blank">
+      <ui-button variant="secondary" iconLeft="whatsapp" [href]="directLink" target="_blank">
         Abrir WhatsApp
       </ui-button>
     </ui-card>

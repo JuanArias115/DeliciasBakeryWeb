@@ -15,9 +15,10 @@ export default class CelebrationsPage {
   readonly occasions = [
     'Cumpleanos',
     'Aniversarios',
-    'Baby shower',
-    'Graduaciones',
-    'Eventos corporativos'
+    'Amor y amistad',
+    'Infantil',
+    'Empresarial y eventos',
+    'Fechas especiales'
   ];
 
   constructor(private readonly whatsapp: WhatsAppService) {}

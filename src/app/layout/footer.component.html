@@ -3,34 +3,50 @@
     <section>
       <h3>Delicias Bakery</h3>
       <p>{{ config.location }}</p>
-      <p>{{ config.baseOrderNotice }}</p>
+      <p>Pedidos 100% por encargo.</p>
+      <p>Agenda con minimo 24 horas de anticipacion.</p>
     </section>
 
     <section>
-      <h3>Horarios</h3>
+      <h3>Pedidos y disponibilidad</h3>
       <ul>
-        @for (hour of config.businessHours; track hour) {
-          <li>{{ hour }}</li>
-        }
+        <li>Se responden por orden de llegada.</li>
+        <li>Solicita con minimo 24 horas de anticipacion.</li>
+        <li>Te recomendamos agendar con tiempo para asegurar tu fecha.</li>
       </ul>
+    </section>
+
+    <section>
+      <h3>Siguenos</h3>
+      <div class="social-row" aria-label="Redes sociales">
+        <a class="social-btn" [href]="config.instagramUrl" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <ui-icon name="instagram" [size]="18" />
+        </a>
+        <a class="social-btn" [href]="config.tiktokUrl" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <ui-icon name="tiktok" [size]="18" />
+        </a>
+        <a
+          class="social-btn"
+          [href]="'https://wa.me/' + config.whatsappNumber"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <ui-icon name="whatsapp" [size]="18" />
+        </a>
+      </div>
+      <p>{{ config.whatsappDisplay }}</p>
+      <p>Haz tu pedido directo por WhatsApp.</p>
     </section>
 
     <section>
       <h3>Enlaces</h3>
       <ul>
         <li><a routerLink="/productos">Catalogo</a></li>
+        <li><a routerLink="/celebraciones">Celebraciones</a></li>
         <li><a routerLink="/contacto">Contacto</a></li>
         <li><a routerLink="/politicas">Politicas</a></li>
-        <li><a [href]="config.instagramUrl" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       </ul>
-    </section>
-
-    <section>
-      <h3>WhatsApp</h3>
-      <a [href]="'https://wa.me/' + config.whatsappNumber" target="_blank" rel="noopener noreferrer">
-        {{ config.whatsappDisplay }}
-      </a>
-      <p>Pedidos por encargo, minimo 24h de anticipacion.</p>
     </section>
   </div>
 </footer>

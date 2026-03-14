@@ -1,214 +1,264 @@
-import { CLOUDINARY_WIDTHS, cldImage } from '../lib/cloudinary';
 import { Product } from '../models/product.model';
 
-export const PRODUCTS: Product[] = [
-  {
-    name: 'Alfajor Arequipe',
-    slug: 'alfajor-arequipe',
-    category: 'postres',
-    occasion: ['detalle', 'regalo'],
-    description: 'Alfajor suave relleno de arequipe, ideal para antojo o detalle.',
-    priceFrom: 18000,
-    sizes: [
-      { id: 'unidad', label: 'Unidad', price: 18000 },
-      { id: 'x4', label: 'Pack x4', price: 62000 },
-      { id: 'x8', label: 'Pack x8', price: 112000 }
-    ],
-    defaultSizeId: 'unidad',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/B9FBA254-1DFE-4084-8880-F2C30690F972_vbbrw9.jpg'],
-    tags: ['Regalo', 'Dulce']
-  },
-  {
-    name: 'Cheesecake Frutos Rojos',
-    slug: 'cheesecake-frutos-rojos',
-    category: 'postres',
-    occasion: ['cumpleanos', 'brunch'],
-    description: 'Base crocante, crema suave y topping de frutos rojos.',
-    priceFrom: 78000,
-    sizes: [
-      { id: 'mini', label: 'Mini (4 porciones)', price: 78000, serves: '4 porciones' },
-      { id: 'mediana', label: 'Mediana (8 porciones)', price: 112000, serves: '8 porciones' },
-      { id: 'grande', label: 'Grande (12 porciones)', price: 148000, serves: '12 porciones' }
-    ],
-    defaultSizeId: 'mini',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/77767B31-248E-4947-BB0E-6415F7E6859E_xpi9ak.jpg'],
-    tags: ['Clasico', 'Sin fondant'],
-    featured: true
-  },
-  {
-    name: 'Box Regalo Amor',
-    slug: 'box-regalo-amor',
-    category: 'detalles',
-    occasion: ['romantico', 'aniversario', 'detalle'],
-    description: 'Detalle tipo box ideal para sorprender en fechas especiales.',
-    priceFrom: 65000,
-    sizes: [
-      { id: 'mini', label: 'Mini', price: 65000 },
-      { id: 'standard', label: 'Standard', price: 89000 },
-      { id: 'premium', label: 'Premium', price: 125000, note: 'Incluye tarjeta personalizada' }
-    ],
-    defaultSizeId: 'standard',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967830/Amor_c3owyt.jpg'],
-    tags: ['Romantico', 'Regalo'],
-    featured: true
-  },
-  {
-    name: 'Galletas Decoradas',
-    slug: 'galletas-decoradas',
-    category: 'detalles',
-    occasion: ['detalle', 'evento'],
-    description: 'Galletas decoradas perfectas para regalos, eventos y recuerdos.',
-    priceFrom: 55000,
-    sizes: [
-      { id: 'x10', label: 'Caja x10', price: 55000 },
-      { id: 'x20', label: 'Caja x20', price: 99000, note: 'Ideal souvenirs' }
-    ],
-    defaultSizeId: 'x10',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_epvu2z.jpg'],
-    tags: ['Personalizable', 'Detalle']
-  },
-  {
-    name: 'Caja Brownies (Cuadrícula)',
-    slug: 'caja-brownies-cuadricula',
-    category: 'cajas',
-    occasion: ['regalo', 'empresarial'],
-    description: 'Caja surtida de brownies, ideal para oficina o regalo.',
-    priceFrom: 68000,
-    sizes: [
-      { id: 'x8', label: 'Caja x8', price: 52000 },
-      { id: 'x12', label: 'Caja x12', price: 68000 },
-      { id: 'x20', label: 'Caja x20', price: 105000, note: 'Incluye tarjeta personalizada' }
-    ],
-    defaultSizeId: 'x12',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_fad3s5.jpg'],
-    tags: ['Ideal oficina', 'Entrega rapida'],
-    featured: true
-  },
-  {
-    name: 'Torta Red Velvet',
-    slug: 'torta-red-velvet',
-    category: 'tortas',
-    occasion: ['cumpleanos', 'familiar'],
-    description: 'Torta red velvet con acabado elegante en buttercream.',
-    priceFrom: 145000,
-    sizes: [
-      { id: '8p', label: '8 porciones', price: 145000, serves: '8 porciones' },
-      { id: '12p', label: '12 porciones', price: 185000, serves: '12 porciones' },
-      { id: '18p', label: '18 porciones', price: 245000, note: 'Incluye figura basica' }
-    ],
-    defaultSizeId: '8p',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg'],
-    tags: ['Favorita', 'Suave']
-  },
-  {
-    name: 'Tarta Frutos Rojos (Amor)',
-    slug: 'tarta-frutos-rojos-amor',
-    category: 'postres',
-    occasion: ['romantico', 'aniversario', 'detalle'],
-    description: 'Tarta con frutas frescas, perfecta para fechas especiales.',
-    priceFrom: 52000,
-    sizes: [
-      { id: 'mini', label: 'Mini', price: 52000 },
-      { id: 'mediana', label: 'Mediana', price: 79000 },
-      { id: 'grande', label: 'Grande', price: 112000 }
-    ],
-    defaultSizeId: 'mini',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/Amor_fanewu.jpg'],
-    tags: ['Romantico', 'Tendencia']
-  },
-  {
-    name: 'Galletas Chips',
-    slug: 'galletas-chips',
-    category: 'postres',
-    occasion: ['snack', 'regalo'],
-    description: 'Galletas tipo cookie con chips, perfectas para compartir.',
-    priceFrom: 46000,
-    sizes: [
-      { id: 'x8', label: 'Caja x8', price: 46000 },
-      { id: 'x12', label: 'Caja x12', price: 64000 },
-      { id: 'x20', label: 'Caja x20', price: 98000 }
-    ],
-    defaultSizeId: 'x8',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_ov2ddl.jpg'],
-    tags: ['Recien horneadas', 'Crunchy']
-  },
-  {
-    name: 'Box Regalo Amor (Variante)',
-    slug: 'box-regalo-amor-2',
-    category: 'detalles',
-    occasion: ['romantico', 'detalle'],
-    description: 'Variante de box para regalo, ideal para sorprender.',
-    priceFrom: 65000,
-    sizes: [
-      { id: 'mini', label: 'Mini', price: 65000 },
-      { id: 'standard', label: 'Standard', price: 89000 }
-    ],
-    defaultSizeId: 'standard',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_mgvfpq.jpg'],
-    tags: ['Regalo', 'Amor']
-  },
-  {
-    name: 'Torta Corazón San Valentín',
-    slug: 'torta-corazon-san-valentin',
-    category: 'tortas',
-    occasion: ['romantico', 'san-valentin'],
-    description: 'Torta en forma de corazon con mensaje personalizado.',
-    priceFrom: 118000,
-    sizes: [
-      { id: '6p', label: '6 porciones', price: 118000 },
-      { id: '10p', label: '10 porciones', price: 156000 },
-      { id: '14p', label: '14 porciones', price: 199000, note: 'Incluye caja premium' }
-    ],
-    defaultSizeId: '6p',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/ChatGPT_Image_1_mar_2026_09_01_32_p.m._vnz10u.jpg'],
-    tags: ['Edicion especial', 'Romantica'],
-    featured: true
-  },
-  {
-    name: 'Rosas Rojas (Detalle)',
-    slug: 'rosas-rojas',
-    category: 'detalles',
-    occasion: ['romantico', 'aniversario'],
-    description: 'Detalle floral para complementar tus regalos y celebraciones.',
-    priceFrom: 0,
-    sizes: [{ id: 'detalle', label: 'Detalle', price: 0 }],
-    defaultSizeId: 'detalle',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/Amor_ydpcfp.jpg'],
-    tags: ['Romantico']
-  },
-  {
-    name: 'Tarta Limón',
-    slug: 'tarta-limon',
-    category: 'postres',
-    occasion: ['familiar', 'domingo'],
-    description: 'Tarta de limón con base suave y sabor fresco.',
-    priceFrom: 52000,
-    sizes: [
-      { id: 'familiar', label: 'Familiar', price: 52000, serves: '6 porciones' },
-      { id: 'grande', label: 'Grande', price: 74000, serves: '10 porciones' }
-    ],
-    defaultSizeId: 'familiar',
-    images: ['https://res.cloudinary.com/dscih1izv/image/upload/v1772967828/12C7669D-9EAB-4330-80F4-4B451C6209F1_rtzsut.jpg'],
-    tags: ['Fresco', 'Acido dulce']
-  }
-];
+const PRODUCT_IMAGES = {
+  cheesecakeHeart:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484800/cheesecake-frutos-rojos-corazon-01_oabnar.png',
+  cheesecakeMedium:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484798/cheesecake-frutos-rojos-mediano-01_nezkdv.png',
+  cheesecakeLarge:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/cheesecake-maracuya-grande-01_plmfdr.png',
+  tiramisu:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484804/postres-tiramisu-01_vmynj7.png',
+  brownieRound:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484800/postres-brownie-01_ht1fm1.png',
+  brownieHeart:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484803/postres-brownie-corazon-01_ulwsls.png',
+  brownieBites:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484802/postres-brownie-Bites-01_s1v38a.png',
+  cupcakes:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484805/postres-cupcakes-01_ne1g3b.png',
+  cupcakesRedVelvet:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484805/postres-cupcakes-red-velvet-01_codoa5.png',
+  cookiesNewYork:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484813/postres-cookies-new-york-01_ketfc6.png',
+  cookiesClassic:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-cookies-01_eonnr6.png',
+  chocoFresas:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-choco-fresas-rosas-01_txvvwq.png',
+  alfajores:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/postres-alfajores-01_lwr6zq.png',
+  customCake:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg'
+} as const;
+
+export const PRODUCT_CATEGORY_LABELS = {
+  'cheesecakes-tiramisu': 'Cheesecakes y tiramisu',
+  brownies: 'Brownies',
+  'tortas-mini-cakes': 'Tortas y mini cakes',
+  'postres-detalles': 'Postres y detalles',
+  'fechas-especiales': 'Fechas especiales',
+  desayunos: 'Desayunos',
+  'linea-fit': 'Linea fit',
+  catering: 'Catering y mesas de postres'
+} as const;
 
 export const PRODUCT_CATEGORIES: { value: Product['category']; label: string }[] = [
-  { value: 'postres', label: 'Postres' },
-  { value: 'tortas', label: 'Tortas' },
-  { value: 'cajas', label: 'Cajas' },
-  { value: 'detalles', label: 'Detalles' },
-  { value: 'catering', label: 'Catering' }
+  { value: 'cheesecakes-tiramisu', label: PRODUCT_CATEGORY_LABELS['cheesecakes-tiramisu'] },
+  { value: 'brownies', label: PRODUCT_CATEGORY_LABELS.brownies },
+  { value: 'tortas-mini-cakes', label: PRODUCT_CATEGORY_LABELS['tortas-mini-cakes'] },
+  { value: 'postres-detalles', label: PRODUCT_CATEGORY_LABELS['postres-detalles'] },
+  { value: 'fechas-especiales', label: PRODUCT_CATEGORY_LABELS['fechas-especiales'] },
+  { value: 'desayunos', label: PRODUCT_CATEGORY_LABELS.desayunos },
+  { value: 'linea-fit', label: PRODUCT_CATEGORY_LABELS['linea-fit'] },
+  { value: 'catering', label: PRODUCT_CATEGORY_LABELS.catering }
 ];
 
 export const OCCASIONS = [
-  'cumpleanos',
-  'aniversario',
-  'detalle',
-  'romantico',
-  'empresarial',
-  'evento',
-  'infantil',
-  'boda',
-  'corporativo'
+  { value: 'cumpleanos', label: 'Cumpleanos' },
+  { value: 'aniversarios', label: 'Aniversarios' },
+  { value: 'amor-amistad', label: 'Amor y amistad' },
+  { value: 'infantil', label: 'Infantil' },
+  { value: 'empresarial-eventos', label: 'Empresarial y eventos' },
+  { value: 'fechas-especiales', label: 'Fechas especiales' }
 ] as const;
+
+export type ProductOccasion = (typeof OCCASIONS)[number]['value'];
+
+export const PRODUCTS: Product[] = [
+  {
+    name: 'Cheesecake tradicional',
+    slug: 'cheesecake-tradicional',
+    category: 'cheesecakes-tiramisu',
+    occasion: ['cumpleanos', 'aniversarios', 'amor-amistad', 'fechas-especiales'],
+    description: 'Ideal para celebrar, compartir o sorprender con un detalle especial.',
+    details: [
+      'Sabores clasicos: frutos rojos, maracuya, fresa, mora, limon y arequipe.',
+      'Sabores premium (+$7.000): arandanos, Milo, Chocoramo y mix con Hersheys, M&M, Oreo o Milo.'
+    ],
+    priceFrom: 30000,
+    sizes: [
+      { id: 'corazon', label: 'Corazon', price: 30000, serves: '3 porciones aprox.' },
+      { id: 'mediano', label: 'Mediano', price: 36000, serves: '16 cm / 8-10 porciones' },
+      { id: 'grande', label: 'Grande', price: 45000, serves: '22 cm / 12-14 porciones' }
+    ],
+    defaultSizeId: 'mediano',
+    images: [PRODUCT_IMAGES.cheesecakeMedium, PRODUCT_IMAGES.cheesecakeHeart, PRODUCT_IMAGES.cheesecakeLarge],
+    tags: ['Clasico', 'Personalizable'],
+    featured: true
+  },
+  {
+    name: 'New York Cheesecake',
+    slug: 'new-york-cheesecake',
+    category: 'cheesecakes-tiramisu',
+    occasion: ['cumpleanos', 'aniversarios', 'fechas-especiales'],
+    description: 'Cheesecake mas alto y cremoso, con textura densa y horneado clasico.',
+    details: ['Decorado con frutos rojos para equilibrar su intensidad y dar un acabado premium.'],
+    priceFrom: 46000,
+    sizes: [
+      { id: '16cm', label: '16 cm', price: 46000, serves: '8 porciones' },
+      { id: '22cm', label: '22 cm', price: 68000, serves: '15 porciones' }
+    ],
+    defaultSizeId: '16cm',
+    images: [PRODUCT_IMAGES.cheesecakeMedium],
+    tags: ['Horneado clasico', 'Cremoso']
+  },
+  {
+    name: 'Tiramisu',
+    slug: 'tiramisu',
+    category: 'cheesecakes-tiramisu',
+    occasion: ['cumpleanos', 'aniversarios', 'empresarial-eventos'],
+    description: 'Postre cremoso y equilibrado para compartir en reuniones o celebraciones.',
+    priceFrom: 40000,
+    sizes: [
+      { id: 'mediano', label: 'Mediano', price: 40000, serves: '16 cm / 8-10 porciones' },
+      { id: 'grande', label: 'Grande', price: 50000, serves: '22 cm / 12-14 porciones' }
+    ],
+    defaultSizeId: 'mediano',
+    images: [PRODUCT_IMAGES.tiramisu],
+    tags: ['Suave', 'Para compartir'],
+    featured: true
+  },
+  {
+    name: 'Brownie redondo',
+    slug: 'brownie-redondo',
+    category: 'brownies',
+    occasion: ['cumpleanos', 'amor-amistad', 'fechas-especiales'],
+    description: 'Brownie melcochudo y suave, ideal para compartir o celebrar.',
+    details: [
+      'Toppings: azucar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazon.',
+      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+    ],
+    priceFrom: 36000,
+    sizes: [{ id: 'estandar', label: 'Tamano estandar', price: 36000 }],
+    defaultSizeId: 'estandar',
+    images: [PRODUCT_IMAGES.brownieRound],
+    tags: ['Melcochudo', 'Personalizable']
+  },
+  {
+    name: 'Brownie corazon',
+    slug: 'brownie-corazon',
+    category: 'brownies',
+    occasion: ['amor-amistad', 'aniversarios', 'fechas-especiales'],
+    description: 'Brownie en forma de corazon, perfecto para sorprender con un detalle especial.',
+    details: [
+      'Toppings: azucar pulverizada o chocolate rojo con chispas de corazon.',
+      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+    ],
+    priceFrom: 36000,
+    sizes: [{ id: 'corazon', label: 'Corazon', price: 36000 }],
+    defaultSizeId: 'corazon',
+    images: [PRODUCT_IMAGES.brownieHeart],
+    tags: ['Romantico', 'Especial']
+  },
+  {
+    name: 'Brownie bites',
+    slug: 'brownie-bites',
+    category: 'brownies',
+    occasion: ['cumpleanos', 'empresarial-eventos', 'fechas-especiales'],
+    description: 'Brownie en cubos, perfecto para compartir en reuniones o celebraciones.',
+    details: [
+      '36 unidades aprox.',
+      'Toppings: azucar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazon.',
+      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+    ],
+    priceFrom: 46000,
+    sizes: [{ id: 'x36', label: 'Caja x36', price: 46000, serves: '36 unidades aprox.' }],
+    defaultSizeId: 'x36',
+    images: [PRODUCT_IMAGES.brownieBites],
+    tags: ['Para compartir', 'Eventos'],
+    featured: true
+  },
+  {
+    name: 'Tortas personalizadas y mini cakes',
+    slug: 'tortas-personalizadas-mini-cakes',
+    category: 'tortas-mini-cakes',
+    occasion: ['cumpleanos', 'aniversarios', 'infantil', 'fechas-especiales'],
+    description: 'Creamos tortas disenadas especialmente para cada ocasion, segun tu idea o referencia.',
+    details: [
+      'Mini cakes desde $36.000.',
+      'Tamanos disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
+      'Sabores: vainilla, chocolate y red velvet.',
+      'Rellenos: Nutella, arequipe, frutos rojos y maracuya.',
+      'El valor final depende del tamano, diseno y nivel de decoracion.'
+    ],
+    priceFrom: 36000,
+    images: [PRODUCT_IMAGES.customCake],
+    tags: ['Personalizadas', 'Sobre pedido'],
+    featured: true
+  },
+  {
+    name: 'Cupcakes personalizados',
+    slug: 'cupcakes-personalizados',
+    category: 'postres-detalles',
+    occasion: ['cumpleanos', 'amor-amistad', 'infantil', 'fechas-especiales'],
+    description: 'Bizcochos esponjosos con crema chantilly del color que desees.',
+    details: [
+      'Sabores: vainilla, red velvet, chocolate u otro sabor especial.',
+      'Tambien disponibles en amapola, arandanos, naranja y zanahoria.',
+      'Puedes indicar el color de la crema y el estilo en el mensaje adicional.'
+    ],
+    priceFrom: 26000,
+    sizes: [
+      { id: 'x6', label: 'Caja x6', price: 26000 },
+      { id: 'x12', label: 'Caja x12', price: 50000 }
+    ],
+    defaultSizeId: 'x6',
+    images: [PRODUCT_IMAGES.cupcakes, PRODUCT_IMAGES.cupcakesRedVelvet],
+    tags: ['Personalizables', 'Detalle'],
+    featured: true
+  },
+  {
+    name: 'Cookies estilo New York',
+    slug: 'cookies-estilo-new-york',
+    category: 'postres-detalles',
+    occasion: ['cumpleanos', 'amor-amistad', 'empresarial-eventos'],
+    description: 'Cookies gruesas, suaves por dentro y ligeramente crujientes por fuera.',
+    details: [
+      'Sabores: chocochips, Nutella, Oreo, galleta Milo, Hersheys blanca, pistacho, birthday cake, red velvet, nueces y almendras.',
+      'Tip: calientala 10 a 15 segundos antes de comer para que el centro quede mas suave.'
+    ],
+    priceFrom: 36000,
+    sizes: [{ id: 'x6', label: 'Caja x6', price: 36000 }],
+    defaultSizeId: 'x6',
+    images: [PRODUCT_IMAGES.cookiesNewYork],
+    tags: ['Recien horneadas', 'Viral']
+  },
+  {
+    name: 'Crookie',
+    slug: 'crookie',
+    category: 'postres-detalles',
+    occasion: ['cumpleanos', 'amor-amistad', 'fechas-especiales'],
+    description: 'La mezcla viral entre croissant y cookie, hojaldrado por fuera y suave por dentro.',
+    priceFrom: 36000,
+    sizes: [{ id: 'x6', label: 'Caja x6', price: 36000 }],
+    defaultSizeId: 'x6',
+    images: [PRODUCT_IMAGES.cookiesClassic],
+    tags: ['Viral', 'Croissant + cookie']
+  },
+  {
+    name: 'Alfajores',
+    slug: 'alfajores',
+    category: 'postres-detalles',
+    occasion: ['amor-amistad', 'aniversarios', 'fechas-especiales'],
+    description: 'Galletas suaves rellenas de dulce de leche, ideales para regalo o detalle.',
+    priceFrom: 26000,
+    sizes: [{ id: 'x12', label: 'Caja x12', price: 26000 }],
+    defaultSizeId: 'x12',
+    images: [PRODUCT_IMAGES.alfajores],
+    tags: ['Detalle', 'Dulce de leche']
+  },
+  {
+    name: 'Chocofresas y rosas',
+    slug: 'chocofresas-y-rosas',
+    category: 'fechas-especiales',
+    occasion: ['amor-amistad', 'aniversarios', 'cumpleanos', 'fechas-especiales'],
+    description: 'Bouquet en forma de corazon con fresas cubiertas de chocolate y rosas naturales.',
+    details: ['Incluye 12 rosas y 12 chocofresas.'],
+    priceFrom: 110000,
+    sizes: [{ id: 'bouquet', label: 'Bouquet corazon', price: 110000, note: 'Incluye 12 rosas y 12 chocofresas' }],
+    defaultSizeId: 'bouquet',
+    images: [PRODUCT_IMAGES.chocoFresas],
+    tags: ['Regalo especial', 'Romantico'],
+    featured: true
+  }
+];

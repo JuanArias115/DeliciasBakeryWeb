@@ -7,8 +7,8 @@
       <span class="hero-title-bottom">cada celebracion</span>
     </h1>
     <p>
-      Endulzamos momentos especiales en Chia y Cajica con acabados elegantes, sabores memorables y
-      entregas puntuales.
+      Endulzamos momentos especiales en Chia y Cajica con detalles personalizados para cada ocasion,
+      opciones accesibles y una experiencia cercana, hecha con amor.
     </p>
     <div class="hero-actions">
       <ui-button iconLeft="whatsapp" [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
@@ -59,7 +59,7 @@
           <p>{{ product.description }}</p>
           <div class="meta-row">
             <span class="price">Desde {{ getMinPrice(product) | currency: 'COP' : 'symbol' : '1.0-0' }}</span>
-            <ui-badge>{{ product.category }}</ui-badge>
+            <ui-badge>{{ categoryLabel(product.category) }}</ui-badge>
           </div>
           <ui-button size="sm" variant="secondary" iconRight="arrow-right" [routerLink]="'/productos/' + product.slug">
             Ver detalle
@@ -85,21 +85,21 @@
 
 <section class="container section-space coverage">
   <ui-section-title
-    eyebrow="Logistica"
-    title="Cobertura y tiempos"
-    description="Atendemos en Chia y Cajica con agenda previa para garantizar calidad."
+    eyebrow="Pedidos"
+    title="Pedidos y disponibilidad"
+    description="Trabajamos 100% por encargo y organizamos cada entrega segun agenda."
   />
 
   <div class="coverage-grid">
     <ui-card [hoverable]="false">
-      <h3>Zona de entrega</h3>
-      <p>{{ config.location }}</p>
-      <p>Consultar zonas cercanas y costo de envio al confirmar pedido.</p>
+      <h3>Como funciona</h3>
+      <p>Pedidos 100% por encargo. Se responden por orden de llegada.</p>
+      <p>Te recomendamos agendar con anticipacion para asegurar tu fecha.</p>
     </ui-card>
     <ui-card [hoverable]="false">
-      <h3>Tiempo minimo</h3>
-      <p>24 horas de anticipacion para la mayoria de pedidos.</p>
-      <p>Fechas especiales: reserva con mayor antelacion.</p>
+      <h3>Agenda y entregas</h3>
+      <p>Solicita con minimo 24 horas de anticipacion.</p>
+      <p>Atendemos Chia y Cajica con entregas locales bajo encargo.</p>
     </ui-card>
   </div>
 </section>

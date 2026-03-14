@@ -11,10 +11,12 @@ import {
   faPhone,
   faTag
 } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faTiktok, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export type IconName =
   | 'whatsapp'
+  | 'instagram'
+  | 'tiktok'
   | 'phone'
   | 'arrow-right'
   | 'arrow-left'
@@ -26,6 +28,8 @@ export type IconName =
 
 const ICON_MAP: Record<IconName, IconDefinition> = {
   whatsapp: faWhatsapp,
+  instagram: faInstagram,
+  tiktok: faTiktok,
   phone: faPhone,
   'arrow-right': faArrowRight,
   'arrow-left': faArrowLeft,

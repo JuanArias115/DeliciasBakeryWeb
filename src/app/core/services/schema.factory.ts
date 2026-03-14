@@ -1,6 +1,7 @@
 import { siteConfig } from '../config/site.config';
 import { getMinPrice } from '../helpers/product-pricing.helper';
 
+import { PRODUCT_CATEGORY_LABELS } from '../../data/products.mock';
 import { cldImage } from '../../lib/cloudinary';
 import { Product } from '../../models/product.model';
 
@@ -21,7 +22,7 @@ export function createLocalBusinessSchema(siteUrl: string): Record<string, unkno
       addressRegion: siteConfig.addressRegion,
       addressCountry: siteConfig.country
     },
-    sameAs: [siteConfig.instagramUrl],
+    sameAs: [siteConfig.instagramUrl, siteConfig.tiktokUrl].filter(Boolean),
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: siteConfig.whatsappDisplay,
@@ -56,7 +57,7 @@ export function createProductSchema(product: Product, canonicalUrl: string): Rec
     description: product.description,
     image: product.images,
     sku: product.slug,
-    category: product.category,
+    category: PRODUCT_CATEGORY_LABELS[product.category],
     brand: {
       '@type': 'Brand',
       name: siteConfig.brandName

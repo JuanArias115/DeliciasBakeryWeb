@@ -6,6 +6,7 @@ import { AnalyticsService } from '../../core/services/analytics.service';
 import { getMinPrice } from '../../core/helpers/product-pricing.helper';
 import {
   OCCASIONS,
+  ProductOccasion,
   PRODUCT_CATEGORIES,
   PRODUCTS
 } from '../../data/products.mock';
@@ -39,7 +40,7 @@ export default class ProductsPage implements OnInit, OnDestroy {
 
   readonly query = signal('');
   readonly selectedCategory = signal<'all' | ProductCategory>('all');
-  readonly selectedOccasion = signal<'all' | string>('all');
+  readonly selectedOccasion = signal<'all' | ProductOccasion>('all');
   readonly loading = signal(true);
   readonly getMinPrice = getMinPrice;
   readonly productImageThumb = (image: string): string => cldSized(image, CLOUDINARY_WIDTHS.thumb);
@@ -85,7 +86,7 @@ export default class ProductsPage implements OnInit, OnDestroy {
   }
 
   setOccasion(value: string): void {
-    this.selectedOccasion.set(value);
+    this.selectedOccasion.set(value as 'all' | ProductOccasion);
   }
 
   trackViewProduct(slug: string): void {

@@ -52,6 +52,14 @@ small {
   gap: 0.35rem;
 }
 
+.detail-list {
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
 .order-form {
   display: grid;
   gap: 0.75rem;

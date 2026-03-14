@@ -32,6 +32,14 @@
           }
         </div>
 
+        @if (product.details?.length) {
+          <ul class="detail-list">
+            @for (detail of product.details; track detail) {
+              <li>{{ detail }}</li>
+            }
+          </ul>
+        }
+
         <ui-card [hoverable]="false">
           <form class="order-form" novalidate>
             <h2>Arma tu pedido</h2>

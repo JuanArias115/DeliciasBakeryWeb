@@ -1,4 +1,12 @@
-export type ProductCategory = 'postres' | 'tortas' | 'cajas' | 'detalles' | 'catering';
+export type ProductCategory =
+  | 'cheesecakes-tiramisu'
+  | 'brownies'
+  | 'tortas-mini-cakes'
+  | 'postres-detalles'
+  | 'fechas-especiales'
+  | 'desayunos'
+  | 'linea-fit'
+  | 'catering';
 
 export interface ProductSizeOption {
   id: string;
@@ -14,6 +22,7 @@ export interface Product {
   category: ProductCategory;
   occasion: string[];
   description: string;
+  details?: string[];
   priceFrom?: number;
   sizes?: ProductSizeOption[];
   defaultSizeId?: string;

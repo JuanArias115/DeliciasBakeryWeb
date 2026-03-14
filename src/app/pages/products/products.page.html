@@ -33,7 +33,7 @@
       <select [value]="selectedOccasion()" (change)="setOccasion(($any($event.target)).value)">
         <option value="all">Todas</option>
         @for (occasion of occasions; track occasion) {
-          <option [value]="occasion">{{ occasion }}</option>
+          <option [value]="occasion.value">{{ occasion.label }}</option>
         }
       </select>
     </label>

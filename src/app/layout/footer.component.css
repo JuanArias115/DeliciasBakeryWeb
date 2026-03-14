@@ -10,6 +10,11 @@
   gap: 1.4rem;
 }
 
+section {
+  display: grid;
+  gap: 0.55rem;
+}
+
 h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -36,6 +41,37 @@ a {
 
 a:hover {
   color: var(--color-text);
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.social-btn {
+  align-items: center;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  color: var(--color-coffee);
+  display: inline-flex;
+  height: 2.6rem;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  width: 2.6rem;
+}
+
+.social-btn:hover {
+  border-color: color-mix(in srgb, var(--color-primary-strong) 35%, white);
+  color: var(--color-primary-strong);
+  transform: translateY(-1px);
+}
+
+.social-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 35%, white);
+  outline-offset: 2px;
 }
 
 @media (min-width: 900px) {
