@@ -49,6 +49,7 @@ export interface Product {
   occasion: string[];
   description: string;
   details?: string[];
+  autoRotateImages?: boolean;
   flavorOptions?: ProductFlavorOption[];
   defaultFlavorId?: string;
   coatingOptions?: ProductCoatingOption[];
@@ -58,6 +59,7 @@ export interface Product {
   mixOptions?: ProductMixOption[];
   mixTotal?: number;
   mixLabel?: string;
+  priceLabelMode?: 'fixed' | 'from';
   priceFrom?: number;
   sizes?: ProductSizeOption[];
   defaultSizeId?: string;

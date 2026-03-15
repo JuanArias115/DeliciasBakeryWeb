@@ -2,63 +2,51 @@ import { Review } from '../models/review.model';
 
 export const REVIEWS: Review[] = [
   {
-    name: 'Valeria C.',
+    name: 'Mateo B.',
     rating: 5,
-    text: 'La torta llegó hermosa y deliciosa. La atención por WhatsApp fue súper ágil.',
-    date: '2026-01-10'
+    text: 'Tan lindaaaa, muchísimas gracias!! Yo siempre fiel a tu trabajo, me parece que es excelente.',
+    date: '2025-03-11'
   },
   {
-    name: 'Camilo R.',
+    name: 'Natalia',
     rating: 5,
-    text: 'Pedimos caja de brownies para la oficina y todos quedaron encantados.',
-    date: '2025-12-14'
+    text: 'Ayy estuvo deliciosoooo, me encantó. Ahora me gustaría pedir uno mediano de Milo, porfa.',
+    date: '2025-08-13'
   },
   {
-    name: 'Daniela M.',
+    name: 'Cata',
     rating: 5,
-    text: 'Muy cumplidos con la entrega en Cajicá. Presentación impecable.',
-    date: '2025-11-05'
+    text: 'Te iba a decir que hermosa como siempre. Me saliste como favorito como en Nequi.',
+    date: '2026-02-17'
   },
   {
-    name: 'Luisa F.',
-    rating: 4,
-    text: 'La mini cake fue perfecta para regalo. Repetiré para aniversario.',
-    date: '2025-10-22'
-  },
-  {
-    name: 'Andres P.',
+    name: 'Abigail',
     rating: 5,
-    text: 'Atención amable, calidad alta y tiempos claros desde el inicio.',
-    date: '2025-09-18'
+    text: 'En cuanto a sabor estaba muy rica y la decoración divina, todo el mundo la elogió.',
+    date: '2025-04-14'
   },
   {
-    name: 'Natalia G.',
+    name: 'Nata',
     rating: 5,
-    text: 'Nos salvaron el cumpleaños con una torta personalizada preciosa.',
-    date: '2025-08-30'
+    text: 'Wow Vale, qué belleza. Quedó igualita.',
+    date: '2026-11-15'
   },
   {
-    name: 'Santiago T.',
-    rating: 4,
-    text: 'Excelente sabor y buena relación precio-calidad para eventos.',
-    date: '2025-07-13'
-  },
-  {
-    name: 'Mariana H.',
+    name: 'Andrea',
     rating: 5,
-    text: 'Todo llegó fresco y con muy buena presentación. Recomendados.',
-    date: '2025-06-29'
+    text: 'Te quería agradecer por los alfajores, están deliciosos, el regalo encantó. Te seguiré pidiendo cositas.',
+    date: '2026-03-06'
   },
   {
-    name: 'Paola V.',
+    name: 'Katherine',
     rating: 5,
-    text: 'Me encantó la caja de fresas con chocolate, súper premium.',
-    date: '2025-05-20'
+    text: 'Te quedaron muy hermosos. Los chicos del local quedaron encantados.',
+    date: '2025-09-20'
   },
   {
-    name: 'Felipe N.',
+    name: 'Jhon',
     rating: 5,
-    text: 'Proceso fácil por WhatsApp y respuesta rápida. Muy confiables.',
-    date: '2025-04-03'
+    text: 'Una se la di a una tía y quedó encantada, dijo que súper rica y muy bonita, que felicitara a quien la había hecho.',
+    date: '2024-12-27'
   }
 ];

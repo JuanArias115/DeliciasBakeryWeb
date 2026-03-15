@@ -32,7 +32,21 @@ const PRODUCT_IMAGES = {
   alfajores:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/postres-alfajores-01_lwr6zq.png',
   customCake:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg'
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg',
+  customCake02: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_02_k8hom6.jpg',
+  customCake03: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_03_n5xbml.jpg',
+  customCake04: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_04_pd4tpx.jpg',
+  customCake05: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_05_r3pumj.jpg',
+  customCake06: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_06_h5riuq.jpg',
+  customCake07: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_07_qg4sqd.jpg',
+  customCake09: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593759/postres_cakes_09_bogq2x.jpg',
+  customCake10: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593759/postres_cakes_10_v3dsyg.jpg',
+  customCake11: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593759/postres_cakes_11_bx2sm4.jpg',
+  customCake12: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593760/postres_cakes_12_dgusfh.jpg',
+  customCake13: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593760/postres_cakes_13_hbrdb3.jpg',
+  customCake14: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593760/postres_cakes_14_ywqxv5.jpg',
+  customCake15: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593760/postres_cakes_15_twiryz.jpg',
+  customCake15b: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593761/postres_cakes_15_cptnmt.heic'
 } as const;
 
 export const PRODUCT_CATEGORY_LABELS = {
@@ -277,8 +291,26 @@ export const PRODUCTS: Product[] = [
       'Rellenos: Nutella, arequipe, frutos rojos y maracuyá.',
       'El valor final depende del tamaño, diseño y nivel de decoración.'
     ],
+    autoRotateImages: true,
+    priceLabelMode: 'from',
     priceFrom: 36000,
-    images: [PRODUCT_IMAGES.customCake],
+    images: [
+      PRODUCT_IMAGES.customCake02,
+      PRODUCT_IMAGES.customCake03,
+      PRODUCT_IMAGES.customCake04,
+      PRODUCT_IMAGES.customCake07,
+      PRODUCT_IMAGES.customCake05,
+      PRODUCT_IMAGES.customCake06,
+      PRODUCT_IMAGES.customCake09,
+      PRODUCT_IMAGES.customCake10,
+      PRODUCT_IMAGES.customCake11,
+      PRODUCT_IMAGES.customCake14,
+      PRODUCT_IMAGES.customCake15,
+      PRODUCT_IMAGES.customCake13,
+      PRODUCT_IMAGES.customCake12,
+      PRODUCT_IMAGES.customCake15b,
+      PRODUCT_IMAGES.customCake
+    ],
     tags: ['Personalizadas', 'Sobre pedido'],
     featured: true
   },

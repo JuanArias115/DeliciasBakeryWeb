@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -61,9 +61,18 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   readonly coatingId = new FormControl('', { nonNullable: true });
   readonly toppingId = new FormControl('', { nonNullable: true });
   readonly mixCounts: Record<string, number> = {};
+  readonly activeImageIndex = signal(0);
 
   readonly product = this.route.snapshot.data['product'] as Product | null;
   readonly productImageDetail = (image: string): string => cldSized(image, CLOUDINARY_WIDTHS.detail);
+  readonly activeImage = computed(() => {
+    if (!this.product?.images?.length) {
+      return '';
+    }
+
+    return this.product.images[this.activeImageIndex()] ?? this.product.images[0];
+  });
+  private carouselTimer?: ReturnType<typeof setInterval>;
 
   ngOnInit(): void {
     if (!this.product) {
@@ -75,6 +84,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     this.coatingId.setValue(this.defaultCoating?.id ?? '');
     this.toppingId.setValue(this.defaultTopping?.id ?? '');
     this.initializeMixCounts();
+    this.startCarouselIfNeeded();
 
     const path = `/productos/${this.product.slug}`;
 
@@ -95,6 +105,10 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.carouselTimer) {
+      clearInterval(this.carouselTimer);
+    }
+
     this.seo.removeJsonLd('jsonld-product');
   }
 
@@ -237,7 +251,19 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       return '';
     }
 
+    if (this.product.autoRotateImages && this.product.images.length > 1) {
+      return this.activeImage();
+    }
+
     return this.selectedSize?.image ?? this.product.images[0];
+  }
+
+  get displayPricePrefix(): string {
+    if (this.product?.priceLabelMode === 'from') {
+      return 'Desde ';
+    }
+
+    return '';
   }
 
   get mixTotalRequired(): number {
@@ -299,6 +325,20 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     }
 
     this.mixCounts[optionId] = this.getMixCount(optionId) - 1;
+  }
+
+  startCarouselIfNeeded(): void {
+    if (!this.product?.autoRotateImages || this.product.images.length < 2) {
+      return;
+    }
+
+    this.carouselTimer = setInterval(() => {
+      this.activeImageIndex.update((current) => (current + 1) % this.product!.images.length);
+    }, 2800);
+  }
+
+  selectImage(index: number): void {
+    this.activeImageIndex.set(index);
   }
 
   get displayPrice(): number {

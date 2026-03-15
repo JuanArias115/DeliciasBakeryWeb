@@ -16,12 +16,25 @@
           loading="eager"
           fetchpriority="high"
         />
+        @if (product.autoRotateImages && product.images.length > 1) {
+          <div class="carousel-dots" aria-label="Galería de imágenes del producto">
+            @for (image of product.images; track image; let i = $index) {
+              <button
+                type="button"
+                class="carousel-dot"
+                [class.is-active]="i === activeImageIndex()"
+                [attr.aria-label]="'Ver imagen ' + (i + 1)"
+                (click)="selectImage(i)"
+              ></button>
+            }
+          </div>
+        }
       </div>
 
       <div class="info-col">
         <h1>{{ product.name }}</h1>
         <p class="description">{{ product.description }}</p>
-        <p class="price">{{ displayPrice | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
+        <p class="price">{{ displayPricePrefix }}{{ displayPrice | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
         @if (selectedSize?.serves) {
           <p class="serves">Rinde aprox: {{ selectedSize?.serves }}</p>
         }
