@@ -161,6 +161,7 @@ export const PRODUCTS: Product[] = [
     priceLabelMode: 'from',
     priceFrom: 36000,
     images: [
+      PRODUCT_IMAGES.customCake10,
       PRODUCT_IMAGES.customCake02,
       PRODUCT_IMAGES.customCake03,
       PRODUCT_IMAGES.customCake04,
@@ -168,7 +169,6 @@ export const PRODUCTS: Product[] = [
       PRODUCT_IMAGES.customCake05,
       PRODUCT_IMAGES.customCake06,
       PRODUCT_IMAGES.customCake09,
-      PRODUCT_IMAGES.customCake10,
       PRODUCT_IMAGES.customCake11,
       PRODUCT_IMAGES.customCake14,
       PRODUCT_IMAGES.customCake15,
