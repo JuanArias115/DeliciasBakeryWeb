@@ -145,6 +145,42 @@ const TRUFFLE_TOPPINGS = [
 
 export const PRODUCTS: Product[] = [
   {
+    name: 'Tortas personalizadas y mini cakes',
+    slug: 'tortas-personalizadas-mini-cakes',
+    category: 'tortas-mini-cakes',
+    occasion: ['cumpleanos', 'aniversarios', 'infantil', 'fechas-especiales'],
+    description: 'Creamos tortas diseñadas especialmente para cada ocasión, según tu idea o referencia.',
+    details: [
+      'Mini cakes desde $36.000.',
+      'Tamaños disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
+      'Sabores: vainilla, chocolate y red velvet.',
+      'Rellenos: Nutella, arequipe, frutos rojos y maracuyá.',
+      'El valor final depende del tamaño, diseño y nivel de decoración.'
+    ],
+    autoRotateImages: true,
+    priceLabelMode: 'from',
+    priceFrom: 36000,
+    images: [
+      PRODUCT_IMAGES.customCake02,
+      PRODUCT_IMAGES.customCake03,
+      PRODUCT_IMAGES.customCake04,
+      PRODUCT_IMAGES.customCake07,
+      PRODUCT_IMAGES.customCake05,
+      PRODUCT_IMAGES.customCake06,
+      PRODUCT_IMAGES.customCake09,
+      PRODUCT_IMAGES.customCake10,
+      PRODUCT_IMAGES.customCake11,
+      PRODUCT_IMAGES.customCake14,
+      PRODUCT_IMAGES.customCake15,
+      PRODUCT_IMAGES.customCake13,
+      PRODUCT_IMAGES.customCake12,
+      PRODUCT_IMAGES.customCake15b,
+      PRODUCT_IMAGES.customCake
+    ],
+    tags: ['Personalizadas', 'Sobre pedido'],
+    featured: true
+  },
+  {
     name: 'Cheesecake tradicional',
     slug: 'cheesecake-tradicional',
     category: 'cheesecakes-tiramisu',
@@ -276,42 +312,6 @@ export const PRODUCTS: Product[] = [
     defaultSizeId: 'x36',
     images: [PRODUCT_IMAGES.brownieBites],
     tags: ['Para compartir', 'Eventos'],
-    featured: true
-  },
-  {
-    name: 'Tortas personalizadas y mini cakes',
-    slug: 'tortas-personalizadas-mini-cakes',
-    category: 'tortas-mini-cakes',
-    occasion: ['cumpleanos', 'aniversarios', 'infantil', 'fechas-especiales'],
-    description: 'Creamos tortas diseñadas especialmente para cada ocasión, según tu idea o referencia.',
-    details: [
-      'Mini cakes desde $36.000.',
-      'Tamaños disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
-      'Sabores: vainilla, chocolate y red velvet.',
-      'Rellenos: Nutella, arequipe, frutos rojos y maracuyá.',
-      'El valor final depende del tamaño, diseño y nivel de decoración.'
-    ],
-    autoRotateImages: true,
-    priceLabelMode: 'from',
-    priceFrom: 36000,
-    images: [
-      PRODUCT_IMAGES.customCake02,
-      PRODUCT_IMAGES.customCake03,
-      PRODUCT_IMAGES.customCake04,
-      PRODUCT_IMAGES.customCake07,
-      PRODUCT_IMAGES.customCake05,
-      PRODUCT_IMAGES.customCake06,
-      PRODUCT_IMAGES.customCake09,
-      PRODUCT_IMAGES.customCake10,
-      PRODUCT_IMAGES.customCake11,
-      PRODUCT_IMAGES.customCake14,
-      PRODUCT_IMAGES.customCake15,
-      PRODUCT_IMAGES.customCake13,
-      PRODUCT_IMAGES.customCake12,
-      PRODUCT_IMAGES.customCake15b,
-      PRODUCT_IMAGES.customCake
-    ],
-    tags: ['Personalizadas', 'Sobre pedido'],
     featured: true
   },
   {
