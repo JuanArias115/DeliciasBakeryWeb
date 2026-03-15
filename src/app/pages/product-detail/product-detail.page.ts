@@ -332,6 +332,10 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       return;
     }
 
+    if (this.carouselTimer) {
+      clearInterval(this.carouselTimer);
+    }
+
     this.carouselTimer = setInterval(() => {
       this.activeImageIndex.update((current) => (current + 1) % this.product!.images.length);
     }, 2800);
@@ -339,6 +343,25 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
 
   selectImage(index: number): void {
     this.activeImageIndex.set(index);
+    this.startCarouselIfNeeded();
+  }
+
+  prevImage(): void {
+    if (!this.product?.images.length) {
+      return;
+    }
+
+    this.activeImageIndex.update((current) => (current - 1 + this.product!.images.length) % this.product!.images.length);
+    this.startCarouselIfNeeded();
+  }
+
+  nextImage(): void {
+    if (!this.product?.images.length) {
+      return;
+    }
+
+    this.activeImageIndex.update((current) => (current + 1) % this.product!.images.length);
+    this.startCarouselIfNeeded();
   }
 
   get displayPrice(): number {

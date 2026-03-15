@@ -54,6 +54,17 @@
   object-position: center center;
 }
 
+.product-image-detail.force-cover img,
+.product-image-detail.force-cover.is-portrait img,
+.product-image-detail.force-cover.is-square img {
+  object-fit: cover;
+  padding: 0;
+}
+
+.product-image-detail.force-cover.is-portrait img {
+  object-position: center 30%;
+}
+
 .product-image-detail.is-portrait img {
   object-fit: contain;
   padding: 0.75rem;

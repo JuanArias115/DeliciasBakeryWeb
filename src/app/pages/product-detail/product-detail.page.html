@@ -6,17 +6,26 @@
     </a>
 
     <div class="detail-grid">
-      <div class="media-col">
+      <div class="media-col" [class.is-carousel]="product.autoRotateImages && product.images.length > 1">
         <ui-product-image
           variant="detail"
           [src]="productImageDetail(displayImage)"
           [alt]="'Foto principal de ' + product.name"
+          [forceCover]="!!product.autoRotateImages"
           [width]="1400"
           [height]="1050"
           loading="eager"
           fetchpriority="high"
         />
         @if (product.autoRotateImages && product.images.length > 1) {
+          <div class="carousel-controls" aria-label="Controles del carrusel">
+            <button type="button" class="carousel-nav" aria-label="Imagen anterior" (click)="prevImage()">
+              <ui-icon name="arrow-left" size="sm" />
+            </button>
+            <button type="button" class="carousel-nav" aria-label="Imagen siguiente" (click)="nextImage()">
+              <ui-icon name="arrow-right" size="sm" />
+            </button>
+          </div>
           <div class="carousel-dots" aria-label="Galería de imágenes del producto">
             @for (image of product.images; track image; let i = $index) {
               <button
