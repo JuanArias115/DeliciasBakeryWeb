@@ -46,12 +46,12 @@
     @for (product of featuredProducts; track product.slug) {
       <ui-card>
         <a [routerLink]="'/productos/' + product.slug" class="card-link" [attr.aria-label]="product.name">
-          <img
+          <ui-product-image
+            variant="card"
             [src]="productImageThumb(product.images[0])"
-            width="600"
-            height="450"
-            loading="lazy"
             [alt]="'Foto de ' + product.name"
+            [width]="600"
+            [height]="450"
           />
         </a>
         <div class="card-body">

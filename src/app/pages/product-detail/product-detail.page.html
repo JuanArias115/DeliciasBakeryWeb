@@ -93,6 +93,20 @@
               </section>
             }
 
+            @if (product.coatingOptions?.length) {
+              <section class="flavor-section" aria-label="Selecciona cobertura">
+                <h3>Cobertura</h3>
+                <label class="flavor-field">
+                  <span class="sr-only">Selecciona cobertura</span>
+                  <select [formControl]="coatingId">
+                    @for (coating of product.coatingOptions; track coating.id) {
+                      <option [value]="coating.id">{{ coating.label }}</option>
+                    }
+                  </select>
+                </label>
+              </section>
+            }
+
             @if (product.toppingOptions?.length) {
               <section class="flavor-section" aria-label="Selecciona topping">
                 <h3>Topping</h3>

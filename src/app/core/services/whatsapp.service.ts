@@ -6,6 +6,7 @@ export interface WhatsAppOrderPayload {
   product?: string;
   size?: string;
   flavor?: string;
+  coating?: string;
   topping?: string;
   mix?: string;
   quantity?: string;
@@ -24,6 +25,7 @@ export class WhatsAppService {
       payload.product ? `Producto: ${payload.product}` : '',
       payload.size ? `Tamaño: ${payload.size}` : '',
       payload.flavor ? `Sabor: ${payload.flavor}` : '',
+      payload.coating ? `Cobertura: ${payload.coating}` : '',
       payload.topping ? `Topping: ${payload.topping}` : '',
       payload.mix ? `Selección: ${payload.mix}` : '',
       payload.quantity ? `Cantidad: ${payload.quantity}` : '',

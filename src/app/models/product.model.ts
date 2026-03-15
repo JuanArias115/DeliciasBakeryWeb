@@ -30,6 +30,12 @@ export interface ProductToppingOption {
   surcharge?: number;
 }
 
+export interface ProductCoatingOption {
+  id: string;
+  label: string;
+  surcharge?: number;
+}
+
 export interface ProductMixOption {
   id: string;
   label: string;
@@ -45,6 +51,8 @@ export interface Product {
   details?: string[];
   flavorOptions?: ProductFlavorOption[];
   defaultFlavorId?: string;
+  coatingOptions?: ProductCoatingOption[];
+  defaultCoatingId?: string;
   toppingOptions?: ProductToppingOption[];
   defaultToppingId?: string;
   mixOptions?: ProductMixOption[];

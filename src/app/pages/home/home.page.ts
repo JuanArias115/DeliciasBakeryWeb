@@ -15,6 +15,7 @@ import { BadgeComponent } from '../../shared/ui/badge/badge.component';
 import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
 import { IconComponent } from '../../shared/ui/icon/icon.component';
+import { ProductImageComponent } from '../../shared/ui/product-image/product-image.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
 
 @Component({
@@ -27,6 +28,7 @@ import { SectionTitleComponent } from '../../shared/ui/section-title/section-tit
     CardComponent,
     BadgeComponent,
     IconComponent,
+    ProductImageComponent,
     SectionTitleComponent,
     AccordionComponent
   ],

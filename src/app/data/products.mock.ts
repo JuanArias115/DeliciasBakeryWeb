@@ -27,6 +27,8 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-cookies-01_eonnr6.png',
   chocoFresas:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-choco-fresas-rosas-01_txvvwq.png',
+  trufas:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773592957/postres-trufas-01_hjgvlz.png',
   alfajores:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/postres-alfajores-01_lwr6zq.png',
   customCake:
@@ -112,6 +114,19 @@ const COOKIE_MIX_FLAVORS = [
   { id: 'birthday-cake', label: 'Birthday Cake' },
   { id: 'red-velvet', label: 'Red Velvet' },
   { id: 'nueces-almendras', label: 'Nueces y Almendras' }
+] as const;
+
+const TRUFFLE_COATINGS = [
+  { id: 'blanco', label: 'Chocolate blanco' },
+  { id: 'oscuro', label: 'Chocolate oscuro' },
+  { id: 'mixto', label: 'Mixto (chocolate blanco y oscuro)' }
+] as const;
+
+const TRUFFLE_TOPPINGS = [
+  { id: 'corazon', label: 'Chispas de corazón' },
+  { id: 'glitter-dorado', label: 'Glitter comestible dorado' },
+  { id: 'glitter-plateado', label: 'Glitter comestible plateado' },
+  { id: 'colores', label: 'Chispas de colores' }
 ] as const;
 
 export const PRODUCTS: Product[] = [
@@ -330,6 +345,24 @@ export const PRODUCTS: Product[] = [
     defaultSizeId: 'x12',
     images: [PRODUCT_IMAGES.alfajores],
     tags: ['Detalle', 'Dulce de leche']
+  },
+  {
+    name: 'Trufas',
+    slug: 'trufas',
+    category: 'postres-detalles',
+    occasion: ['amor-amistad', 'aniversarios', 'cumpleanos', 'fechas-especiales'],
+    description:
+      'Bolitas cremosas de Oreo cubiertas con chocolate, perfectas para sorprender, regalar o acompañar cualquier celebración.',
+    details: ['Elige cobertura y topping en los desplegables antes de pedir.'],
+    priceFrom: 26000,
+    sizes: [{ id: 'x12', label: 'Caja x12', price: 26000, serves: '12 unidades' }],
+    defaultSizeId: 'x12',
+    coatingOptions: [...TRUFFLE_COATINGS],
+    defaultCoatingId: 'blanco',
+    toppingOptions: [...TRUFFLE_TOPPINGS],
+    defaultToppingId: 'corazon',
+    images: [PRODUCT_IMAGES.trufas],
+    tags: ['Oreo', 'Detalle']
   },
   {
     name: 'Chocofresas y rosas',

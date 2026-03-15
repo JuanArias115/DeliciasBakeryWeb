@@ -80,14 +80,6 @@
   margin: -1rem -1rem 0;
 }
 
-img {
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  display: block;
-  height: 170px;
-  object-fit: cover;
-  width: 100%;
-}
-
 .card-body {
   display: grid;
   gap: 0.55rem;

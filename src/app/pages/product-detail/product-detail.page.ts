@@ -13,7 +13,13 @@ import { createProductSchema } from '../../core/services/schema.factory';
 import { SeoService } from '../../core/services/seo.service';
 import { WhatsAppService } from '../../core/services/whatsapp.service';
 import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
-import { Product, ProductFlavorOption, ProductSizeOption, ProductToppingOption } from '../../models/product.model';
+import {
+  Product,
+  ProductCoatingOption,
+  ProductFlavorOption,
+  ProductSizeOption,
+  ProductToppingOption
+} from '../../models/product.model';
 import { BadgeComponent } from '../../shared/ui/badge/badge.component';
 import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
@@ -52,6 +58,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   readonly note = new FormControl('', { nonNullable: true });
   readonly sizeId = new FormControl('', { nonNullable: true });
   readonly flavorId = new FormControl('', { nonNullable: true });
+  readonly coatingId = new FormControl('', { nonNullable: true });
   readonly toppingId = new FormControl('', { nonNullable: true });
   readonly mixCounts: Record<string, number> = {};
 
@@ -65,6 +72,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     const defaultSize = getDefaultSize(this.product);
     this.sizeId.setValue(defaultSize?.id ?? '');
     this.flavorId.setValue(this.defaultFlavor?.id ?? '');
+    this.coatingId.setValue(this.defaultCoating?.id ?? '');
     this.toppingId.setValue(this.defaultTopping?.id ?? '');
     this.initializeMixCounts();
 
@@ -100,6 +108,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       product: this.product.name,
       size: selectedSize?.label,
       flavor: this.selectedFlavor?.label,
+      coating: this.selectedCoating?.label,
       topping: this.selectedTopping?.label,
       mix: this.mixSummary || undefined,
       quantity: this.quantity.value,
@@ -120,6 +129,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       product: this.product.slug,
       size: selectedSize?.id ?? null,
       flavor: this.selectedFlavor?.id ?? null,
+      coating: this.selectedCoating?.id ?? null,
       topping: this.selectedTopping?.id ?? null,
       mix: this.mixSummary || null
     });
@@ -181,6 +191,33 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     }
 
     return this.product.toppingOptions[0];
+  }
+
+  get defaultCoating(): ProductCoatingOption | undefined {
+    if (!this.product?.coatingOptions?.length) {
+      return undefined;
+    }
+
+    if (this.product.defaultCoatingId) {
+      const explicitCoating = this.product.coatingOptions.find((coating) => coating.id === this.product?.defaultCoatingId);
+      if (explicitCoating) {
+        return explicitCoating;
+      }
+    }
+
+    return this.product.coatingOptions[0];
+  }
+
+  get selectedCoating(): ProductCoatingOption | undefined {
+    if (!this.product?.coatingOptions?.length) {
+      return undefined;
+    }
+
+    if (!this.coatingId.value) {
+      return this.defaultCoating;
+    }
+
+    return this.product.coatingOptions.find((coating) => coating.id === this.coatingId.value) ?? this.defaultCoating;
   }
 
   get selectedTopping(): ProductToppingOption | undefined {
@@ -272,6 +309,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     return (
       (this.selectedSize?.price ?? getMinPrice(this.product)) +
       (this.selectedFlavor?.surcharge ?? 0) +
+      (this.selectedCoating?.surcharge ?? 0) +
       (this.selectedTopping?.surcharge ?? 0)
     );
   }
