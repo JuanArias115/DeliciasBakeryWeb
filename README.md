@@ -36,6 +36,32 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## BakeryFlow proxy
+
+This project now proxies BakeryFlow under:
+
+- `https://deliciasbakery.shop/bakeryFlow/`
+- `https://deliciasbakery.shop/bakeryFlow/api/`
+
+Permanent code changes:
+
+- [nginx.conf](/Users/juanarias/Workspaces/Web/deliciasBakery/nginx.conf) adds `location /bakeryFlow/` and `location /bakeryFlow/api/`
+- [docker-compose.yml](/Users/juanarias/Workspaces/Web/deliciasBakery/docker-compose.yml) connects the `web` service to the external Docker network `bakeryflow_internal`
+- the main site remains intact at `/`
+
+How it works:
+
+- the main Nginx container still serves Delicias Bakery on `/`
+- requests to `/bakeryFlow/` are proxied to `http://bakeryflow-frontend`
+- requests to `/bakeryFlow/api/` are proxied to `http://bakeryflow-backend:8086`
+- name resolution works because the `web` container joins the `bakeryflow_internal` network used by BakeryFlow
+
+Deployment note:
+
+- BakeryFlow must already be deployed so the Docker network `bakeryflow_internal` exists on the VPS
+- verify it with `docker network inspect bakeryflow_internal`
+- after redeploying this project, Nginx will route both apps from the same public port 80
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:

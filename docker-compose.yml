@@ -4,3 +4,11 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+    networks:
+      - default
+      - bakeryflow_internal
+
+networks:
+  bakeryflow_internal:
+    external: true
+    name: bakeryflow_internal
