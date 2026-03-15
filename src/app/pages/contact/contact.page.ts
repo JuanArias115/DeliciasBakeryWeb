@@ -49,7 +49,7 @@ export default class ContactPage {
   ) {}
 
   get directLink(): string {
-    return this.whatsapp.createLink('Hola Delicias Bakery, quiero asesoria para un pedido.');
+    return this.whatsapp.createLink('Hola Delicias Bakery, quiero asesoría para un pedido.');
   }
 
   submit(): void {
@@ -62,7 +62,7 @@ export default class ContactPage {
     const message = [
       'Hola Delicias Bakery, vengo del formulario de contacto:',
       `Nombre: ${value.name}`,
-      `Telefono: ${value.phone}`,
+      `Teléfono: ${value.phone}`,
       `Fecha estimada: ${value.date}`,
       `Mensaje: ${value.message}`
     ].join('\n');

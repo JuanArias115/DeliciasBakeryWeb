@@ -19,10 +19,10 @@ export class WhatsAppService {
     const lines = [
       'Hola Delicias Bakery, quiero hacer un pedido:',
       payload.product ? `Producto: ${payload.product}` : '',
-      payload.size ? `Tamano: ${payload.size}` : '',
+      payload.size ? `Tamaño: ${payload.size}` : '',
       payload.quantity ? `Cantidad: ${payload.quantity}` : '',
       payload.date ? `Fecha de entrega: ${payload.date}` : '',
-      payload.address ? `Direccion: ${payload.address}` : '',
+      payload.address ? `Dirección: ${payload.address}` : '',
       payload.note ? `Detalle: ${payload.note}` : '',
       '',
       'Gracias'

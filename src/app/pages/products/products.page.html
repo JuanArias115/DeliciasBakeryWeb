@@ -1,13 +1,13 @@
 <section class="container section-space catalog-page">
   <ui-section-title
-    eyebrow="Catalogo"
+    eyebrow="Catálogo"
     title="Productos por encargo"
-    description="Filtra por categoria u ocasion y cotiza en un clic por WhatsApp."
+    description="Filtra por categoría u ocasión y cotiza en un clic por WhatsApp."
   />
 
-  <h1 class="sr-only">Catalogo de Delicias Bakery</h1>
+  <h1 class="sr-only">Catálogo de Delicias Bakery</h1>
 
-  <section class="filters" aria-label="Filtros de catalogo">
+  <section class="filters" aria-label="Filtros de catálogo">
     <label>
       Buscar
       <input
@@ -19,7 +19,7 @@
     </label>
 
     <label>
-      Categoria
+      Categoría
       <select [value]="selectedCategory()" (change)="setCategory(($any($event.target)).value)">
         <option value="all">Todas</option>
         @for (category of categories; track category.value) {
@@ -29,7 +29,7 @@
     </label>
 
     <label>
-      Ocasion
+      Ocasión
       <select [value]="selectedOccasion()" (change)="setOccasion(($any($event.target)).value)">
         <option value="all">Todas</option>
         @for (occasion of occasions; track occasion) {
@@ -74,6 +74,7 @@
             <p class="price">Desde {{ getMinPrice(product) | currency: 'COP' : 'symbol' : '1.0-0' }}</p>
 
             <div class="tag-row">
+              <ui-badge>{{ categoryLabel(product.category) }}</ui-badge>
               @for (tag of product.tags; track tag) {
                 <ui-badge tone="neutral">{{ tag }}</ui-badge>
               }
@@ -93,7 +94,7 @@
         </ui-card>
       } @empty {
         <ui-card [hoverable]="false">
-          <p>No hay resultados con esos filtros. Prueba otra busqueda.</p>
+          <p>No hay resultados con esos filtros. Prueba otra búsqueda.</p>
         </ui-card>
       }
     </div>

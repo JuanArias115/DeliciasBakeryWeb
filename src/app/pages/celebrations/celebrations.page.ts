@@ -13,7 +13,7 @@ import { SectionTitleComponent } from '../../shared/ui/section-title/section-tit
 })
 export default class CelebrationsPage {
   readonly occasions = [
-    'Cumpleanos',
+    'Cumpleaños',
     'Aniversarios',
     'Amor y amistad',
     'Infantil',

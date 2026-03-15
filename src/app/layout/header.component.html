@@ -11,11 +11,11 @@
       <span>Delicias Bakery</span>
     </a>
 
-    <button type="button" class="menu-btn" (click)="toggleMenu()" aria-label="Abrir menu">
-      {{ menuOpen() ? 'Cerrar' : 'Menu' }}
+    <button type="button" class="menu-btn" (click)="toggleMenu()" aria-label="Abrir menú">
+      {{ menuOpen() ? 'Cerrar' : 'Menú' }}
     </button>
 
-    <nav [class.open]="menuOpen()" aria-label="Navegacion principal">
+    <nav [class.open]="menuOpen()" aria-label="Navegación principal">
       @for (item of links; track item.path) {
         <a routerLinkActive="is-active" [routerLink]="item.path" (click)="closeMenu()">{{ item.label }}</a>
       }

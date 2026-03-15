@@ -2,7 +2,7 @@
   <section class="container section-space detail-page">
     <a routerLink="/productos" class="back-link">
       <ui-icon name="arrow-left" size="sm" />
-      <span>Volver al catalogo</span>
+      <span>Volver al catálogo</span>
     </a>
 
     <div class="detail-grid">
@@ -45,8 +45,8 @@
             <h2>Arma tu pedido</h2>
 
             @if (product.sizes?.length) {
-              <section class="size-section" aria-label="Selecciona tamano">
-                <h3>Tamano</h3>
+              <section class="size-section" aria-label="Selecciona tamaño">
+                <h3>Tamaño</h3>
                 <div class="size-grid">
                   @for (size of product.sizes; track size.id) {
                     <label class="size-option" [class.is-selected]="size.id === sizeId.value">
@@ -67,7 +67,7 @@
 
             <ui-input id="qty" label="Cantidad" [control]="quantity" placeholder="1" />
             <ui-input id="date" type="date" label="Fecha de entrega" [control]="date" />
-            <ui-input id="address" label="Direccion" [control]="address" placeholder="Barrio y direccion" />
+            <ui-input id="address" label="Dirección" [control]="address" placeholder="Barrio y dirección" />
             <ui-input
               id="note"
               label="Mensaje adicional"
@@ -79,7 +79,7 @@
             <ui-button iconLeft="cart" [href]="orderLink" target="_blank" (click)="trackClick()">
               Pedir por WhatsApp
             </ui-button>
-            <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
+            <small>Pedidos por encargo, mínimo 24 horas de anticipación.</small>
           </form>
         </ui-card>
       </div>

@@ -11,11 +11,11 @@
     <ui-card [hoverable]="false">
       <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
         <ui-input id="name" label="Nombre" [control]="form.controls.name" placeholder="Tu nombre" />
-        <ui-input id="phone" label="Telefono" type="tel" [control]="form.controls.phone" placeholder="300 000 0000" />
+        <ui-input id="phone" label="Teléfono" type="tel" [control]="form.controls.phone" placeholder="300 000 0000" />
         <ui-input id="date" label="Fecha tentativa" type="date" [control]="form.controls.date" />
         <ui-input
           id="message"
-          label="Que deseas pedir"
+          label="Qué deseas pedir"
           [control]="form.controls.message"
           [multiline]="true"
           placeholder="Producto, cantidad, estilo y detalles"
@@ -27,16 +27,16 @@
       @if (fallbackLink()) {
         <p class="fallback">
           Si no se abrio WhatsApp automaticamente,
-          <a [href]="fallbackLink()" target="_blank" rel="noopener noreferrer">haz clic aqui</a>.
+          <a [href]="fallbackLink()" target="_blank" rel="noopener noreferrer">haz clic aquí</a>.
         </p>
       }
     </ui-card>
 
     <ui-card [hoverable]="false">
-      <h2>Atencion directa</h2>
-      <p>Chia - Cajica, Cundinamarca</p>
+      <h2>Atención directa</h2>
+      <p>Chía - Cajicá, Cundinamarca</p>
       <p>Pedidos 100% por encargo.</p>
-      <p>Agenda con minimo 24 horas de anticipacion.</p>
+      <p>Agenda con mínimo 24 horas de anticipación.</p>
       <p><strong>WhatsApp:</strong> {{ config.whatsappDisplay }}</p>
       <ui-button variant="secondary" iconLeft="whatsapp" [href]="directLink" target="_blank">
         Abrir WhatsApp

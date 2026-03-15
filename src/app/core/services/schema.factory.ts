@@ -18,7 +18,7 @@ export function createLocalBusinessSchema(siteUrl: string): Record<string, unkno
     areaServed: siteConfig.serviceAreas,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Chia',
+      addressLocality: 'Chía',
       addressRegion: siteConfig.addressRegion,
       addressCountry: siteConfig.country
     },

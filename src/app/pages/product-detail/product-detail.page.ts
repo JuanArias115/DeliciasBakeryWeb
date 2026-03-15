@@ -66,7 +66,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
 
     this.seo.apply({
       title: `${this.product.name} | Delicias Bakery`,
-      description: `${this.product.description} Disponible en Chia y Cajica. Pedidos por encargo con 24h de anticipacion.`,
+      description: `${this.product.description} Disponible en Chía y Cajicá. Pedidos por encargo con 24h de anticipación.`,
       path,
       type: 'product',
       image: this.productImageDetail(this.product.images[0])

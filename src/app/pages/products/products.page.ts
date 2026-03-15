@@ -7,6 +7,7 @@ import { getMinPrice } from '../../core/helpers/product-pricing.helper';
 import {
   OCCASIONS,
   ProductOccasion,
+  PRODUCT_CATEGORY_LABELS,
   PRODUCT_CATEGORIES,
   PRODUCTS
 } from '../../data/products.mock';
@@ -91,5 +92,9 @@ export default class ProductsPage implements OnInit, OnDestroy {
 
   trackViewProduct(slug: string): void {
     this.analytics.trackEvent('view_product', { source: 'catalog', slug });
+  }
+
+  categoryLabel(category: (typeof this.products)[number]['category']): string {
+    return PRODUCT_CATEGORY_LABELS[category];
   }
 }

@@ -17,7 +17,7 @@ export class WhatsAppFloatComponent {
   ) {}
 
   get link(): string {
-    return this.whatsapp.createLink('Hola Delicias Bakery, quiero asesoria para un pedido.');
+    return this.whatsapp.createLink('Hola Delicias Bakery, quiero asesoría para un pedido.');
   }
 
   onClick(): void {

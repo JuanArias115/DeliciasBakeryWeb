@@ -32,13 +32,13 @@ const PRODUCT_IMAGES = {
 } as const;
 
 export const PRODUCT_CATEGORY_LABELS = {
-  'cheesecakes-tiramisu': 'Cheesecakes y tiramisu',
+  'cheesecakes-tiramisu': 'Cheesecakes y tiramisú',
   brownies: 'Brownies',
-  'tortas-mini-cakes': 'Tortas y mini cakes',
-  'postres-detalles': 'Postres y detalles',
+  'tortas-mini-cakes': 'Tortas y Mini Cakes',
+  'postres-detalles': 'Postres y Detalles',
   'fechas-especiales': 'Fechas especiales',
   desayunos: 'Desayunos',
-  'linea-fit': 'Linea fit',
+  'linea-fit': 'Línea Fit',
   catering: 'Catering y mesas de postres'
 } as const;
 
@@ -54,7 +54,7 @@ export const PRODUCT_CATEGORIES: { value: Product['category']; label: string }[]
 ];
 
 export const OCCASIONS = [
-  { value: 'cumpleanos', label: 'Cumpleanos' },
+  { value: 'cumpleanos', label: 'Cumpleaños' },
   { value: 'aniversarios', label: 'Aniversarios' },
   { value: 'amor-amistad', label: 'Amor y amistad' },
   { value: 'infantil', label: 'Infantil' },
@@ -72,18 +72,18 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'aniversarios', 'amor-amistad', 'fechas-especiales'],
     description: 'Ideal para celebrar, compartir o sorprender con un detalle especial.',
     details: [
-      'Sabores clasicos: frutos rojos, maracuya, fresa, mora, limon y arequipe.',
-      'Sabores premium (+$7.000): arandanos, Milo, Chocoramo y mix con Hersheys, M&M, Oreo o Milo.'
+      'Sabores clásicos: frutos rojos, maracuyá, fresa, mora, limón y arequipe.',
+      'Sabores premium (+$7.000): arándanos, Milo, Chocoramo y mix con Hershey’s, M&M, Oreo o Milo.'
     ],
     priceFrom: 30000,
     sizes: [
-      { id: 'corazon', label: 'Corazon', price: 30000, serves: '3 porciones aprox.' },
+      { id: 'corazon', label: 'Corazón', price: 30000, serves: '3 porciones aprox.' },
       { id: 'mediano', label: 'Mediano', price: 36000, serves: '16 cm / 8-10 porciones' },
       { id: 'grande', label: 'Grande', price: 45000, serves: '22 cm / 12-14 porciones' }
     ],
     defaultSizeId: 'mediano',
     images: [PRODUCT_IMAGES.cheesecakeMedium, PRODUCT_IMAGES.cheesecakeHeart, PRODUCT_IMAGES.cheesecakeLarge],
-    tags: ['Clasico', 'Personalizable'],
+    tags: ['Clásico', 'Personalizable'],
     featured: true
   },
   {
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     slug: 'new-york-cheesecake',
     category: 'cheesecakes-tiramisu',
     occasion: ['cumpleanos', 'aniversarios', 'fechas-especiales'],
-    description: 'Cheesecake mas alto y cremoso, con textura densa y horneado clasico.',
+    description: 'Cheesecake más alto y cremoso, con textura densa y horneado clásico.',
     details: ['Decorado con frutos rojos para equilibrar su intensidad y dar un acabado premium.'],
     priceFrom: 46000,
     sizes: [
@@ -100,10 +100,10 @@ export const PRODUCTS: Product[] = [
     ],
     defaultSizeId: '16cm',
     images: [PRODUCT_IMAGES.cheesecakeMedium],
-    tags: ['Horneado clasico', 'Cremoso']
+    tags: ['Horneado clásico', 'Cremoso']
   },
   {
-    name: 'Tiramisu',
+    name: 'Tiramisú',
     slug: 'tiramisu',
     category: 'cheesecakes-tiramisu',
     occasion: ['cumpleanos', 'aniversarios', 'empresarial-eventos'],
@@ -125,27 +125,27 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'fechas-especiales'],
     description: 'Brownie melcochudo y suave, ideal para compartir o celebrar.',
     details: [
-      'Toppings: azucar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazon.',
-      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+      'Toppings: azúcar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazón.',
+      'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
     priceFrom: 36000,
-    sizes: [{ id: 'estandar', label: 'Tamano estandar', price: 36000 }],
+    sizes: [{ id: 'estandar', label: 'Tamaño estándar', price: 36000 }],
     defaultSizeId: 'estandar',
     images: [PRODUCT_IMAGES.brownieRound],
     tags: ['Melcochudo', 'Personalizable']
   },
   {
-    name: 'Brownie corazon',
+    name: 'Brownie corazón',
     slug: 'brownie-corazon',
     category: 'brownies',
     occasion: ['amor-amistad', 'aniversarios', 'fechas-especiales'],
-    description: 'Brownie en forma de corazon, perfecto para sorprender con un detalle especial.',
+    description: 'Brownie en forma de corazón, perfecto para sorprender con un detalle especial.',
     details: [
-      'Toppings: azucar pulverizada o chocolate rojo con chispas de corazon.',
-      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+      'Toppings: azúcar pulverizada o chocolate rojo con chispas de corazón.',
+      'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
     priceFrom: 36000,
-    sizes: [{ id: 'corazon', label: 'Corazon', price: 36000 }],
+    sizes: [{ id: 'corazon', label: 'Corazón', price: 36000 }],
     defaultSizeId: 'corazon',
     images: [PRODUCT_IMAGES.brownieHeart],
     tags: ['Romantico', 'Especial']
@@ -158,8 +158,8 @@ export const PRODUCTS: Product[] = [
     description: 'Brownie en cubos, perfecto para compartir en reuniones o celebraciones.',
     details: [
       '36 unidades aprox.',
-      'Toppings: azucar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazon.',
-      'Adicion personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
+      'Toppings: azúcar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazón.',
+      'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
     priceFrom: 46000,
     sizes: [{ id: 'x36', label: 'Caja x36', price: 46000, serves: '36 unidades aprox.' }],
@@ -173,13 +173,13 @@ export const PRODUCTS: Product[] = [
     slug: 'tortas-personalizadas-mini-cakes',
     category: 'tortas-mini-cakes',
     occasion: ['cumpleanos', 'aniversarios', 'infantil', 'fechas-especiales'],
-    description: 'Creamos tortas disenadas especialmente para cada ocasion, segun tu idea o referencia.',
+    description: 'Creamos tortas diseñadas especialmente para cada ocasión, según tu idea o referencia.',
     details: [
       'Mini cakes desde $36.000.',
-      'Tamanos disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
+      'Tamaños disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
       'Sabores: vainilla, chocolate y red velvet.',
-      'Rellenos: Nutella, arequipe, frutos rojos y maracuya.',
-      'El valor final depende del tamano, diseno y nivel de decoracion.'
+      'Rellenos: Nutella, arequipe, frutos rojos y maracuyá.',
+      'El valor final depende del tamaño, diseño y nivel de decoración.'
     ],
     priceFrom: 36000,
     images: [PRODUCT_IMAGES.customCake],
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
     description: 'Bizcochos esponjosos con crema chantilly del color que desees.',
     details: [
       'Sabores: vainilla, red velvet, chocolate u otro sabor especial.',
-      'Tambien disponibles en amapola, arandanos, naranja y zanahoria.',
+      'También disponibles en amapola, arándanos, naranja y zanahoria.',
       'Puedes indicar el color de la crema y el estilo en el mensaje adicional.'
     ],
     priceFrom: 26000,
@@ -214,14 +214,14 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'empresarial-eventos'],
     description: 'Cookies gruesas, suaves por dentro y ligeramente crujientes por fuera.',
     details: [
-      'Sabores: chocochips, Nutella, Oreo, galleta Milo, Hersheys blanca, pistacho, birthday cake, red velvet, nueces y almendras.',
-      'Tip: calientala 10 a 15 segundos antes de comer para que el centro quede mas suave.'
+      'Sabores: chocochips, Nutella, Oreo, galleta Milo, Hershey’s blanca, pistacho, birthday cake, red velvet, nueces y almendras.',
+      'Tip: caliéntala 10 a 15 segundos antes de comer para que el centro quede más suave.'
     ],
     priceFrom: 36000,
     sizes: [{ id: 'x6', label: 'Caja x6', price: 36000 }],
     defaultSizeId: 'x6',
     images: [PRODUCT_IMAGES.cookiesNewYork],
-    tags: ['Recien horneadas', 'Viral']
+    tags: ['Recién horneadas', 'Viral']
   },
   {
     name: 'Crookie',
@@ -252,13 +252,13 @@ export const PRODUCTS: Product[] = [
     slug: 'chocofresas-y-rosas',
     category: 'fechas-especiales',
     occasion: ['amor-amistad', 'aniversarios', 'cumpleanos', 'fechas-especiales'],
-    description: 'Bouquet en forma de corazon con fresas cubiertas de chocolate y rosas naturales.',
+    description: 'Bouquet en forma de corazón con fresas cubiertas de chocolate y rosas naturales.',
     details: ['Incluye 12 rosas y 12 chocofresas.'],
     priceFrom: 110000,
-    sizes: [{ id: 'bouquet', label: 'Bouquet corazon', price: 110000, note: 'Incluye 12 rosas y 12 chocofresas' }],
+    sizes: [{ id: 'bouquet', label: 'Bouquet corazón', price: 110000, note: 'Incluye 12 rosas y 12 chocofresas' }],
     defaultSizeId: 'bouquet',
     images: [PRODUCT_IMAGES.chocoFresas],
-    tags: ['Regalo especial', 'Romantico'],
+    tags: ['Regalo especial', 'Romántico'],
     featured: true
   }
 ];

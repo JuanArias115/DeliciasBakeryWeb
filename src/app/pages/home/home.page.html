@@ -1,35 +1,35 @@
 <section class="hero container section-space">
   <div class="hero-copy">
-    <p class="eyebrow">Pasteleria por encargo</p>
+    <p class="eyebrow">Pastelería por encargo</p>
     <h1>
       <span class="hero-title-top">Delicias Bakery:</span>
       <span class="hero-title-bottom hero-title-gap">detalles que elevan</span>
-      <span class="hero-title-bottom">cada celebracion</span>
+      <span class="hero-title-bottom">cada celebración</span>
     </h1>
     <p>
-      Endulzamos momentos especiales en Chia y Cajica con detalles personalizados para cada ocasion,
+      Endulzamos momentos especiales en Chía y Cajicá con detalles personalizados para cada ocasión,
       opciones accesibles y una experiencia cercana, hecha con amor.
     </p>
     <div class="hero-actions">
       <ui-button iconLeft="whatsapp" [href]="heroWhatsAppLink()" target="_blank" (click)="trackWhatsApp('home_hero')">
         Pedir por WhatsApp
       </ui-button>
-      <ui-button variant="secondary" iconLeft="cart" routerLink="/productos">Ver catalogo</ui-button>
+      <ui-button variant="secondary" iconLeft="cart" routerLink="/productos">Ver catálogo</ui-button>
     </div>
-    <small>Pedidos por encargo, minimo 24 horas de anticipacion.</small>
+    <small>Pedidos por encargo, mínimo 24 horas de anticipación.</small>
   </div>
 
   <div class="hero-aside">
     <ui-card [hoverable]="false">
       <h2 class="location-title">
         <ui-icon name="location" size="sm" />
-        <span>Chia-Cajica</span>
+        <span>Chía-Cajicá</span>
       </h2>
-      <p>Atencion cercana y personalizada para fechas especiales, regalos y eventos.</p>
+      <p>Atención cercana y personalizada para fechas especiales, regalos y eventos.</p>
       <ul>
         <li>Entregas a domicilio (pedidos bajo encargo)</li>
-        <li>Personalizacion de diseno</li>
-        <li>Respuesta rapida por WhatsApp</li>
+        <li>Personalización de diseño</li>
+        <li>Respuesta rápida por WhatsApp</li>
       </ul>
     </ui-card>
   </div>
@@ -39,7 +39,7 @@
   <ui-section-title
     eyebrow="Recomendados"
     title="Destacados de la semana"
-    description="Los productos mas pedidos por nuestros clientes en Chia y Cajica."
+    description="Los productos más pedidos por nuestros clientes en Chía y Cajicá."
   />
 
   <div class="product-grid">
@@ -71,7 +71,7 @@
 </section>
 
 <section class="container section-space">
-  <ui-section-title eyebrow="Proceso" title="Como pedir" description="Un flujo simple para cotizar y confirmar." />
+  <ui-section-title eyebrow="Proceso" title="Cómo pedir" description="Un flujo simple para cotizar y confirmar." />
 
   <div class="steps">
     @for (step of steps; track step; let i = $index) {
@@ -87,29 +87,29 @@
   <ui-section-title
     eyebrow="Pedidos"
     title="Pedidos y disponibilidad"
-    description="Trabajamos 100% por encargo y organizamos cada entrega segun agenda."
+    description="Trabajamos 100% por encargo y organizamos cada entrega según agenda."
   />
 
   <div class="coverage-grid">
     <ui-card [hoverable]="false">
-      <h3>Como funciona</h3>
+      <h3>Cómo funciona</h3>
       <p>Pedidos 100% por encargo. Se responden por orden de llegada.</p>
-      <p>Te recomendamos agendar con anticipacion para asegurar tu fecha.</p>
+      <p>Te recomendamos agendar con anticipación para asegurar tu fecha.</p>
     </ui-card>
     <ui-card [hoverable]="false">
       <h3>Agenda y entregas</h3>
-      <p>Solicita con minimo 24 horas de anticipacion.</p>
-      <p>Atendemos Chia y Cajica con entregas locales bajo encargo.</p>
+      <p>Solicita con mínimo 24 horas de anticipación.</p>
+      <p>Atendemos Chía y Cajicá con entregas locales bajo encargo.</p>
     </ui-card>
   </div>
 </section>
 
 <section class="container section-space">
-  <ui-section-title eyebrow="Clientes felices" title="Resenas reales" description="Lo que dicen quienes ya probaron." />
+  <ui-section-title eyebrow="Clientes felices" title="Reseñas reales" description="Lo que dicen quienes ya probaron." />
 
   <ui-card [hoverable]="false">
     <div class="review-card">
-      <p class="stars" aria-label="Calificacion">{{ '*****'.slice(0, review.rating) }}</p>
+      <p class="stars" aria-label="Calificación">{{ '*****'.slice(0, review.rating) }}</p>
       <p class="review-text">"{{ review.text }}"</p>
       <p class="review-meta">{{ review.name }} - {{ review.date | date: 'longDate' : undefined : 'es-CO' }}</p>
       <div class="review-actions">
