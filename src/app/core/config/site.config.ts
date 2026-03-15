@@ -23,7 +23,6 @@ export const navigationLinks = [
   { label: 'Inicio', path: '/inicio' },
   { label: 'Productos', path: '/productos' },
   { label: 'Celebraciones', path: '/celebraciones' },
-  { label: 'Galería', path: '/galeria' },
   { label: 'Reseñas', path: '/resenas' },
   { label: 'Contacto', path: '/contacto' }
 ] as const;
