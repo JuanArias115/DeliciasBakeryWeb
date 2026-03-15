@@ -174,8 +174,7 @@ export const PRODUCTS: Product[] = [
       PRODUCT_IMAGES.customCake15,
       PRODUCT_IMAGES.customCake13,
       PRODUCT_IMAGES.customCake12,
-      PRODUCT_IMAGES.customCake15b,
-      PRODUCT_IMAGES.customCake
+      PRODUCT_IMAGES.customCake15b
     ],
     tags: ['Personalizadas', 'Sobre pedido'],
     featured: true
