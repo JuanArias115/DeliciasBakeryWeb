@@ -14,6 +14,26 @@ export interface ProductSizeOption {
   price: number;
   serves?: string;
   note?: string;
+  image?: string;
+}
+
+export interface ProductFlavorOption {
+  id: string;
+  label: string;
+  surcharge?: number;
+  tier?: 'classic' | 'premium';
+}
+
+export interface ProductToppingOption {
+  id: string;
+  label: string;
+  surcharge?: number;
+}
+
+export interface ProductMixOption {
+  id: string;
+  label: string;
+  surcharge?: number;
 }
 
 export interface Product {
@@ -23,6 +43,13 @@ export interface Product {
   occasion: string[];
   description: string;
   details?: string[];
+  flavorOptions?: ProductFlavorOption[];
+  defaultFlavorId?: string;
+  toppingOptions?: ProductToppingOption[];
+  defaultToppingId?: string;
+  mixOptions?: ProductMixOption[];
+  mixTotal?: number;
+  mixLabel?: string;
   priceFrom?: number;
   sizes?: ProductSizeOption[];
   defaultSizeId?: string;

@@ -19,6 +19,7 @@ export class ButtonComponent {
   @Input() iconLeft?: IconName;
   @Input() iconRight?: IconName;
   @Input() iconSize?: 'sm' | 'md' | 'lg' | number;
+  @Input() disabled = false;
 
   get classes(): string {
     return `btn btn-${this.variant} btn-${this.size}`;

@@ -9,7 +9,7 @@
       <div class="media-col">
         <ui-product-image
           variant="detail"
-          [src]="productImageDetail(product.images[0])"
+          [src]="productImageDetail(displayImage)"
           [alt]="'Foto principal de ' + product.name"
           [width]="1400"
           [height]="1050"
@@ -65,6 +65,95 @@
               </section>
             }
 
+            @if (product.flavorOptions?.length) {
+              <section class="flavor-section" aria-label="Selecciona sabor">
+                <h3>Sabor</h3>
+                <label class="flavor-field">
+                  <span class="sr-only">Selecciona sabor</span>
+                  <select [formControl]="flavorId">
+                    @if (classicFlavors.length) {
+                      <optgroup label="Sabores clásicos">
+                        @for (flavor of classicFlavors; track flavor.id) {
+                          <option [value]="flavor.id">{{ flavor.label }}</option>
+                        }
+                      </optgroup>
+                    }
+                    @if (premiumFlavors.length) {
+                      <optgroup label="Sabores premium (+$7.000)">
+                        @for (flavor of premiumFlavors; track flavor.id) {
+                          <option [value]="flavor.id">{{ flavor.label }}</option>
+                        }
+                      </optgroup>
+                    }
+                  </select>
+                </label>
+                @if (selectedFlavor?.surcharge) {
+                  <small>Este sabor tiene un recargo de {{ selectedFlavor?.surcharge | currency: 'COP' : 'symbol' : '1.0-0' }}.</small>
+                }
+              </section>
+            }
+
+            @if (product.toppingOptions?.length) {
+              <section class="flavor-section" aria-label="Selecciona topping">
+                <h3>Topping</h3>
+                <label class="flavor-field">
+                  <span class="sr-only">Selecciona topping</span>
+                  <select [formControl]="toppingId">
+                    @for (topping of product.toppingOptions; track topping.id) {
+                      <option [value]="topping.id">{{ topping.label }}</option>
+                    }
+                  </select>
+                </label>
+              </section>
+            }
+
+            @if (product.mixOptions?.length) {
+              <section class="mix-section" aria-label="Selecciona sabores de la caja">
+                <div class="mix-head">
+                  <div>
+                    <h3>{{ product.mixLabel || 'Selección de sabores' }}</h3>
+                    <p>Elige {{ mixTotalRequired }} galletas y combina los sabores como prefieras.</p>
+                  </div>
+                  <span class="mix-counter">{{ currentMixCount }}/{{ mixTotalRequired }}</span>
+                </div>
+
+                <div class="mix-grid">
+                  @for (option of product.mixOptions; track option.id) {
+                    <div class="mix-row">
+                      <span class="mix-label">{{ option.label }}</span>
+                      <div class="mix-controls">
+                        <button
+                          type="button"
+                          class="mix-btn"
+                          (click)="decrementMix(option.id)"
+                          [disabled]="getMixCount(option.id) === 0"
+                          [attr.aria-label]="'Quitar una unidad de ' + option.label"
+                        >
+                          -
+                        </button>
+                        <span class="mix-value">{{ getMixCount(option.id) }}</span>
+                        <button
+                          type="button"
+                          class="mix-btn"
+                          (click)="incrementMix(option.id)"
+                          [disabled]="currentMixCount >= mixTotalRequired"
+                          [attr.aria-label]="'Agregar una unidad de ' + option.label"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  }
+                </div>
+
+                @if (mixSummary) {
+                  <small>Seleccionado: {{ mixSummary }}</small>
+                } @else {
+                  <small>Debes completar {{ mixTotalRequired }} galletas para poder pedir.</small>
+                }
+              </section>
+            }
+
             <ui-input id="qty" label="Cantidad" [control]="quantity" placeholder="1" />
             <ui-input id="date" type="date" label="Fecha de entrega" [control]="date" />
             <ui-input id="address" label="Dirección" [control]="address" placeholder="Barrio y dirección" />
@@ -76,7 +165,7 @@
               placeholder="Ejemplo: dedicatoria, colores, alergias"
             />
 
-            <ui-button iconLeft="cart" [href]="orderLink" target="_blank" (click)="trackClick()">
+            <ui-button iconLeft="cart" [href]="orderLink" target="_blank" [disabled]="!canOrder" (click)="trackClick()">
               Pedir por WhatsApp
             </ui-button>
             <small>Pedidos por encargo, mínimo 24 horas de anticipación.</small>

@@ -1,5 +1,12 @@
 @if (href) {
-  <a [href]="href" [target]="target" [class]="classes" rel="noopener noreferrer">
+  <a
+    [attr.href]="disabled ? null : href"
+    [target]="disabled ? null : target"
+    [class]="classes"
+    [attr.aria-disabled]="disabled ? 'true' : null"
+    [attr.tabindex]="disabled ? '-1' : null"
+    rel="noopener noreferrer"
+  >
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }
@@ -9,7 +16,7 @@
     }
   </a>
 } @else if (routerLink) {
-  <a [routerLink]="routerLink" [class]="classes">
+  <a [routerLink]="disabled ? null : routerLink" [class]="classes" [attr.aria-disabled]="disabled ? 'true' : null">
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }
@@ -19,7 +26,7 @@
     }
   </a>
 } @else {
-  <button [type]="type" [class]="classes">
+  <button [type]="type" [class]="classes" [disabled]="disabled">
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }

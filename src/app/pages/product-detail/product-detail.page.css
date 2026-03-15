@@ -78,6 +78,124 @@ small {
   margin: 0;
 }
 
+.flavor-section {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.flavor-section h3 {
+  margin: 0;
+}
+
+.flavor-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.flavor-field select {
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font: inherit;
+  padding: 0.85rem 0.95rem;
+}
+
+.flavor-field select:focus-visible {
+  border-color: var(--color-primary-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, white);
+  outline: none;
+}
+
+.mix-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mix-head {
+  align-items: start;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.mix-head h3,
+.mix-head p {
+  margin: 0;
+}
+
+.mix-head p {
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+.mix-counter {
+  align-items: center;
+  background: color-mix(in srgb, var(--color-primary) 15%, white);
+  border-radius: 999px;
+  color: var(--color-primary-strong);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 800;
+  justify-content: center;
+  min-width: 3.3rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.mix-grid {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.mix-row {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  padding: 0.75rem 0.85rem;
+}
+
+.mix-label {
+  font-weight: 600;
+}
+
+.mix-controls {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.mix-btn {
+  align-items: center;
+  background: color-mix(in srgb, var(--color-primary) 12%, white);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-coffee);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.mix-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.mix-value {
+  font-weight: 800;
+  min-width: 1ch;
+  text-align: center;
+}
+
 .size-grid {
   display: grid;
   gap: 0.55rem;

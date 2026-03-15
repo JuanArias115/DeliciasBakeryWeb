@@ -5,6 +5,9 @@ import { siteConfig } from '../config/site.config';
 export interface WhatsAppOrderPayload {
   product?: string;
   size?: string;
+  flavor?: string;
+  topping?: string;
+  mix?: string;
   quantity?: string;
   date?: string;
   address?: string;
@@ -20,6 +23,9 @@ export class WhatsAppService {
       'Hola Delicias Bakery, quiero hacer un pedido:',
       payload.product ? `Producto: ${payload.product}` : '',
       payload.size ? `Tamaño: ${payload.size}` : '',
+      payload.flavor ? `Sabor: ${payload.flavor}` : '',
+      payload.topping ? `Topping: ${payload.topping}` : '',
+      payload.mix ? `Selección: ${payload.mix}` : '',
       payload.quantity ? `Cantidad: ${payload.quantity}` : '',
       payload.date ? `Fecha de entrega: ${payload.date}` : '',
       payload.address ? `Dirección: ${payload.address}` : '',

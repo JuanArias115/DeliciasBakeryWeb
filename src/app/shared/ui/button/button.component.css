@@ -26,6 +26,15 @@
   transform: translateY(-1px);
 }
 
+.btn[aria-disabled='true'],
+.btn:disabled {
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.55;
+  pointer-events: none;
+  transform: none;
+}
+
 .btn-md {
   font-size: 0.95rem;
   padding: 0.8rem 1.2rem;

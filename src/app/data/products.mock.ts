@@ -7,6 +7,8 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484798/cheesecake-frutos-rojos-mediano-01_nezkdv.png',
   cheesecakeLarge:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/cheesecake-maracuya-grande-01_plmfdr.png',
+  cheesecakeNewYork:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/cheesecake-frutos-rojos-newYork-01_rbfm0s.png',
   tiramisu:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484804/postres-tiramisu-01_vmynj7.png',
   brownieRound:
@@ -64,6 +66,54 @@ export const OCCASIONS = [
 
 export type ProductOccasion = (typeof OCCASIONS)[number]['value'];
 
+const CHEESECAKE_FLAVORS = [
+  { id: 'frutos-rojos', label: 'Frutos Rojos', tier: 'classic' as const },
+  { id: 'maracuya', label: 'Maracuyá', tier: 'classic' as const },
+  { id: 'fresa', label: 'Fresa', tier: 'classic' as const },
+  { id: 'mora', label: 'Mora', tier: 'classic' as const },
+  { id: 'limon', label: 'Limón', tier: 'classic' as const },
+  { id: 'arequipe', label: 'Arequipe', tier: 'classic' as const },
+  { id: 'nutella', label: 'Nutella', tier: 'classic' as const },
+  { id: 'lulo', label: 'Lulo', tier: 'classic' as const },
+  { id: 'mango', label: 'Mango', tier: 'classic' as const },
+  { id: 'durazno', label: 'Durazno', tier: 'classic' as const },
+  { id: 'oreo', label: 'Oreo', tier: 'classic' as const },
+  { id: 'arandanos', label: 'Arándanos', tier: 'premium' as const, surcharge: 7000 },
+  { id: 'milo', label: 'Milo', tier: 'premium' as const, surcharge: 7000 },
+  { id: 'chocoramo', label: 'Chocoramo', tier: 'premium' as const, surcharge: 7000 },
+  {
+    id: 'mix',
+    label: 'Mix (Hershey’s, M&M, Oreo o Milo)',
+    tier: 'premium' as const,
+    surcharge: 7000
+  }
+];
+
+const BROWNIE_TOPPINGS = [
+  { id: 'azucar', label: 'Azúcar pulverizada (clásico)' },
+  { id: 'arequipe-oreo', label: 'Arequipe y Oreo' },
+  { id: 'chocolate-blanco', label: 'Chocolate blanco + chispas de corazón' },
+  { id: 'chocolate-oscuro', label: 'Chocolate oscuro + chispas de corazón' },
+  { id: 'chocolate-rojo', label: 'Chocolate rojo + chispas de corazón' }
+] as const;
+
+const BROWNIE_HEART_TOPPINGS = [
+  { id: 'azucar', label: 'Azúcar pulverizada (clásico)' },
+  { id: 'chocolate-rojo', label: 'Chocolate rojo + chispas de corazón' }
+] as const;
+
+const COOKIE_MIX_FLAVORS = [
+  { id: 'chocochips', label: 'Chocochips' },
+  { id: 'nutella', label: 'Nutella' },
+  { id: 'oreo', label: 'Oreo' },
+  { id: 'galleta-milo', label: 'Galleta Milo' },
+  { id: 'hersheys-blanca', label: 'Hershey’s Blanca' },
+  { id: 'pistacho', label: 'Pistacho' },
+  { id: 'birthday-cake', label: 'Birthday Cake' },
+  { id: 'red-velvet', label: 'Red Velvet' },
+  { id: 'nueces-almendras', label: 'Nueces y Almendras' }
+] as const;
+
 export const PRODUCTS: Product[] = [
   {
     name: 'Cheesecake tradicional',
@@ -72,14 +122,34 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'aniversarios', 'amor-amistad', 'fechas-especiales'],
     description: 'Ideal para celebrar, compartir o sorprender con un detalle especial.',
     details: [
-      'Sabores clásicos: frutos rojos, maracuyá, fresa, mora, limón y arequipe.',
-      'Sabores premium (+$7.000): arándanos, Milo, Chocoramo y mix con Hershey’s, M&M, Oreo o Milo.'
+      'Elige el sabor en el desplegable antes de pedir.',
+      'Sabores premium con recargo de $7.000.'
     ],
+    flavorOptions: CHEESECAKE_FLAVORS,
+    defaultFlavorId: 'frutos-rojos',
     priceFrom: 30000,
     sizes: [
-      { id: 'corazon', label: 'Corazón', price: 30000, serves: '3 porciones aprox.' },
-      { id: 'mediano', label: 'Mediano', price: 36000, serves: '16 cm / 8-10 porciones' },
-      { id: 'grande', label: 'Grande', price: 45000, serves: '22 cm / 12-14 porciones' }
+      {
+        id: 'corazon',
+        label: 'Corazón',
+        price: 30000,
+        serves: '3 porciones aprox.',
+        image: PRODUCT_IMAGES.cheesecakeHeart
+      },
+      {
+        id: 'mediano',
+        label: 'Mediano',
+        price: 36000,
+        serves: '16 cm / 8-10 porciones',
+        image: PRODUCT_IMAGES.cheesecakeMedium
+      },
+      {
+        id: 'grande',
+        label: 'Grande',
+        price: 45000,
+        serves: '22 cm / 12-14 porciones',
+        image: PRODUCT_IMAGES.cheesecakeLarge
+      }
     ],
     defaultSizeId: 'mediano',
     images: [PRODUCT_IMAGES.cheesecakeMedium, PRODUCT_IMAGES.cheesecakeHeart, PRODUCT_IMAGES.cheesecakeLarge],
@@ -92,14 +162,19 @@ export const PRODUCTS: Product[] = [
     category: 'cheesecakes-tiramisu',
     occasion: ['cumpleanos', 'aniversarios', 'fechas-especiales'],
     description: 'Cheesecake más alto y cremoso, con textura densa y horneado clásico.',
-    details: ['Decorado con frutos rojos para equilibrar su intensidad y dar un acabado premium.'],
+    details: [
+      'Elige el sabor en el desplegable antes de pedir.',
+      'Sabores premium con recargo de $7.000.'
+    ],
+    flavorOptions: CHEESECAKE_FLAVORS,
+    defaultFlavorId: 'frutos-rojos',
     priceFrom: 46000,
     sizes: [
       { id: '16cm', label: '16 cm', price: 46000, serves: '8 porciones' },
       { id: '22cm', label: '22 cm', price: 68000, serves: '15 porciones' }
     ],
     defaultSizeId: '16cm',
-    images: [PRODUCT_IMAGES.cheesecakeMedium],
+    images: [PRODUCT_IMAGES.cheesecakeNewYork],
     tags: ['Horneado clásico', 'Cremoso']
   },
   {
@@ -125,9 +200,11 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'fechas-especiales'],
     description: 'Brownie melcochudo y suave, ideal para compartir o celebrar.',
     details: [
-      'Toppings: azúcar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazón.',
+      'Elige el topping en el desplegable antes de pedir.',
       'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
+    toppingOptions: [...BROWNIE_TOPPINGS],
+    defaultToppingId: 'azucar',
     priceFrom: 36000,
     sizes: [{ id: 'estandar', label: 'Tamaño estándar', price: 36000 }],
     defaultSizeId: 'estandar',
@@ -141,9 +218,11 @@ export const PRODUCTS: Product[] = [
     occasion: ['amor-amistad', 'aniversarios', 'fechas-especiales'],
     description: 'Brownie en forma de corazón, perfecto para sorprender con un detalle especial.',
     details: [
-      'Toppings: azúcar pulverizada o chocolate rojo con chispas de corazón.',
+      'Elige el topping en el desplegable antes de pedir.',
       'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
+    toppingOptions: [...BROWNIE_HEART_TOPPINGS],
+    defaultToppingId: 'azucar',
     priceFrom: 36000,
     sizes: [{ id: 'corazon', label: 'Corazón', price: 36000 }],
     defaultSizeId: 'corazon',
@@ -158,9 +237,11 @@ export const PRODUCTS: Product[] = [
     description: 'Brownie en cubos, perfecto para compartir en reuniones o celebraciones.',
     details: [
       '36 unidades aprox.',
-      'Toppings: azúcar pulverizada, arequipe y Oreo, chocolate blanco, oscuro o rojo con chispas de corazón.',
+      'Elige el topping en el desplegable antes de pedir.',
       'Adición personalizada +$5.000: letras en chocolate y mensaje corto de hasta 15 letras.'
     ],
+    toppingOptions: [...BROWNIE_TOPPINGS],
+    defaultToppingId: 'azucar',
     priceFrom: 46000,
     sizes: [{ id: 'x36', label: 'Caja x36', price: 46000, serves: '36 unidades aprox.' }],
     defaultSizeId: 'x36',
@@ -214,12 +295,15 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'empresarial-eventos'],
     description: 'Cookies gruesas, suaves por dentro y ligeramente crujientes por fuera.',
     details: [
-      'Sabores: chocochips, Nutella, Oreo, galleta Milo, Hershey’s blanca, pistacho, birthday cake, red velvet, nueces y almendras.',
+      'Elige 4 galletas y combina los sabores como prefieras.',
       'Tip: caliéntala 10 a 15 segundos antes de comer para que el centro quede más suave.'
     ],
     priceFrom: 36000,
-    sizes: [{ id: 'x6', label: 'Caja x6', price: 36000 }],
-    defaultSizeId: 'x6',
+    sizes: [{ id: 'x4', label: 'Caja x4', price: 36000 }],
+    defaultSizeId: 'x4',
+    mixOptions: [...COOKIE_MIX_FLAVORS],
+    mixTotal: 4,
+    mixLabel: 'Sabores de tu caja',
     images: [PRODUCT_IMAGES.cookiesNewYork],
     tags: ['Recién horneadas', 'Viral']
   },
