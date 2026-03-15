@@ -52,8 +52,8 @@ Permanent code changes:
 How it works:
 
 - the main Nginx container still serves Delicias Bakery on `/`
-- requests to `/bakeryFlow/` are proxied to `http://bakeryflow-frontend`
-- requests to `/bakeryFlow/api/` are proxied to `http://bakeryflow-backend:8086`
+- requests to `/bakeryFlow/` are proxied to `http://bakeryflow-frontend:8085/`
+- requests to `/bakeryFlow/api/` are proxied to `http://bakeryflow-backend:8086/api/`
 - name resolution works because the `web` container joins the `bakeryflow_internal` network used by BakeryFlow
 
 Deployment note:
