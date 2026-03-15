@@ -23,6 +23,7 @@
 }
 
 .media-col.is-carousel {
+  justify-items: center;
   position: relative;
 }
 
@@ -252,15 +253,16 @@ small {
   flex-wrap: wrap;
   gap: 0.45rem;
   justify-content: center;
+  width: min(100%, 32rem);
 }
 
 .carousel-controls {
   display: flex;
   justify-content: space-between;
-  left: 0.9rem;
+  left: max(0.9rem, calc(50% - 16rem));
   pointer-events: none;
   position: absolute;
-  right: 0.9rem;
+  right: max(0.9rem, calc(50% - 16rem));
   top: calc(50% - 1.3rem);
 }
 

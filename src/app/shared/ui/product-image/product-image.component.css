@@ -49,6 +49,10 @@
   justify-content: center;
 }
 
+.product-image-detail.frame-portrait {
+  aspect-ratio: 4 / 5;
+}
+
 .product-image-detail img {
   object-fit: cover;
   object-position: center center;
@@ -63,6 +67,19 @@
 
 .product-image-detail.force-cover.is-portrait img {
   object-position: center 30%;
+}
+
+.product-image-detail.frame-portrait.force-cover img,
+.product-image-detail.frame-portrait.force-cover.is-portrait img,
+.product-image-detail.frame-portrait.force-cover.is-square img {
+  object-fit: cover;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.product-image-detail.frame-portrait.force-cover.is-portrait img {
+  object-position: center 18%;
 }
 
 .product-image-detail.is-portrait img {

@@ -11,6 +11,7 @@
           variant="detail"
           [src]="productImageDetail(displayImage)"
           [alt]="'Foto principal de ' + product.name"
+          [frame]="product.autoRotateImages ? 'portrait' : 'default'"
           [forceCover]="!!product.autoRotateImages"
           [width]="1400"
           [height]="1050"

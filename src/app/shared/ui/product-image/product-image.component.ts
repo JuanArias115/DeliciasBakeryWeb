@@ -9,6 +9,7 @@ export class ProductImageComponent {
   @Input({ required: true }) src = '';
   @Input({ required: true }) alt = '';
   @Input() variant: 'card' | 'detail' = 'card';
+  @Input() frame: 'default' | 'portrait' = 'default';
   @Input() forceCover = false;
   @Input() width = 600;
   @Input() height = 450;
@@ -18,7 +19,7 @@ export class ProductImageComponent {
 
   get classes(): string {
     const forceCoverClass = this.forceCover ? ' force-cover' : '';
-    return `product-image product-image-${this.variant} is-${this.orientation}${forceCoverClass}`;
+    return `product-image product-image-${this.variant} is-${this.orientation} frame-${this.frame}${forceCoverClass}`;
   }
 
   onLoad(event: Event): void {

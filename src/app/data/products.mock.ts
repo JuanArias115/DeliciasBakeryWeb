@@ -18,7 +18,7 @@ const PRODUCT_IMAGES = {
   brownieBites:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484802/postres-brownie-Bites-01_s1v38a.png',
   cupcakes:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484805/postres-cupcakes-01_ne1g3b.png',
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773596806/postres-cupcakes-01_dytgoo.jpg',
   cupcakesRedVelvet:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484805/postres-cupcakes-red-velvet-01_codoa5.png',
   cookiesNewYork:
