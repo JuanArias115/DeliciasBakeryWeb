@@ -29,7 +29,7 @@ export const REVIEWS: Review[] = [
     name: 'Nata',
     rating: 5,
     text: 'Wow Vale, qué belleza. Quedó igualita.',
-    date: '2026-11-15'
+    date: '2025-11-15'
   },
   {
     name: 'Andrea',
