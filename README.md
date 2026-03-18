@@ -58,6 +58,7 @@ How it works:
 - public Swagger is exposed at `https://deliciasbakery.shop/bakeryFlow/api/swagger`
 - `/bakeryFlow/api` redirects to `/bakeryFlow/api/` so the API root never falls through to the frontend
 - name resolution works because the `web` container joins the `bakeryflow_internal` network used by BakeryFlow
+- Nginx uses runtime DNS re-resolution for `bakeryflow-frontend` and `bakeryflow-backend`, so it keeps working after BakeryFlow recreates containers with new IPs
 - the `/bakeryFlow/api/` block must stay above `/bakeryFlow/` so API requests never fall through to the frontend
 
 Deployment note:
@@ -65,6 +66,7 @@ Deployment note:
 - BakeryFlow must already be deployed so the Docker network `bakeryflow_internal` exists on the VPS
 - verify it with `docker network inspect bakeryflow_internal`
 - redeploy order: first BakeryFlow, then DeliciasBakery if Nginx config changed
+- if BakeryFlow was redeployed and DeliciasBakery kept old upstream IPs in memory, redeploying DeliciasBakery reloads the main Nginx with the fresh dynamic proxy config
 - after redeploying this project, Nginx will route both apps from the same public port 80
 
 ## Running unit tests
