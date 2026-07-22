@@ -30,7 +30,7 @@ export default class CelebrationsPage implements OnInit, OnDestroy {
       title: 'Eventos & catering',
       description:
         'Creamos detalles y experiencias para eventos empresariales, celebraciones corporativas y encuentros especiales. Diseñamos opciones personalizadas para cumpleaños, reuniones, aniversarios y eventos sociales como 15 años, matrimonios y otras celebraciones. Cotiza tu idea y creamos el detalle perfecto para tu evento.',
-      ctaLabel: 'Cotizar por WhatsApp',
+      ctaLabel: 'WhatsApp',
       whatsappMessage: 'Hola Delicias Bakery, quiero cotizar una propuesta para eventos y catering.',
       images: [
         'https://res.cloudinary.com/dscih1izv/image/upload/v1784736576/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-01.jpg',
@@ -59,7 +59,7 @@ export default class CelebrationsPage implements OnInit, OnDestroy {
       title: 'Navidad',
       description:
         'Encuentra detalles especiales para regalar y compartir en Navidad. Contamos con opciones diseñadas para sorprender en esta época del año, desde desayunos y cajas especiales hasta anchetas navideñas ideales para regalos familiares, corporativos o entre amigos. Cotiza tus detalles navideños o tus anchetas para colaboradores.',
-      ctaLabel: 'Cotizar Navidad',
+      ctaLabel: 'WhatsApp',
       whatsappMessage: 'Hola Delicias Bakery, quiero cotizar detalles o anchetas navideñas.',
       images: [
         'https://res.cloudinary.com/dscih1izv/image/upload/v1784736777/deliciasbakery/web/categorias/celebraciones/navidad/navidad-01.jpg',
@@ -82,7 +82,7 @@ export default class CelebrationsPage implements OnInit, OnDestroy {
       title: 'Fechas especiales',
       description:
         'Detalles pensados para celebrar los momentos más importantes del año: Día de la Mujer, Día del Hombre, Día de la Madre, Día del Padre, San Valentín, Amor y Amistad, entre otros. Opciones perfectas para sorprender y celebrar a quienes más quieres. Cuéntanos tu idea y creamos el detalle perfecto.',
-      ctaLabel: 'Cuéntanos tu idea',
+      ctaLabel: 'WhatsApp',
       whatsappMessage: 'Hola Delicias Bakery, quiero cotizar un detalle para una fecha especial.',
       images: [
         'https://res.cloudinary.com/dscih1izv/image/upload/v1784736712/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-portada.jpg',
