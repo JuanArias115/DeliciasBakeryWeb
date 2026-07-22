@@ -131,7 +131,11 @@ export default class CelebrationsPage implements OnInit, OnDestroy {
   }
 
   imageUrl(image: string): string {
-    return cldSized(image, CLOUDINARY_WIDTHS.detail);
+    return cldSized(image, CLOUDINARY_WIDTHS.detail, {
+      aspectRatio: '5:4',
+      crop: 'fill',
+      gravity: 'auto'
+    });
   }
 
   currentImage(section: CelebrationSection): string {

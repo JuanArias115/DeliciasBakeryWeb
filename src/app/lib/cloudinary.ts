@@ -8,6 +8,9 @@ export const CLOUDINARY_WIDTHS = {
 type CloudinaryWidth = (typeof CLOUDINARY_WIDTHS)[keyof typeof CLOUDINARY_WIDTHS] | 1200;
 
 interface CloudinaryOptions {
+  aspectRatio?: string;
+  crop?: 'fill';
+  gravity?: 'auto';
   width?: CloudinaryWidth;
 }
 
@@ -40,6 +43,18 @@ function extractPublicId(imageOrPublicId: string): string {
 export function cldImage(publicId: string, opts: CloudinaryOptions = {}): string {
   const transformations = ['f_auto', 'q_auto'];
 
+  if (opts.crop) {
+    transformations.push(`c_${opts.crop}`);
+  }
+
+  if (opts.gravity) {
+    transformations.push(`g_${opts.gravity}`);
+  }
+
+  if (opts.aspectRatio) {
+    transformations.push(`ar_${opts.aspectRatio}`);
+  }
+
   if (opts.width) {
     transformations.push(`w_${opts.width}`);
   }
@@ -47,6 +62,6 @@ export function cldImage(publicId: string, opts: CloudinaryOptions = {}): string
   return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${transformations.join(',')}/${sanitizePublicId(publicId)}`;
 }
 
-export function cldSized(imageOrPublicId: string, width: CloudinaryWidth): string {
-  return cldImage(extractPublicId(imageOrPublicId), { width });
+export function cldSized(imageOrPublicId: string, width: CloudinaryWidth, opts: Omit<CloudinaryOptions, 'width'> = {}): string {
+  return cldImage(extractPublicId(imageOrPublicId), { ...opts, width });
 }
