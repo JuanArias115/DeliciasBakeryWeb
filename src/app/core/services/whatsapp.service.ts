@@ -9,6 +9,7 @@ export interface WhatsAppOrderPayload {
   coating?: string;
   topping?: string;
   mix?: string;
+  customizations?: string[];
   quantity?: string;
   date?: string;
   address?: string;
@@ -28,6 +29,7 @@ export class WhatsAppService {
       payload.coating ? `Cobertura: ${payload.coating}` : '',
       payload.topping ? `Topping: ${payload.topping}` : '',
       payload.mix ? `Selección: ${payload.mix}` : '',
+      ...(payload.customizations ?? []),
       payload.quantity ? `Cantidad: ${payload.quantity}` : '',
       payload.date ? `Fecha de entrega: ${payload.date}` : '',
       payload.address ? `Dirección: ${payload.address}` : '',

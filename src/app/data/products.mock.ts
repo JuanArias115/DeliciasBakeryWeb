@@ -17,20 +17,40 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484803/postres-brownie-corazon-01_ulwsls.png',
   brownieBites:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484802/postres-brownie-Bites-01_s1v38a.png',
-  cupcakes:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1773596806/postres-cupcakes-01_dytgoo.jpg',
-  cupcakesRedVelvet:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1773484805/postres-cupcakes-red-velvet-01_codoa5.png',
+  cupcakes01:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736450/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-01.jpg',
+  cupcakes02:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736454/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-02.jpg',
+  cupcakes03:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736457/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-03.jpg',
+  cupcakes04:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736463/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-04.jpg',
+  cupcakes05:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736466/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-05.jpg',
+  cupcakes06:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736469/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-06.jpg',
   cookiesNewYork:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484813/postres-cookies-new-york-01_ketfc6.png',
   cookiesClassic:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-cookies-01_eonnr6.png',
   chocoFresas:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-choco-fresas-rosas-01_txvvwq.png',
-  trufas:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1773592957/postres-trufas-01_hjgvlz.png',
+  trufas01:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736473/deliciasbakery/web/productos/trufas/trufas-01.jpg',
+  trufas02:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736477/deliciasbakery/web/productos/trufas/trufas-02.jpg',
   alfajores:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/postres-alfajores-01_lwr6zq.png',
+  desayunoPortada:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736548/deliciasbakery/web/categorias/desayunos/desayunos-portada.png',
+  desayuno01:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736557/deliciasbakery/web/categorias/desayunos/desayunos-01.jpg',
+  desayuno02:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736567/deliciasbakery/web/categorias/desayunos/desayunos-02.jpg',
+  tablaQuesos01:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736712/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-portada.jpg',
+  tablaQuesos02:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736718/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-01.jpg',
   customCake:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg',
   customCake02: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_02_k8hom6.jpg',
@@ -105,6 +125,47 @@ const CHEESECAKE_FLAVORS = [
   }
 ];
 
+const CUPCAKE_FLAVORS = [
+  { id: 'vanilla', label: 'Vanilla' },
+  { id: 'red-velvet', label: 'Red Velvet' },
+  { id: 'chocolate', label: 'Chocolate' }
+] as const;
+
+const BREAKFAST_EGG_OPTIONS = [
+  { id: 'pericos', label: 'Pericos' },
+  { id: 'rancheros', label: 'Rancheros' },
+  { id: 'jamon', label: 'Jamón' },
+  { id: 'queso', label: 'Queso' },
+  { id: 'maiz', label: 'Maíz' }
+] as const;
+
+const BREAKFAST_BASE_OPTIONS = [
+  { id: 'pancakes-corazon', label: 'Pancakes en forma de corazón' },
+  { id: 'pancakes-redondos', label: 'Pancakes redondos' },
+  { id: 'waffles', label: 'Waffles' }
+] as const;
+
+const BREAKFAST_TOPPING_OPTIONS = [
+  { id: 'nutella', label: 'Nutella' },
+  { id: 'mermelada', label: 'Mermelada' },
+  { id: 'miel', label: 'Miel' }
+] as const;
+
+const BREAKFAST_FIT_EXTRAS = [
+  { id: 'fit-base', label: 'Pancakes o waffles fit', surcharge: 4000 },
+  { id: 'proteina', label: 'Scoop de proteína', surcharge: 5000 }
+] as const;
+
+const BREAKFAST_ADDITIONS = [
+  { id: 'tinto', label: 'Tinto', surcharge: 3000 },
+  { id: 'cafe-con-leche', label: 'Café con leche', surcharge: 5000 },
+  { id: 'milo', label: 'Milo', surcharge: 5000 },
+  { id: 'chocolate', label: 'Chocolate', surcharge: 5000 },
+  { id: 'wrap', label: 'Wrap de jamón, queso, tomate y lechuga', surcharge: 12000 },
+  { id: 'cereal-yogurt', label: 'Cereal con yogurt', surcharge: 12000 },
+  { id: 'sandwich', label: 'Sándwich de jamón y queso', surcharge: 12000 }
+] as const;
+
 const BROWNIE_TOPPINGS = [
   { id: 'azucar', label: 'Azúcar pulverizada (clásico)' },
   { id: 'arequipe-oreo', label: 'Arequipe y Oreo' },
@@ -158,6 +219,7 @@ export const PRODUCTS: Product[] = [
       'El valor final depende del tamaño, diseño y nivel de decoración.'
     ],
     autoRotateImages: true,
+    detailImageFrame: 'portrait',
     priceLabelMode: 'from',
     priceFrom: 36000,
     images: [
@@ -291,7 +353,7 @@ export const PRODUCTS: Product[] = [
     sizes: [{ id: 'corazon', label: 'Corazón', price: 36000 }],
     defaultSizeId: 'corazon',
     images: [PRODUCT_IMAGES.brownieHeart],
-    tags: ['Romantico', 'Especial']
+    tags: ['Romántico', 'Especial']
   },
   {
     name: 'Brownie bites',
@@ -320,19 +382,85 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'infantil', 'fechas-especiales'],
     description: 'Bizcochos esponjosos con crema chantilly del color que desees.',
     details: [
-      'Sabores: vainilla, red velvet, chocolate u otro sabor especial.',
-      'También disponibles en amapola, arándanos, naranja y zanahoria.',
-      'Puedes indicar el color de la crema y el estilo en el mensaje adicional.'
+      'Selecciona el sabor base antes de pedir.',
+      'También puedes indicar color de crema, estilo o mensaje corto en el campo de detalle.',
+      'Si quieres otro sabor especial, consúltalo por WhatsApp.'
     ],
+    flavorOptions: [...CUPCAKE_FLAVORS],
+    defaultFlavorId: 'vanilla',
+    autoRotateImages: true,
     priceFrom: 26000,
     sizes: [
       { id: 'x6', label: 'Caja x6', price: 26000 },
       { id: 'x12', label: 'Caja x12', price: 50000 }
     ],
     defaultSizeId: 'x6',
-    images: [PRODUCT_IMAGES.cupcakes, PRODUCT_IMAGES.cupcakesRedVelvet],
+    images: [
+      PRODUCT_IMAGES.cupcakes01,
+      PRODUCT_IMAGES.cupcakes02,
+      PRODUCT_IMAGES.cupcakes03,
+      PRODUCT_IMAGES.cupcakes04,
+      PRODUCT_IMAGES.cupcakes05,
+      PRODUCT_IMAGES.cupcakes06
+    ],
     tags: ['Personalizables', 'Detalle'],
     featured: true
+  },
+  {
+    name: 'Desayuno sorpresa',
+    slug: 'desayuno-sorpresa',
+    category: 'desayunos',
+    occasion: ['amor-amistad', 'aniversarios', 'cumpleanos', 'fechas-especiales'],
+    description: 'Un desayuno especial en caja decorada, ideal para regalar y sorprender a domicilio.',
+    details: [
+      'Incluye caja decorada con bombas.',
+      'Incluye fruta de temporada.',
+      'Incluye jugo de naranja.'
+    ],
+    autoRotateImages: true,
+    priceFrom: 52000,
+    customOptionGroups: [
+      {
+        id: 'huevos',
+        label: 'Huevos al gusto',
+        selection: 'single',
+        required: true,
+        helperText: 'Elige cómo prefieres los huevos de tu desayuno.',
+        options: [...BREAKFAST_EGG_OPTIONS]
+      },
+      {
+        id: 'base-dulce',
+        label: 'Pancakes o waffles',
+        selection: 'single',
+        required: true,
+        helperText: 'Escoge la base dulce principal del desayuno.',
+        options: [...BREAKFAST_BASE_OPTIONS]
+      },
+      {
+        id: 'topping-dulce',
+        label: 'Topping',
+        selection: 'single',
+        required: true,
+        helperText: 'Selecciona el topping para los pancakes o waffles.',
+        options: [...BREAKFAST_TOPPING_OPTIONS]
+      },
+      {
+        id: 'extras-fit',
+        label: 'Opcionales fit',
+        selection: 'multiple',
+        helperText: 'Si quieres, puedes sumar una versión fit o proteína.',
+        options: [...BREAKFAST_FIT_EXTRAS]
+      },
+      {
+        id: 'adiciones',
+        label: 'Adiciones',
+        selection: 'multiple',
+        helperText: 'Suma bebidas o complementos adicionales a tu caja.',
+        options: [...BREAKFAST_ADDITIONS]
+      }
+    ],
+    images: [PRODUCT_IMAGES.desayunoPortada, PRODUCT_IMAGES.desayuno01, PRODUCT_IMAGES.desayuno02],
+    tags: ['Sorpresa', 'A domicilio']
   },
   {
     name: 'Cookies estilo New York',
@@ -385,6 +513,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Bolitas cremosas de Oreo cubiertas con chocolate, perfectas para sorprender, regalar o acompañar cualquier celebración.',
     details: ['Elige cobertura y topping en los desplegables antes de pedir.'],
+    autoRotateImages: true,
     priceFrom: 26000,
     sizes: [{ id: 'x12', label: 'Caja x12', price: 26000, serves: '12 unidades' }],
     defaultSizeId: 'x12',
@@ -392,8 +521,26 @@ export const PRODUCTS: Product[] = [
     defaultCoatingId: 'blanco',
     toppingOptions: [...TRUFFLE_TOPPINGS],
     defaultToppingId: 'corazon',
-    images: [PRODUCT_IMAGES.trufas],
+    images: [PRODUCT_IMAGES.trufas01, PRODUCT_IMAGES.trufas02],
     tags: ['Oreo', 'Detalle']
+  },
+  {
+    name: 'Tabla de quesos',
+    slug: 'tabla-de-quesos',
+    category: 'fechas-especiales',
+    occasion: ['aniversarios', 'amor-amistad', 'empresarial-eventos', 'fechas-especiales'],
+    description:
+      'Una opción perfecta para compartir en celebraciones, reuniones o como regalo especial, con quesos, charcutería y acompañamientos seleccionados.',
+    details: [
+      'Incluye variedad de quesos.',
+      'Incluye salami y embutidos.',
+      'Incluye aceitunas.',
+      'Incluye frutas como uvas y uchuvas.',
+      'Incluye tomates cherry.'
+    ],
+    priceFrom: 89000,
+    images: [PRODUCT_IMAGES.tablaQuesos01, PRODUCT_IMAGES.tablaQuesos02],
+    tags: ['Para compartir', 'Regalo especial']
   },
   {
     name: 'Chocofresas y rosas',

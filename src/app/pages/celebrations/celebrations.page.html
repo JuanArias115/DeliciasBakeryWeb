@@ -1,24 +1,52 @@
 <section class="container section-space celebrations">
   <ui-section-title
     eyebrow="Momentos especiales"
-    title="Tortas y detalles para celebraciones"
-    description="Diseños personalizados para fechas importantes en Chía y Cajicá."
+    title="Celebraciones con detalles que sí se sienten pensados"
+    description="Tres líneas de celebración para cotizar por WhatsApp con inspiración visual real."
   />
 
   <h1 class="sr-only">Celebraciones Delicias Bakery</h1>
 
-  <div class="cards">
-    @for (item of occasions; track item) {
-      <ui-card>
-        <h2>{{ item }}</h2>
-        <p>Te asesoramos en sabor, diseño, porciones y logística para tu fecha.</p>
-      </ui-card>
+  <div class="celebration-list">
+    @for (section of sections; track section.id; let i = $index) {
+      <article class="celebration-block" [class.reverse]="i % 2 === 1">
+        <ui-card class="celebration-copy" [hoverable]="false">
+          <p class="eyebrow">{{ section.eyebrow }}</p>
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+          <ui-button [href]="linkFor(section)" target="_blank">{{ section.ctaLabel }}</ui-button>
+        </ui-card>
+
+        <div class="celebration-media">
+          <div class="carousel-frame">
+            <img
+              [src]="imageUrl(currentImage(section))"
+              [alt]="'Inspiración visual de ' + section.title"
+              loading="lazy"
+              width="1400"
+              height="1050"
+            />
+            <div class="carousel-controls" [attr.aria-label]="'Controles del carrusel de ' + section.title">
+              <button type="button" class="carousel-nav" [attr.aria-label]="'Ver imagen anterior de ' + section.title" (click)="prev(section.id)">
+                <ui-icon name="arrow-left" size="sm" />
+              </button>
+              <button type="button" class="carousel-nav" [attr.aria-label]="'Ver imagen siguiente de ' + section.title" (click)="next(section.id)">
+                <ui-icon name="arrow-right" size="sm" />
+              </button>
+            </div>
+          </div>
+          <div class="carousel-meta">
+            <span>{{ currentIndex(section.id) + 1 }} / {{ section.images.length }}</span>
+            <p>Las imágenes rotan automáticamente y también puedes navegar manualmente.</p>
+          </div>
+        </div>
+      </article>
     }
   </div>
 
   <ui-card [hoverable]="false" class="cta-card">
     <h2>Agenda tu fecha con anticipación</h2>
-    <p>Pedidos por encargo, mínimo 24 horas de anticipación. En temporada alta te sugerimos reservar antes.</p>
-    <ui-button [href]="link" target="_blank">Pedir por WhatsApp</ui-button>
+    <p>Pedidos por encargo, mínimo 24 horas de anticipación. En temporada alta conviene reservar antes.</p>
+    <ui-button [href]="linkFor(sections[0])" target="_blank">Hablar por WhatsApp</ui-button>
   </ui-card>
 </section>

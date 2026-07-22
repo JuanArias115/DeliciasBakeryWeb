@@ -1,0 +1,763 @@
+{
+  "cloud_name": "dscih1izv",
+  "generated_at": "2026-07-22T16:15:00.543483Z",
+  "groups": {
+    "cupcakes": {
+      "zip_path": "/Users/juanarias/Downloads/cupcakes.zip",
+      "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+      "purpose": "Carrusel e imágenes extra para el producto Cupcakes personalizados",
+      "assets": [
+        {
+          "source_file": "cupcakes_01.heic",
+          "uploaded_file": "cupcakes_01.jpg",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-01",
+          "version": 1784736450,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1381692,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736450/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-01.jpg"
+        },
+        {
+          "source_file": "cupcakes_02.HEIC",
+          "uploaded_file": "cupcakes_02.jpg",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-02",
+          "version": 1784736454,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2063973,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736454/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-02.jpg"
+        },
+        {
+          "source_file": "cupcakes_03.heic",
+          "uploaded_file": "cupcakes_03.jpg",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-03",
+          "version": 1784736457,
+          "format": "jpg",
+          "width": 2268,
+          "height": 4032,
+          "bytes": 712585,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736457/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-03.jpg"
+        },
+        {
+          "source_file": "cupcakes_04.JPG",
+          "uploaded_file": "cupcakes_04.JPG",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-04",
+          "version": 1784736463,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 4147702,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736463/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-04.jpg"
+        },
+        {
+          "source_file": "cupcakes_05.heic",
+          "uploaded_file": "cupcakes_05.jpg",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-05",
+          "version": 1784736466,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1224248,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736466/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-05.jpg"
+        },
+        {
+          "source_file": "cupcakes_06.heic",
+          "uploaded_file": "cupcakes_06.jpg",
+          "folder": "deliciasbakery/web/productos/cupcakes-personalizados",
+          "public_id": "deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-06",
+          "version": 1784736469,
+          "format": "jpg",
+          "width": 3214,
+          "height": 5712,
+          "bytes": 1172061,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736469/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-06.jpg"
+        }
+      ]
+    },
+    "trufas": {
+      "zip_path": "/Users/juanarias/Downloads/Carrusel para trufas.zip",
+      "folder": "deliciasbakery/web/productos/trufas",
+      "purpose": "Carrusel adicional para el producto Trufas",
+      "assets": [
+        {
+          "source_file": "Trufas_01.heic",
+          "uploaded_file": "Trufas_01.jpg",
+          "folder": "deliciasbakery/web/productos/trufas",
+          "public_id": "deliciasbakery/web/productos/trufas/trufas-01",
+          "version": 1784736473,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1984709,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736473/deliciasbakery/web/productos/trufas/trufas-01.jpg"
+        },
+        {
+          "source_file": "Trufas_02.heic",
+          "uploaded_file": "Trufas_02.jpg",
+          "folder": "deliciasbakery/web/productos/trufas",
+          "public_id": "deliciasbakery/web/productos/trufas/trufas-02",
+          "version": 1784736477,
+          "format": "jpg",
+          "width": 3214,
+          "height": 5712,
+          "bytes": 1630325,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736477/deliciasbakery/web/productos/trufas/trufas-02.jpg"
+        }
+      ]
+    },
+    "galletas": {
+      "zip_path": "/Users/juanarias/Downloads/galletas.zip",
+      "folder": "deliciasbakery/web/productos/galletas",
+      "purpose": "Carrusel y recursos para la familia de galletas",
+      "assets": [
+        {
+          "source_file": "galletas.heic",
+          "uploaded_file": "galletas.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-portada",
+          "version": 1784736482,
+          "format": "jpg",
+          "width": 2807,
+          "height": 4990,
+          "bytes": 2374821,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736482/deliciasbakery/web/productos/galletas/galletas-portada.jpg"
+        },
+        {
+          "source_file": "galletas_01.heic",
+          "uploaded_file": "galletas_01.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-01",
+          "version": 1784736486,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1584669,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736486/deliciasbakery/web/productos/galletas/galletas-01.jpg"
+        },
+        {
+          "source_file": "galletas_02.HEIC",
+          "uploaded_file": "galletas_02.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-02",
+          "version": 1784736492,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2774206,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736492/deliciasbakery/web/productos/galletas/galletas-02.jpg"
+        },
+        {
+          "source_file": "galletas_03.heic",
+          "uploaded_file": "galletas_03.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-03",
+          "version": 1784736496,
+          "format": "jpg",
+          "width": 3214,
+          "height": 5712,
+          "bytes": 1662754,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736496/deliciasbakery/web/productos/galletas/galletas-03.jpg"
+        },
+        {
+          "source_file": "galletas_04.HEIC",
+          "uploaded_file": "galletas_04.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-04",
+          "version": 1784736505,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2886310,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736505/deliciasbakery/web/productos/galletas/galletas-04.jpg"
+        },
+        {
+          "source_file": "galletas_05.heic",
+          "uploaded_file": "galletas_05.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-05",
+          "version": 1784736510,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1950818,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736510/deliciasbakery/web/productos/galletas/galletas-05.jpg"
+        },
+        {
+          "source_file": "galletas_06.heic",
+          "uploaded_file": "galletas_06.jpg",
+          "folder": "deliciasbakery/web/productos/galletas",
+          "public_id": "deliciasbakery/web/productos/galletas/galletas-06",
+          "version": 1784736542,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2434947,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736542/deliciasbakery/web/productos/galletas/galletas-06.jpg"
+        }
+      ]
+    },
+    "desayunos": {
+      "zip_path": "/Users/juanarias/Downloads/Desayunos.zip",
+      "folder": "deliciasbakery/web/categorias/desayunos",
+      "purpose": "Portada y carrusel para categoría/sección Desayunos",
+      "assets": [
+        {
+          "source_file": "Desayunos.PNG",
+          "uploaded_file": "Desayunos.PNG",
+          "folder": "deliciasbakery/web/categorias/desayunos",
+          "public_id": "deliciasbakery/web/categorias/desayunos/desayunos-portada",
+          "version": 1784736548,
+          "format": "png",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 2232253,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736548/deliciasbakery/web/categorias/desayunos/desayunos-portada.png"
+        },
+        {
+          "source_file": "desayunos_01.JPG",
+          "uploaded_file": "desayunos_01.JPG",
+          "folder": "deliciasbakery/web/categorias/desayunos",
+          "public_id": "deliciasbakery/web/categorias/desayunos/desayunos-01",
+          "version": 1784736557,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 3184540,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736557/deliciasbakery/web/categorias/desayunos/desayunos-01.jpg"
+        },
+        {
+          "source_file": "desayunos_02.JPG",
+          "uploaded_file": "desayunos_02.JPG",
+          "folder": "deliciasbakery/web/categorias/desayunos",
+          "public_id": "deliciasbakery/web/categorias/desayunos/desayunos-02",
+          "version": 1784736567,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 3798343,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736567/deliciasbakery/web/categorias/desayunos/desayunos-02.jpg"
+        }
+      ]
+    },
+    "eventos-catering": {
+      "zip_path": "/Users/juanarias/Downloads/Eventos & catering.zip",
+      "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+      "purpose": "Carrusel para subcategoría Eventos & catering",
+      "assets": [
+        {
+          "source_file": "Eventos & catering_01.HEIC",
+          "uploaded_file": "Eventos & catering_01.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-01",
+          "version": 1784736576,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2786517,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736576/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-01.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_02.JPG",
+          "uploaded_file": "Eventos & catering_02.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-02",
+          "version": 1784736600,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 4654405,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736600/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-02.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_03.heic",
+          "uploaded_file": "Eventos & catering_03.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-03",
+          "version": 1784736610,
+          "format": "jpg",
+          "width": 2268,
+          "height": 4032,
+          "bytes": 1262360,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736610/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-03.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_04.jpg",
+          "uploaded_file": "Eventos & catering_04.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-04",
+          "version": 1784736623,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 6778955,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736623/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-04.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_05.jpg",
+          "uploaded_file": "Eventos & catering_05.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-05",
+          "version": 1784736648,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 4365394,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736648/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-05.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_06.JPG",
+          "uploaded_file": "Eventos & catering_06.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-06",
+          "version": 1784736665,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 6430983,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736665/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-06.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_07.HEIC",
+          "uploaded_file": "Eventos & catering_07.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-07",
+          "version": 1784736668,
+          "format": "jpg",
+          "width": 4090,
+          "height": 4280,
+          "bytes": 1635243,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736668/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-07.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_08.HEIC",
+          "uploaded_file": "Eventos & catering_08.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-08",
+          "version": 1784736672,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2081526,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736672/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-08.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_09.HEIC",
+          "uploaded_file": "Eventos & catering_09.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-09",
+          "version": 1784736680,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 3969649,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736680/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-09.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_10.heic",
+          "uploaded_file": "Eventos & catering_10.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-10",
+          "version": 1784736683,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1767075,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736683/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-10.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_11.HEIC",
+          "uploaded_file": "Eventos & catering_11.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-11",
+          "version": 1784736686,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1979344,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736686/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-11.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_12.JPG",
+          "uploaded_file": "Eventos & catering_12.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-12",
+          "version": 1784736688,
+          "format": "jpg",
+          "width": 3096,
+          "height": 3096,
+          "bytes": 2160997,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736688/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-12.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_13.HEIC",
+          "uploaded_file": "Eventos & catering_13.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-13",
+          "version": 1784736692,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 5460351,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736692/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-13.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_15.JPG",
+          "uploaded_file": "Eventos & catering_15.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-15",
+          "version": 1784736695,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 4334587,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736695/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-15.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_16.HEIC",
+          "uploaded_file": "Eventos & catering_16.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-16",
+          "version": 1784736700,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 2378233,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736700/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-16.jpg"
+        },
+        {
+          "source_file": "Eventos & catering_17.JPG",
+          "uploaded_file": "Eventos & catering_17.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-17",
+          "version": 1784736701,
+          "format": "webp",
+          "width": 1080,
+          "height": 720,
+          "bytes": 56972,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736701/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-17.webp"
+        },
+        {
+          "source_file": "Eventos & catering_18.JPG",
+          "uploaded_file": "Eventos & catering_18.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-18",
+          "version": 1784736704,
+          "format": "webp",
+          "width": 1080,
+          "height": 720,
+          "bytes": 58474,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736704/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-18.webp"
+        },
+        {
+          "source_file": "Eventos & catering_19.JPG",
+          "uploaded_file": "Eventos & catering_19.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/eventos-catering",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-19",
+          "version": 1784736706,
+          "format": "webp",
+          "width": 1080,
+          "height": 720,
+          "bytes": 102390,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736706/deliciasbakery/web/categorias/celebraciones/eventos-catering/eventos-and-catering-19.webp"
+        }
+      ]
+    },
+    "fechas-especiales": {
+      "zip_path": "/Users/juanarias/Downloads/fechas especiales.zip",
+      "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+      "purpose": "Portada y carrusel para subcategoría Fechas especiales",
+      "assets": [
+        {
+          "source_file": "fechas especiales.JPG",
+          "uploaded_file": "fechas especiales.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-portada",
+          "version": 1784736712,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 5037357,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736712/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-portada.jpg"
+        },
+        {
+          "source_file": "fechas especiales_01.heic",
+          "uploaded_file": "fechas especiales_01.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-01",
+          "version": 1784736718,
+          "format": "jpg",
+          "width": 4536,
+          "height": 8064,
+          "bytes": 4312507,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736718/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-01.jpg"
+        },
+        {
+          "source_file": "fechas especiales_02.heic",
+          "uploaded_file": "fechas especiales_02.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-02",
+          "version": 1784736721,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1405545,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736721/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-02.jpg"
+        },
+        {
+          "source_file": "fechas especiales_03.heic",
+          "uploaded_file": "fechas especiales_03.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-03",
+          "version": 1784736724,
+          "format": "jpg",
+          "width": 2904,
+          "height": 5160,
+          "bytes": 1507946,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736724/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-03.jpg"
+        },
+        {
+          "source_file": "fechas especiales_04.HEIC",
+          "uploaded_file": "fechas especiales_04.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-04",
+          "version": 1784736728,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2106546,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736728/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-04.jpg"
+        },
+        {
+          "source_file": "fechas especiales_05.heic",
+          "uploaded_file": "fechas especiales_05.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-05",
+          "version": 1784736737,
+          "format": "jpg",
+          "width": 4536,
+          "height": 8064,
+          "bytes": 5240847,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736737/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-05.jpg"
+        },
+        {
+          "source_file": "fechas especiales_06.heic",
+          "uploaded_file": "fechas especiales_06.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-06",
+          "version": 1784736741,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1964660,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736741/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-06.jpg"
+        },
+        {
+          "source_file": "fechas especiales_07.heic",
+          "uploaded_file": "fechas especiales_07.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-07",
+          "version": 1784736744,
+          "format": "jpg",
+          "width": 2268,
+          "height": 4032,
+          "bytes": 1185073,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736744/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-07.jpg"
+        },
+        {
+          "source_file": "fechas especiales_08.heic",
+          "uploaded_file": "fechas especiales_08.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-08",
+          "version": 1784736748,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2402139,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736748/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-08.jpg"
+        },
+        {
+          "source_file": "fechas especiales_09.heic",
+          "uploaded_file": "fechas especiales_09.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-09",
+          "version": 1784736757,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2085937,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736757/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-09.jpg"
+        },
+        {
+          "source_file": "fechas especiales_10.heic",
+          "uploaded_file": "fechas especiales_10.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/fechas-especiales",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-10",
+          "version": 1784736772,
+          "format": "jpg",
+          "width": 4536,
+          "height": 8064,
+          "bytes": 4801042,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736772/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-10.jpg"
+        }
+      ]
+    },
+    "navidad": {
+      "zip_path": "/Users/juanarias/Downloads/navidad.zip",
+      "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+      "purpose": "Carrusel para subcategoría Navidad",
+      "assets": [
+        {
+          "source_file": "navidad_01.heic",
+          "uploaded_file": "navidad_01.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-01",
+          "version": 1784736777,
+          "format": "jpg",
+          "width": 2268,
+          "height": 4032,
+          "bytes": 1575590,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736777/deliciasbakery/web/categorias/celebraciones/navidad/navidad-01.jpg"
+        },
+        {
+          "source_file": "navidad_02.JPG",
+          "uploaded_file": "navidad_02.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-02",
+          "version": 1784736782,
+          "format": "jpg",
+          "width": 4284,
+          "height": 5712,
+          "bytes": 4692544,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736782/deliciasbakery/web/categorias/celebraciones/navidad/navidad-02.jpg"
+        },
+        {
+          "source_file": "navidad_0209.JPG",
+          "uploaded_file": "navidad_0209.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-0209",
+          "version": 1784736787,
+          "format": "jpg",
+          "width": 4000,
+          "height": 3000,
+          "bytes": 2783072,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736787/deliciasbakery/web/categorias/celebraciones/navidad/navidad-0209.jpg"
+        },
+        {
+          "source_file": "navidad_03.HEIC",
+          "uploaded_file": "navidad_03.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-03-heic",
+          "version": 1784737134,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 4138244,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784737134/deliciasbakery/web/categorias/celebraciones/navidad/navidad-03-heic.jpg"
+        },
+        {
+          "source_file": "navidad_03.jpg",
+          "uploaded_file": "navidad_03.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-03-jpg",
+          "version": 1784737137,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 4646255,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784737137/deliciasbakery/web/categorias/celebraciones/navidad/navidad-03-jpg.jpg"
+        },
+        {
+          "source_file": "navidad_04.heic",
+          "uploaded_file": "navidad_04.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-04-heic",
+          "version": 1784737141,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 3503073,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784737141/deliciasbakery/web/categorias/celebraciones/navidad/navidad-04-heic.jpg"
+        },
+        {
+          "source_file": "navidad_04.jpg",
+          "uploaded_file": "navidad_04.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-04-jpg",
+          "version": 1784737144,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 5160571,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784737144/deliciasbakery/web/categorias/celebraciones/navidad/navidad-04-jpg.jpg"
+        },
+        {
+          "source_file": "navidad_05.heic",
+          "uploaded_file": "navidad_05.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-05",
+          "version": 1784736834,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 2057907,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736834/deliciasbakery/web/categorias/celebraciones/navidad/navidad-05.jpg"
+        },
+        {
+          "source_file": "navidad_06.heic",
+          "uploaded_file": "navidad_06.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-06",
+          "version": 1784736838,
+          "format": "jpg",
+          "width": 3213,
+          "height": 5712,
+          "bytes": 1228595,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736838/deliciasbakery/web/categorias/celebraciones/navidad/navidad-06.jpg"
+        },
+        {
+          "source_file": "navidad_07.heic",
+          "uploaded_file": "navidad_07.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-07",
+          "version": 1784736845,
+          "format": "jpg",
+          "width": 3214,
+          "height": 5712,
+          "bytes": 2172787,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736845/deliciasbakery/web/categorias/celebraciones/navidad/navidad-07.jpg"
+        },
+        {
+          "source_file": "navidad_08.heic",
+          "uploaded_file": "navidad_08.jpg",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-08",
+          "version": 1784736852,
+          "format": "jpg",
+          "width": 3214,
+          "height": 5712,
+          "bytes": 1457210,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736852/deliciasbakery/web/categorias/celebraciones/navidad/navidad-08.jpg"
+        },
+        {
+          "source_file": "navidad_09.JPG",
+          "uploaded_file": "navidad_09.JPG",
+          "folder": "deliciasbakery/web/categorias/celebraciones/navidad",
+          "public_id": "deliciasbakery/web/categorias/celebraciones/navidad/navidad-09",
+          "version": 1784736862,
+          "format": "jpg",
+          "width": 4000,
+          "height": 3000,
+          "bytes": 2767619,
+          "secure_url": "https://res.cloudinary.com/dscih1izv/image/upload/v1784736862/deliciasbakery/web/categorias/celebraciones/navidad/navidad-09.jpg"
+        }
+      ]
+    }
+  }
+}

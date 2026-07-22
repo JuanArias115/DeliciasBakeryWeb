@@ -11,7 +11,7 @@
           variant="detail"
           [src]="productImageDetail(displayImage)"
           [alt]="'Foto principal de ' + product.name"
-          [frame]="product.autoRotateImages ? 'portrait' : 'default'"
+          [frame]="product.detailImageFrame ?? 'default'"
           [forceCover]="!!product.autoRotateImages"
           [width]="1400"
           [height]="1050"
@@ -97,14 +97,14 @@
                     @if (classicFlavors.length) {
                       <optgroup label="Sabores clásicos">
                         @for (flavor of classicFlavors; track flavor.id) {
-                          <option [value]="flavor.id">{{ flavor.label }}</option>
+                          <option [value]="flavor.id">{{ optionLabel(flavor) }}</option>
                         }
                       </optgroup>
                     }
                     @if (premiumFlavors.length) {
                       <optgroup label="Sabores premium (+$7.000)">
                         @for (flavor of premiumFlavors; track flavor.id) {
-                          <option [value]="flavor.id">{{ flavor.label }}</option>
+                          <option [value]="flavor.id">{{ optionLabel(flavor) }}</option>
                         }
                       </optgroup>
                     }
@@ -123,7 +123,7 @@
                   <span class="sr-only">Selecciona cobertura</span>
                   <select [formControl]="coatingId">
                     @for (coating of product.coatingOptions; track coating.id) {
-                      <option [value]="coating.id">{{ coating.label }}</option>
+                      <option [value]="coating.id">{{ optionLabel(coating) }}</option>
                     }
                   </select>
                 </label>
@@ -137,10 +137,60 @@
                   <span class="sr-only">Selecciona topping</span>
                   <select [formControl]="toppingId">
                     @for (topping of product.toppingOptions; track topping.id) {
-                      <option [value]="topping.id">{{ topping.label }}</option>
+                      <option [value]="topping.id">{{ optionLabel(topping) }}</option>
                     }
                   </select>
                 </label>
+              </section>
+            }
+
+            @for (group of singleCustomOptionGroups; track group.id) {
+              <section class="custom-section" [attr.aria-label]="'Selecciona ' + group.label">
+                <h3>{{ group.label }}</h3>
+                @if (group.helperText) {
+                  <p class="group-helper">{{ group.helperText }}</p>
+                }
+                <label class="flavor-field">
+                  <span class="sr-only">{{ group.label }}</span>
+                  <select [value]="singleSelectionValue(group.id)" (change)="setSingleSelection(group.id, $any($event.target).value)">
+                    <option value="">Selecciona una opción</option>
+                    @for (option of group.options; track option.id) {
+                      <option [value]="option.id">{{ optionLabel(option) }}</option>
+                    }
+                  </select>
+                </label>
+                @if (group.required && singleSelectionValue(group.id).length === 0) {
+                  <small>Selecciona una opción para continuar con tu pedido.</small>
+                }
+              </section>
+            }
+
+            @for (group of multiCustomOptionGroups; track group.id) {
+              <section class="custom-section" [attr.aria-label]="'Selecciona ' + group.label">
+                <h3>{{ group.label }}</h3>
+                @if (group.helperText) {
+                  <p class="group-helper">{{ group.helperText }}</p>
+                }
+                <div class="custom-grid">
+                  @for (option of group.options; track option.id) {
+                    <label class="custom-option" [class.is-selected]="isMultiSelected(group.id, option.id)">
+                      <input
+                        type="checkbox"
+                        [checked]="isMultiSelected(group.id, option.id)"
+                        (change)="toggleMultiSelection(group.id, option.id, $any($event.target).checked)"
+                      />
+                      <div>
+                        <span class="custom-option-label">{{ option.label }}</span>
+                        @if (option.surcharge) {
+                          <small>+{{ option.surcharge | currency: 'COP' : 'symbol' : '1.0-0' }}</small>
+                        }
+                      </div>
+                    </label>
+                  }
+                </div>
+                @if (group.required && multiSelectionValues(group.id).length === 0) {
+                  <small>Selecciona al menos una opción para continuar con tu pedido.</small>
+                }
               </section>
             }
 

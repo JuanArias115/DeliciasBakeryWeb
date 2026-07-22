@@ -42,6 +42,21 @@ export interface ProductMixOption {
   surcharge?: number;
 }
 
+export interface ProductCustomOption {
+  id: string;
+  label: string;
+  surcharge?: number;
+}
+
+export interface ProductCustomOptionGroup {
+  id: string;
+  label: string;
+  selection: 'single' | 'multiple';
+  options: ProductCustomOption[];
+  helperText?: string;
+  required?: boolean;
+}
+
 export interface Product {
   name: string;
   slug: string;
@@ -50,6 +65,7 @@ export interface Product {
   description: string;
   details?: string[];
   autoRotateImages?: boolean;
+  detailImageFrame?: 'default' | 'portrait';
   flavorOptions?: ProductFlavorOption[];
   defaultFlavorId?: string;
   coatingOptions?: ProductCoatingOption[];
@@ -59,6 +75,7 @@ export interface Product {
   mixOptions?: ProductMixOption[];
   mixTotal?: number;
   mixLabel?: string;
+  customOptionGroups?: ProductCustomOptionGroup[];
   priceLabelMode?: 'fixed' | 'from';
   priceFrom?: number;
   sizes?: ProductSizeOption[];

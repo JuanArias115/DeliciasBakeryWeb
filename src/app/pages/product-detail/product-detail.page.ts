@@ -3,11 +3,7 @@ import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
-import {
-  getDefaultSize,
-  getMinPrice,
-  getSelectedSize
-} from '../../core/helpers/product-pricing.helper';
+import { getDefaultSize, getMinPrice, getSelectedSize } from '../../core/helpers/product-pricing.helper';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { createProductSchema } from '../../core/services/schema.factory';
 import { SeoService } from '../../core/services/seo.service';
@@ -16,6 +12,8 @@ import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
 import {
   Product,
   ProductCoatingOption,
+  ProductCustomOption,
+  ProductCustomOptionGroup,
   ProductFlavorOption,
   ProductSizeOption,
   ProductToppingOption
@@ -48,6 +46,11 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   private readonly seo = inject(SeoService);
   private readonly whatsapp = inject(WhatsAppService);
   private readonly analytics = inject(AnalyticsService);
+  private readonly currencyFormatter = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    maximumFractionDigits: 0
+  });
 
   readonly quantity = new FormControl('1', {
     nonNullable: true,
@@ -61,6 +64,8 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   readonly coatingId = new FormControl('', { nonNullable: true });
   readonly toppingId = new FormControl('', { nonNullable: true });
   readonly mixCounts: Record<string, number> = {};
+  readonly customSelections: Record<string, string> = {};
+  readonly customMultiSelections: Record<string, string[]> = {};
   readonly activeImageIndex = signal(0);
 
   readonly product = this.route.snapshot.data['product'] as Product | null;
@@ -72,18 +77,21 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
 
     return this.product.images[this.activeImageIndex()] ?? this.product.images[0];
   });
+
   private carouselTimer?: ReturnType<typeof setInterval>;
 
   ngOnInit(): void {
     if (!this.product) {
       return;
     }
+
     const defaultSize = getDefaultSize(this.product);
     this.sizeId.setValue(defaultSize?.id ?? '');
     this.flavorId.setValue(this.defaultFlavor?.id ?? '');
     this.coatingId.setValue(this.defaultCoating?.id ?? '');
     this.toppingId.setValue(this.defaultTopping?.id ?? '');
     this.initializeMixCounts();
+    this.initializeCustomSelections();
     this.startCarouselIfNeeded();
 
     const path = `/productos/${this.product.slug}`;
@@ -116,6 +124,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     if (!this.product) {
       return this.whatsapp.createLink('Hola Delicias Bakery, quiero cotizar un pedido.');
     }
+
     const selectedSize = getSelectedSize(this.product, this.sizeId.value);
 
     return this.whatsapp.createOrderLink({
@@ -125,6 +134,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       coating: this.selectedCoating?.label,
       topping: this.selectedTopping?.label,
       mix: this.mixSummary || undefined,
+      customizations: this.selectedCustomizationLines,
       quantity: this.quantity.value,
       date: this.date.value || 'Por definir',
       address: this.address.value || 'Por definir',
@@ -136,6 +146,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     if (!this.product) {
       return;
     }
+
     const selectedSize = getSelectedSize(this.product, this.sizeId.value);
 
     this.analytics.trackEvent('click_whatsapp', {
@@ -145,7 +156,8 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       flavor: this.selectedFlavor?.id ?? null,
       coating: this.selectedCoating?.id ?? null,
       topping: this.selectedTopping?.id ?? null,
-      mix: this.mixSummary || null
+      mix: this.mixSummary || null,
+      customizations: this.selectedCustomizationLines.join(' | ') || null
     });
   }
 
@@ -289,12 +301,48 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       .join(', ');
   }
 
-  get canOrder(): boolean {
-    if (!this.product?.mixOptions?.length) {
-      return true;
+  get singleCustomOptionGroups(): ProductCustomOptionGroup[] {
+    return this.product?.customOptionGroups?.filter((group) => group.selection === 'single') ?? [];
+  }
+
+  get multiCustomOptionGroups(): ProductCustomOptionGroup[] {
+    return this.product?.customOptionGroups?.filter((group) => group.selection === 'multiple') ?? [];
+  }
+
+  get selectedCustomizationLines(): string[] {
+    const lines: string[] = [];
+
+    for (const group of this.singleCustomOptionGroups) {
+      const selectedOption = this.selectedOptionForGroup(group);
+      if (selectedOption) {
+        lines.push(`${group.label}: ${this.optionLabel(selectedOption)}`);
+      }
     }
 
-    return this.currentMixCount === this.mixTotalRequired;
+    for (const group of this.multiCustomOptionGroups) {
+      const selectedOptions = this.selectedOptionsForGroup(group);
+      if (selectedOptions.length) {
+        lines.push(`${group.label}: ${selectedOptions.map((option) => this.optionLabel(option)).join(', ')}`);
+      }
+    }
+
+    return lines;
+  }
+
+  get hasMissingRequiredSelections(): boolean {
+    const missingSingles = this.singleCustomOptionGroups.some(
+      (group) => group.required && this.singleSelectionValue(group.id).length === 0
+    );
+    const missingMultiples = this.multiCustomOptionGroups.some(
+      (group) => group.required && this.multiSelectionValues(group.id).length === 0
+    );
+
+    return missingSingles || missingMultiples;
+  }
+
+  get canOrder(): boolean {
+    const mixValid = !this.product?.mixOptions?.length || this.currentMixCount === this.mixTotalRequired;
+    return mixValid && !this.hasMissingRequiredSelections;
   }
 
   initializeMixCounts(): void {
@@ -304,6 +352,21 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
 
     for (const option of this.product.mixOptions) {
       this.mixCounts[option.id] = 0;
+    }
+  }
+
+  initializeCustomSelections(): void {
+    if (!this.product?.customOptionGroups?.length) {
+      return;
+    }
+
+    for (const group of this.product.customOptionGroups) {
+      if (group.selection === 'single') {
+        this.customSelections[group.id] = '';
+        continue;
+      }
+
+      this.customMultiSelections[group.id] = [];
     }
   }
 
@@ -325,6 +388,52 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     }
 
     this.mixCounts[optionId] = this.getMixCount(optionId) - 1;
+  }
+
+  singleSelectionValue(groupId: string): string {
+    return this.customSelections[groupId] ?? '';
+  }
+
+  setSingleSelection(groupId: string, optionId: string): void {
+    this.customSelections[groupId] = optionId;
+  }
+
+  multiSelectionValues(groupId: string): string[] {
+    return this.customMultiSelections[groupId] ?? [];
+  }
+
+  toggleMultiSelection(groupId: string, optionId: string, checked: boolean): void {
+    const next = new Set(this.multiSelectionValues(groupId));
+
+    if (checked) {
+      next.add(optionId);
+    } else {
+      next.delete(optionId);
+    }
+
+    this.customMultiSelections[groupId] = Array.from(next);
+  }
+
+  isMultiSelected(groupId: string, optionId: string): boolean {
+    return this.multiSelectionValues(groupId).includes(optionId);
+  }
+
+  selectedOptionForGroup(group: ProductCustomOptionGroup): ProductCustomOption | undefined {
+    const selectedId = this.singleSelectionValue(group.id);
+    return group.options.find((option) => option.id === selectedId);
+  }
+
+  selectedOptionsForGroup(group: ProductCustomOptionGroup): ProductCustomOption[] {
+    const selectedIds = new Set(this.multiSelectionValues(group.id));
+    return group.options.filter((option) => selectedIds.has(option.id));
+  }
+
+  optionLabel(option: ProductCustomOption | ProductFlavorOption): string {
+    if (!option.surcharge) {
+      return option.label;
+    }
+
+    return `${option.label} (${this.currencyFormatter.format(option.surcharge)})`;
   }
 
   startCarouselIfNeeded(): void {
@@ -369,11 +478,17 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
       return 0;
     }
 
+    const customOptionsSurcharge = [
+      ...this.singleCustomOptionGroups.flatMap((group) => this.selectedOptionForGroup(group) ?? []),
+      ...this.multiCustomOptionGroups.flatMap((group) => this.selectedOptionsForGroup(group))
+    ].reduce((total, option) => total + (option.surcharge ?? 0), 0);
+
     return (
       (this.selectedSize?.price ?? getMinPrice(this.product)) +
       (this.selectedFlavor?.surcharge ?? 0) +
       (this.selectedCoating?.surcharge ?? 0) +
-      (this.selectedTopping?.surcharge ?? 0)
+      (this.selectedTopping?.surcharge ?? 0) +
+      customOptionsSurcharge
     );
   }
 }
