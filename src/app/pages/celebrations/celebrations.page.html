@@ -14,18 +14,22 @@
           <p class="eyebrow">{{ section.eyebrow }}</p>
           <h2>{{ section.title }}</h2>
           <p>{{ section.description }}</p>
-          <ui-button [href]="linkFor(section)" target="_blank">{{ section.ctaLabel }}</ui-button>
+          <a class="celebration-cta" [href]="linkFor(section)" target="_blank" rel="noopener noreferrer">{{ section.ctaLabel }}</a>
         </ui-card>
 
         <div class="celebration-media">
           <div class="carousel-frame">
-            <img
-              [src]="imageUrl(currentImage(section))"
-              [alt]="'Inspiración visual de ' + section.title"
-              loading="lazy"
-              width="1400"
-              height="1050"
-            />
+            @for (image of section.images; track image; let imageIndex = $index) {
+              <img
+                class="carousel-image"
+                [class.is-active]="imageIndex === currentIndex(section.id)"
+                [src]="imageUrl(image)"
+                [alt]="'Inspiración visual de ' + section.title + ' ' + (imageIndex + 1)"
+                loading="lazy"
+                width="1400"
+                height="1050"
+              />
+            }
             <div class="carousel-controls" [attr.aria-label]="'Controles del carrusel de ' + section.title">
               <button type="button" class="carousel-nav" [attr.aria-label]="'Ver imagen anterior de ' + section.title" (click)="prev(section.id)">
                 <ui-icon name="arrow-left" size="sm" />
@@ -37,7 +41,6 @@
           </div>
           <div class="carousel-meta">
             <span>{{ currentIndex(section.id) + 1 }} / {{ section.images.length }}</span>
-            <p>Las imágenes rotan automáticamente y también puedes navegar manualmente.</p>
           </div>
         </div>
       </article>
@@ -47,6 +50,6 @@
   <ui-card [hoverable]="false" class="cta-card">
     <h2>Agenda tu fecha con anticipación</h2>
     <p>Pedidos por encargo, mínimo 24 horas de anticipación. En temporada alta conviene reservar antes.</p>
-    <ui-button [href]="linkFor(sections[0])" target="_blank">Hablar por WhatsApp</ui-button>
+    <a class="celebration-cta" [href]="linkFor(sections[0])" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
   </ui-card>
 </section>

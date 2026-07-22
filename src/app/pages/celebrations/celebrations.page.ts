@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 import { WhatsAppService } from '../../core/services/whatsapp.service';
 import { CLOUDINARY_WIDTHS, cldSized } from '../../lib/cloudinary';
-import { ButtonComponent } from '../../shared/ui/button/button.component';
 import { CardComponent } from '../../shared/ui/card/card.component';
 import { IconComponent } from '../../shared/ui/icon/icon.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
@@ -19,7 +18,7 @@ interface CelebrationSection {
 
 @Component({
   selector: 'app-celebrations-page',
-  imports: [ButtonComponent, CardComponent, IconComponent, SectionTitleComponent],
+  imports: [CardComponent, IconComponent, SectionTitleComponent],
   templateUrl: './celebrations.page.html',
   styleUrl: './celebrations.page.css'
 })
