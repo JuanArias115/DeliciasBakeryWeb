@@ -19,6 +19,8 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484802/postres-brownie-Bites-01_s1v38a.png',
   cupcakes01:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1784736450/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-01.jpg',
+  cupcakesHero:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1773596806/postres-cupcakes-01_dytgoo.jpg',
   cupcakes02:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1784736454/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-02.jpg',
   cupcakes03:
@@ -31,6 +33,20 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1784736469/deliciasbakery/web/productos/cupcakes-personalizados/cupcakes-06.jpg',
   cookiesNewYork:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484813/postres-cookies-new-york-01_ketfc6.png',
+  galletasPortada:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736482/deliciasbakery/web/productos/galletas/galletas-portada.jpg',
+  galletas01:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736486/deliciasbakery/web/productos/galletas/galletas-01.jpg',
+  galletas02:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736492/deliciasbakery/web/productos/galletas/galletas-02.jpg',
+  galletas03:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736496/deliciasbakery/web/productos/galletas/galletas-03.jpg',
+  galletas04:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736505/deliciasbakery/web/productos/galletas/galletas-04.jpg',
+  galletas05:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736510/deliciasbakery/web/productos/galletas/galletas-05.jpg',
+  galletas06:
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736542/deliciasbakery/web/productos/galletas/galletas-06.jpg',
   cookiesClassic:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-cookies-01_eonnr6.png',
   chocoFresas:
@@ -48,9 +64,9 @@ const PRODUCT_IMAGES = {
   desayuno02:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1784736567/deliciasbakery/web/categorias/desayunos/desayunos-02.jpg',
   tablaQuesos01:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736712/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-portada.jpg',
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1785312032/deliciasbakery/web/productos/tabla-de-quesos/tabla-de-quesos-01.jpg',
   tablaQuesos02:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736718/deliciasbakery/web/categorias/celebraciones/fechas-especiales/fechas-especiales-01.jpg',
+    'https://res.cloudinary.com/dscih1izv/image/upload/v1785312035/deliciasbakery/web/productos/tabla-de-quesos/tabla-de-quesos-02.jpg',
   customCake:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg',
   customCake02: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_02_k8hom6.jpg',
@@ -223,7 +239,7 @@ export const PRODUCTS: Product[] = [
     priceLabelMode: 'from',
     priceFrom: 36000,
     images: [
-      PRODUCT_IMAGES.customCake10,
+      PRODUCT_IMAGES.customCake14,
       PRODUCT_IMAGES.customCake02,
       PRODUCT_IMAGES.customCake03,
       PRODUCT_IMAGES.customCake04,
@@ -232,7 +248,7 @@ export const PRODUCTS: Product[] = [
       PRODUCT_IMAGES.customCake06,
       PRODUCT_IMAGES.customCake09,
       PRODUCT_IMAGES.customCake11,
-      PRODUCT_IMAGES.customCake14,
+      PRODUCT_IMAGES.customCake10,
       PRODUCT_IMAGES.customCake15,
       PRODUCT_IMAGES.customCake13,
       PRODUCT_IMAGES.customCake12,
@@ -396,6 +412,7 @@ export const PRODUCTS: Product[] = [
     ],
     defaultSizeId: 'x6',
     images: [
+      PRODUCT_IMAGES.cupcakesHero,
       PRODUCT_IMAGES.cupcakes01,
       PRODUCT_IMAGES.cupcakes02,
       PRODUCT_IMAGES.cupcakes03,
@@ -472,13 +489,23 @@ export const PRODUCTS: Product[] = [
       'Elige 4 galletas y combina los sabores como prefieras.',
       'Tip: caliéntala 10 a 15 segundos antes de comer para que el centro quede más suave.'
     ],
+    autoRotateImages: true,
     priceFrom: 36000,
     sizes: [{ id: 'x4', label: 'Caja x4', price: 36000 }],
     defaultSizeId: 'x4',
     mixOptions: [...COOKIE_MIX_FLAVORS],
     mixTotal: 4,
     mixLabel: 'Sabores de tu caja',
-    images: [PRODUCT_IMAGES.cookiesNewYork],
+    images: [
+      PRODUCT_IMAGES.cookiesNewYork,
+      PRODUCT_IMAGES.galletasPortada,
+      PRODUCT_IMAGES.galletas01,
+      PRODUCT_IMAGES.galletas02,
+      PRODUCT_IMAGES.galletas03,
+      PRODUCT_IMAGES.galletas04,
+      PRODUCT_IMAGES.galletas05,
+      PRODUCT_IMAGES.galletas06
+    ],
     tags: ['Recién horneadas', 'Viral']
   },
   {
