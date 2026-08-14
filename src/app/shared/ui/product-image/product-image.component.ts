@@ -10,6 +10,8 @@ export class ProductImageComponent {
   @Input({ required: true }) alt = '';
   @Input() variant: 'card' | 'detail' = 'card';
   @Input() frame: 'default' | 'portrait' = 'default';
+  @Input() fit: 'cover' | 'contain' | null = null;
+  @Input() objectPosition = '';
   @Input() forceCover = false;
   @Input() width = 600;
   @Input() height = 450;
@@ -19,7 +21,15 @@ export class ProductImageComponent {
 
   get classes(): string {
     const forceCoverClass = this.forceCover ? ' force-cover' : '';
-    return `product-image product-image-${this.variant} is-${this.orientation} frame-${this.frame}${forceCoverClass}`;
+    const fitClass = ` fit-${this.fit ?? 'auto'}`;
+    return `product-image product-image-${this.variant} is-${this.orientation} frame-${this.frame}${fitClass}${forceCoverClass}`;
+  }
+
+  get imageStyle(): Record<string, string> {
+    return {
+      '--product-image-fit': this.fit ?? '',
+      '--product-image-position': this.objectPosition
+    };
   }
 
   onLoad(event: Event): void {

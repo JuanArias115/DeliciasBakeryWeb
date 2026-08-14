@@ -26,6 +26,10 @@
   text-decoration: none;
 }
 
+.brand-name {
+  color: var(--color-primary-strong);
+}
+
 .brand-mark {
   border: 2px solid color-mix(in srgb, var(--color-primary) 25%, white);
   border-radius: 999px;

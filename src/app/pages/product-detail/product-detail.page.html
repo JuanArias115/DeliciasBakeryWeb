@@ -12,7 +12,9 @@
           [src]="productImageDetail(displayImage)"
           [alt]="'Foto principal de ' + product.name"
           [frame]="product.detailImageFrame ?? 'default'"
-          [forceCover]="!!product.autoRotateImages"
+          [fit]="displayImageFit"
+          [objectPosition]="displayImagePosition"
+          [forceCover]="shouldForceCover"
           [width]="1400"
           [height]="1050"
           loading="eager"
@@ -95,14 +97,14 @@
                   <span class="sr-only">Selecciona sabor</span>
                   <select [formControl]="flavorId">
                     @if (classicFlavors.length) {
-                      <optgroup label="Sabores clásicos">
+                      <optgroup label="Sabores">
                         @for (flavor of classicFlavors; track flavor.id) {
                           <option [value]="flavor.id">{{ optionLabel(flavor) }}</option>
                         }
                       </optgroup>
                     }
                     @if (premiumFlavors.length) {
-                      <optgroup label="Sabores premium (+$7.000)">
+                      <optgroup label="Sabores premium">
                         @for (flavor of premiumFlavors; track flavor.id) {
                           <option [value]="flavor.id">{{ optionLabel(flavor) }}</option>
                         }

@@ -49,13 +49,15 @@ export function createLocalBusinessSchema(siteUrl: string): Record<string, unkno
 
 export function createProductSchema(product: Product, canonicalUrl: string): Record<string, unknown> {
   const price = getMinPrice(product);
+  const siteOrigin = new URL(canonicalUrl).origin;
+  const images = product.images.map((image) => (image.startsWith('/') ? `${siteOrigin}${image}` : image));
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.images,
+    image: images,
     sku: product.slug,
     category: PRODUCT_CATEGORY_LABELS[product.category],
     brand: {

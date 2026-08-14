@@ -9,6 +9,7 @@ const PRODUCT_IMAGES = {
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/cheesecake-maracuya-grande-01_plmfdr.png',
   cheesecakeNewYork:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/cheesecake-frutos-rojos-newYork-01_rbfm0s.png',
+  cheesecakeNewYorkSecond: '/assets/products/new-york-cheesecake/new-york-cheesecake-02.jpg',
   tiramisu:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484804/postres-tiramisu-01_vmynj7.png',
   brownieRound:
@@ -52,9 +53,10 @@ const PRODUCT_IMAGES = {
   chocoFresas:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484801/postres-choco-fresas-rosas-01_txvvwq.png',
   trufas01:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736473/deliciasbakery/web/productos/trufas/trufas-01.jpg',
+    '/assets/products/trufas/trufas-portada-rosa.png',
   trufas02:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1784736477/deliciasbakery/web/productos/trufas/trufas-02.jpg',
+    '/assets/products/trufas/trufas-02.jpg',
+  trufas03: '/assets/products/trufas/trufas-01.jpg',
   alfajores:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1773484799/postres-alfajores-01_lwr6zq.png',
   desayunoPortada:
@@ -66,7 +68,7 @@ const PRODUCT_IMAGES = {
   tablaQuesos01:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1785312032/deliciasbakery/web/productos/tabla-de-quesos/tabla-de-quesos-01.jpg',
   tablaQuesos02:
-    'https://res.cloudinary.com/dscih1izv/image/upload/v1785312035/deliciasbakery/web/productos/tabla-de-quesos/tabla-de-quesos-02.jpg',
+    '/assets/products/tabla-de-quesos/tabla-de-quesos-02.jpg',
   customCake:
     'https://res.cloudinary.com/dscih1izv/image/upload/v1772967829/44030994-FE0B-4175-9526-D73DEF04F4D7_hcmlti.jpg',
   customCake02: 'https://res.cloudinary.com/dscih1izv/image/upload/v1773593758/postres_cakes_02_k8hom6.jpg',
@@ -141,6 +143,15 @@ const CHEESECAKE_FLAVORS = [
   }
 ];
 
+const NEW_YORK_CHEESECAKE_FLAVORS = [
+  { id: 'frutos-rojos', label: 'Frutos rojos', tier: 'classic' as const },
+  { id: 'maracuya', label: 'Maracuyá', tier: 'classic' as const },
+  { id: 'oreo', label: 'Oreo', tier: 'classic' as const },
+  { id: 'arandanos', label: 'Arándanos', tier: 'premium' as const, surcharge: 10000 },
+  { id: 'milo', label: 'Milo', tier: 'premium' as const, surcharge: 10000 },
+  { id: 'pistacho', label: 'Pistacho', tier: 'premium' as const, surcharge: 10000 }
+] as const;
+
 const CUPCAKE_FLAVORS = [
   { id: 'vanilla', label: 'Vanilla' },
   { id: 'red-velvet', label: 'Red Velvet' },
@@ -207,6 +218,11 @@ const COOKIE_MIX_FLAVORS = [
   { id: 'nueces-almendras', label: 'Nueces y Almendras' }
 ] as const;
 
+const CROOKIE_FLAVORS = [
+  { id: 'clasico', label: 'Clásico' },
+  { id: 'peanut-butter', label: 'Peanut butter' }
+] as const;
+
 const TRUFFLE_COATINGS = [
   { id: 'blanco', label: 'Chocolate blanco' },
   { id: 'oscuro', label: 'Chocolate oscuro' },
@@ -229,7 +245,7 @@ export const PRODUCTS: Product[] = [
     description: 'Creamos tortas diseñadas especialmente para cada ocasión, según tu idea o referencia.',
     details: [
       'Mini cakes desde $36.000.',
-      'Tamaños disponibles: mini cake (1-2 porciones), 4-6, 10-12, 12-15, 20-25 y 30 porciones.',
+      'Tamaños disponibles: mini cake (2-4 porciones), 6-8, 10-12, 12-15, 20-25, 30 porciones y más.',
       'Sabores: vainilla, chocolate y red velvet.',
       'Rellenos: Nutella, arequipe, frutos rojos y maracuyá.',
       'El valor final depende del tamaño, diseño y nivel de decoración.'
@@ -306,17 +322,20 @@ export const PRODUCTS: Product[] = [
     description: 'Cheesecake más alto y cremoso, con textura densa y horneado clásico.',
     details: [
       'Elige el sabor en el desplegable antes de pedir.',
-      'Sabores premium con recargo de $7.000.'
+      'Sabores premium con recargo de $10.000.'
     ],
-    flavorOptions: CHEESECAKE_FLAVORS,
+    flavorOptions: [...NEW_YORK_CHEESECAKE_FLAVORS],
     defaultFlavorId: 'frutos-rojos',
+    autoRotateImages: true,
+    detailImageFrame: 'portrait',
+    detailImageFit: 'contain',
     priceFrom: 46000,
     sizes: [
       { id: '16cm', label: '16 cm', price: 46000, serves: '8 porciones' },
       { id: '22cm', label: '22 cm', price: 68000, serves: '15 porciones' }
     ],
     defaultSizeId: '16cm',
-    images: [PRODUCT_IMAGES.cheesecakeNewYork],
+    images: [PRODUCT_IMAGES.cheesecakeNewYork, PRODUCT_IMAGES.cheesecakeNewYorkSecond],
     tags: ['Horneado clásico', 'Cremoso']
   },
   {
@@ -486,12 +505,17 @@ export const PRODUCTS: Product[] = [
     occasion: ['cumpleanos', 'amor-amistad', 'empresarial-eventos'],
     description: 'Cookies gruesas, suaves por dentro y ligeramente crujientes por fuera.',
     details: [
-      'Elige 4 galletas y combina los sabores como prefieras.',
+      'Elige el tamaño de tu caja y combina los sabores como prefieras.',
       'Tip: caliéntala 10 a 15 segundos antes de comer para que el centro quede más suave.'
     ],
     autoRotateImages: true,
+    detailImageFrame: 'portrait',
+    detailImageFit: 'contain',
     priceFrom: 36000,
-    sizes: [{ id: 'x4', label: 'Caja x4', price: 36000 }],
+    sizes: [
+      { id: 'x4', label: 'Caja x4', price: 36000, mixCount: 4 },
+      { id: 'x6', label: 'Caja x6', price: 52000, mixCount: 6 }
+    ],
     defaultSizeId: 'x4',
     mixOptions: [...COOKIE_MIX_FLAVORS],
     mixTotal: 4,
@@ -514,9 +538,15 @@ export const PRODUCTS: Product[] = [
     category: 'postres-detalles',
     occasion: ['cumpleanos', 'amor-amistad', 'fechas-especiales'],
     description: 'La mezcla viral entre croissant y cookie, hojaldrado por fuera y suave por dentro.',
+    details: ['Selecciona el sabor y el tamaño antes de pedir.'],
+    flavorOptions: [...CROOKIE_FLAVORS],
+    defaultFlavorId: 'clasico',
     priceFrom: 36000,
-    sizes: [{ id: 'x6', label: 'Caja x6', price: 36000 }],
-    defaultSizeId: 'x6',
+    sizes: [
+      { id: 'x4', label: 'Caja x4', price: 32000 },
+      { id: 'x6', label: 'Caja x6', price: 44000 }
+    ],
+    defaultSizeId: 'x4',
     images: [PRODUCT_IMAGES.cookiesClassic],
     tags: ['Viral', 'Croissant + cookie']
   },
@@ -541,6 +571,8 @@ export const PRODUCTS: Product[] = [
       'Bolitas cremosas de Oreo cubiertas con chocolate, perfectas para sorprender, regalar o acompañar cualquier celebración.',
     details: ['Elige cobertura y topping en los desplegables antes de pedir.'],
     autoRotateImages: true,
+    detailImageFrame: 'portrait',
+    detailImageFit: 'contain',
     priceFrom: 26000,
     sizes: [{ id: 'x12', label: 'Caja x12', price: 26000, serves: '12 unidades' }],
     defaultSizeId: 'x12',
@@ -548,7 +580,7 @@ export const PRODUCTS: Product[] = [
     defaultCoatingId: 'blanco',
     toppingOptions: [...TRUFFLE_TOPPINGS],
     defaultToppingId: 'corazon',
-    images: [PRODUCT_IMAGES.trufas01, PRODUCT_IMAGES.trufas02],
+    images: [PRODUCT_IMAGES.trufas01, PRODUCT_IMAGES.trufas02, PRODUCT_IMAGES.trufas03],
     tags: ['Oreo', 'Detalle']
   },
   {

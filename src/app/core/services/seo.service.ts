@@ -24,7 +24,7 @@ export class SeoService {
 
   apply(config: SeoConfig): void {
     const canonicalUrl = this.buildCanonicalUrl(config.path);
-    const image = config.image ?? this.defaultImage;
+    const image = this.resolveImageUrl(config.image ?? this.defaultImage);
     const robotsValue = config.noindex ? 'noindex, nofollow' : 'index, follow';
 
     this.title.setTitle(config.title);
@@ -77,5 +77,13 @@ export class SeoService {
     const normalizedBase = environment.siteUrl.replace(/\/$/, '');
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
     return `${normalizedBase}${normalizedPath === '/' ? '' : normalizedPath}`;
+  }
+
+  private resolveImageUrl(image: string): string {
+    if (image.startsWith('/')) {
+      return `${environment.siteUrl.replace(/\/$/, '')}${image}`;
+    }
+
+    return image;
   }
 }

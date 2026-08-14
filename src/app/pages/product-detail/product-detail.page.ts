@@ -2,6 +2,7 @@ import { CurrencyPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { getDefaultSize, getMinPrice, getSelectedSize } from '../../core/helpers/product-pricing.helper';
 import { AnalyticsService } from '../../core/services/analytics.service';
@@ -79,6 +80,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   });
 
   private carouselTimer?: ReturnType<typeof setInterval>;
+  private sizeSubscription?: Subscription;
 
   ngOnInit(): void {
     if (!this.product) {
@@ -92,6 +94,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     this.toppingId.setValue(this.defaultTopping?.id ?? '');
     this.initializeMixCounts();
     this.initializeCustomSelections();
+    this.watchSizeChanges();
     this.startCarouselIfNeeded();
 
     const path = `/productos/${this.product.slug}`;
@@ -116,6 +119,8 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     if (this.carouselTimer) {
       clearInterval(this.carouselTimer);
     }
+
+    this.sizeSubscription?.unsubscribe();
 
     this.seo.removeJsonLd('jsonld-product');
   }
@@ -270,6 +275,30 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
     return this.selectedSize?.image ?? this.product.images[0];
   }
 
+  get displayImageFit(): 'cover' | 'contain' | null {
+    return this.product?.detailImageFit ?? null;
+  }
+
+  get displayImagePosition(): string {
+    if (!this.product) {
+      return '';
+    }
+
+    if (this.product.autoRotateImages && this.product.detailImagePositions?.length) {
+      return this.product.detailImagePositions[this.activeImageIndex()] ?? this.product.detailImagePosition ?? '';
+    }
+
+    return this.product.detailImagePosition ?? '';
+  }
+
+  get shouldForceCover(): boolean {
+    if (!this.product?.autoRotateImages) {
+      return false;
+    }
+
+    return this.displayImageFit !== 'contain';
+  }
+
   get displayPricePrefix(): string {
     if (this.product?.priceLabelMode === 'from') {
       return 'Desde ';
@@ -279,7 +308,7 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
   }
 
   get mixTotalRequired(): number {
-    return this.product?.mixTotal ?? 0;
+    return this.selectedSize?.mixCount ?? this.product?.mixTotal ?? 0;
   }
 
   get currentMixCount(): number {
@@ -352,6 +381,22 @@ export default class ProductDetailPage implements OnInit, OnDestroy {
 
     for (const option of this.product.mixOptions) {
       this.mixCounts[option.id] = 0;
+    }
+  }
+
+  watchSizeChanges(): void {
+    if (!this.product?.mixOptions?.length || !this.product.sizes?.length) {
+      return;
+    }
+
+    this.sizeSubscription = this.sizeId.valueChanges.subscribe(() => {
+      this.resetMixCounts();
+    });
+  }
+
+  resetMixCounts(): void {
+    for (const optionId of Object.keys(this.mixCounts)) {
+      this.mixCounts[optionId] = 0;
     }
   }
 

@@ -40,6 +40,14 @@ function extractPublicId(imageOrPublicId: string): string {
   return decodeURIComponent(afterUpload.slice(firstSlash + 1));
 }
 
+function isLocalAssetPath(value: string): boolean {
+  return value.startsWith('/');
+}
+
+function isExternalNonCloudinaryUrl(value: string): boolean {
+  return /^https?:\/\//.test(value) && !value.includes('/res.cloudinary.com/');
+}
+
 export function cldImage(publicId: string, opts: CloudinaryOptions = {}): string {
   const transformations = ['f_auto', 'q_auto'];
 
@@ -63,5 +71,9 @@ export function cldImage(publicId: string, opts: CloudinaryOptions = {}): string
 }
 
 export function cldSized(imageOrPublicId: string, width: CloudinaryWidth, opts: Omit<CloudinaryOptions, 'width'> = {}): string {
+  if (isLocalAssetPath(imageOrPublicId) || isExternalNonCloudinaryUrl(imageOrPublicId)) {
+    return imageOrPublicId;
+  }
+
   return cldImage(extractPublicId(imageOrPublicId), { ...opts, width });
 }

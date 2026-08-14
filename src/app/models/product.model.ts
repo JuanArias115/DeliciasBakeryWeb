@@ -15,6 +15,7 @@ export interface ProductSizeOption {
   serves?: string;
   note?: string;
   image?: string;
+  mixCount?: number;
 }
 
 export interface ProductFlavorOption {
@@ -66,6 +67,9 @@ export interface Product {
   details?: string[];
   autoRotateImages?: boolean;
   detailImageFrame?: 'default' | 'portrait';
+  detailImageFit?: 'cover' | 'contain';
+  detailImagePosition?: string;
+  detailImagePositions?: string[];
   flavorOptions?: ProductFlavorOption[];
   defaultFlavorId?: string;
   coatingOptions?: ProductCoatingOption[];

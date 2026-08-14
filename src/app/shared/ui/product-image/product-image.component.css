@@ -11,33 +11,31 @@
 .product-image img {
   display: block;
   height: 100%;
-  object-position: center center;
+  object-fit: var(--product-image-fit, cover);
+  object-position: var(--product-image-position, center center);
   transition: transform 0.25s ease;
   width: 100%;
 }
 
 .product-image-card {
+  --product-image-fit: cover;
+  --product-image-position: center 40%;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-.product-image-card img {
-  object-fit: cover;
-  object-position: center 40%;
-}
-
 .product-image-card.is-square img {
-  object-fit: cover;
-  object-position: center center;
+  --product-image-position: center center;
 }
 
 .product-image-card.is-portrait img {
-  object-fit: cover;
-  object-position: center 28%;
+  --product-image-position: center 28%;
   transform: scale(1.03);
 }
 
 .product-image-detail {
+  --product-image-fit: cover;
+  --product-image-position: center center;
   align-items: center;
   aspect-ratio: 4 / 3;
   background:
@@ -53,41 +51,36 @@
   aspect-ratio: 4 / 5;
 }
 
-.product-image-detail img {
-  object-fit: cover;
-  object-position: center center;
-}
-
 .product-image-detail.force-cover img,
 .product-image-detail.force-cover.is-portrait img,
 .product-image-detail.force-cover.is-square img {
-  object-fit: cover;
   padding: 0;
 }
 
 .product-image-detail.force-cover.is-portrait img {
-  object-position: center 30%;
+  --product-image-position: center 30%;
 }
 
 .product-image-detail.frame-portrait.force-cover img,
 .product-image-detail.frame-portrait.force-cover.is-portrait img,
 .product-image-detail.frame-portrait.force-cover.is-square img {
-  object-fit: cover;
   height: 100%;
   padding: 0;
   width: 100%;
 }
 
 .product-image-detail.frame-portrait.force-cover.is-portrait img {
-  object-position: center 18%;
+  --product-image-position: center 18%;
 }
 
-.product-image-detail.is-portrait img {
-  object-fit: contain;
-  padding: 0.75rem;
+.product-image-detail.fit-contain {
+  --product-image-fit: contain;
 }
 
-.product-image-detail.is-square img {
-  object-fit: contain;
-  padding: 0.35rem;
+.product-image-detail.fit-contain img {
+  padding: 0.45rem;
+}
+
+.product-image-detail.frame-portrait.fit-contain img {
+  padding: 0.3rem;
 }

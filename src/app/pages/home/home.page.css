@@ -22,6 +22,10 @@
   display: block;
 }
 
+.hero-title-top {
+  color: var(--color-primary-strong);
+}
+
 .hero-title-gap {
   margin-top: 1.2rem;
 }
