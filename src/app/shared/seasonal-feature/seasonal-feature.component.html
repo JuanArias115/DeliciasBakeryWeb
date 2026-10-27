@@ -12,13 +12,13 @@
         <a class="seasonal-order" [href]="orderLink" target="_blank" rel="noopener noreferrer" (click)="trackOrder()">
           Pedir por WhatsApp
         </a>
-        <a class="seasonal-detail" [routerLink]="['/productos', product.slug]">Ver producto</a>
+        <a class="seasonal-detail" [routerLink]="['/productos', product.slug]" [attr.aria-label]="'Ver ' + product.name">Ver producto</a>
       </div>
       <small>Chía y Cajicá · Por encargo, con mínimo 24 horas de anticipación.</small>
     </div>
-    <a class="seasonal-photo" [routerLink]="['/productos', product.slug]" [attr.aria-label]="'Ver ' + product.name">
+    <div class="seasonal-photo">
       <img [src]="product.images[0]" [alt]="product.name + ' con decoración de crema sobre fondo rosado'"
         width="720" height="1280" loading="eager" fetchpriority="high" />
-    </a>
+    </div>
   </div>
 </section>
