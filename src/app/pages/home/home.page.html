@@ -1,3 +1,7 @@
+@if (seasonalProduct; as product) {
+  <app-seasonal-feature [product]="product" />
+}
+
 <section class="hero container section-space">
   <div class="hero-copy">
     <p class="eyebrow">Pastelería por encargo</p>
@@ -50,6 +54,7 @@
             variant="card"
             [src]="productImageThumb(product.images[0])"
             [alt]="'Foto de ' + product.name"
+            [objectPosition]="product.cardImagePosition ?? ''"
             [width]="600"
             [height]="450"
           />

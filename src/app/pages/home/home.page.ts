@@ -17,6 +17,7 @@ import { CardComponent } from '../../shared/ui/card/card.component';
 import { IconComponent } from '../../shared/ui/icon/icon.component';
 import { ProductImageComponent } from '../../shared/ui/product-image/product-image.component';
 import { SectionTitleComponent } from '../../shared/ui/section-title/section-title.component';
+import { SeasonalFeatureComponent } from '../../shared/seasonal-feature/seasonal-feature.component';
 
 @Component({
   selector: 'app-home-page',
@@ -30,12 +31,14 @@ import { SectionTitleComponent } from '../../shared/ui/section-title/section-tit
     IconComponent,
     ProductImageComponent,
     SectionTitleComponent,
-    AccordionComponent
+    AccordionComponent,
+    SeasonalFeatureComponent
   ],
   templateUrl: './home.page.html',
   styleUrl: './home.page.css'
 })
 export default class HomePage {
+  readonly seasonalProduct = PRODUCTS.find((product) => product.slug === 'pumpkin-spice-cake');
   readonly featuredProducts = PRODUCTS.filter((product) => product.featured).slice(0, 6);
   readonly steps = siteConfig.orderSteps;
   readonly reviews = REVIEWS;

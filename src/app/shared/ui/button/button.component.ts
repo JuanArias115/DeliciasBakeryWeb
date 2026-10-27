@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -5,7 +6,7 @@ import { IconComponent, IconName } from '../icon/icon.component';
 
 @Component({
   selector: 'ui-button',
-  imports: [RouterLink, IconComponent],
+  imports: [RouterLink, IconComponent, NgTemplateOutlet],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css'
 })

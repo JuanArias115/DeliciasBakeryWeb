@@ -1,3 +1,4 @@
+<ng-template #label><ng-content /></ng-template>
 @if (href) {
   <a
     [attr.href]="disabled ? null : href"
@@ -10,7 +11,7 @@
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }
-    <ng-content />
+    <ng-container [ngTemplateOutlet]="label" />
     @if (iconRight) {
       <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
     }
@@ -20,7 +21,7 @@
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }
-    <ng-content />
+    <ng-container [ngTemplateOutlet]="label" />
     @if (iconRight) {
       <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
     }
@@ -30,7 +31,7 @@
     @if (iconLeft) {
       <ui-icon [name]="iconLeft" [size]="resolvedIconSize" />
     }
-    <ng-content />
+    <ng-container [ngTemplateOutlet]="label" />
     @if (iconRight) {
       <ui-icon [name]="iconRight" [size]="resolvedIconSize" />
     }

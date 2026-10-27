@@ -63,6 +63,7 @@
               variant="card"
               [src]="productImageThumb(product.images[0])"
               [alt]="'Foto de ' + product.name"
+              [objectPosition]="product.cardImagePosition ?? ''"
               [width]="600"
               [height]="450"
             />

@@ -70,6 +70,7 @@ export interface Product {
   detailImageFit?: 'cover' | 'contain';
   detailImagePosition?: string;
   detailImagePositions?: string[];
+  cardImagePosition?: string;
   flavorOptions?: ProductFlavorOption[];
   defaultFlavorId?: string;
   coatingOptions?: ProductCoatingOption[];

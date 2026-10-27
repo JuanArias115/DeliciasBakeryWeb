@@ -238,6 +238,25 @@ const TRUFFLE_TOPPINGS = [
 
 export const PRODUCTS: Product[] = [
   {
+    name: 'Pumpkin Spice Cake',
+    slug: 'pumpkin-spice-cake',
+    category: 'tortas-mini-cakes',
+    occasion: ['cumpleanos', 'fechas-especiales'],
+    description:
+      'El sabor del otoño hecho torta. Nuestro Pumpkin Spice Cake combina el delicioso sabor de la temporada con puré de calabaza y especias.',
+    details: ['Producto de temporada.', 'Pedidos por encargo, mínimo 24 horas de anticipación.'],
+    priceLabelMode: 'fixed',
+    priceFrom: 59000,
+    sizes: [{ id: '6-8-porciones', label: '6–8 porciones', serves: '6–8 porciones', price: 59000 }],
+    defaultSizeId: '6-8-porciones',
+    images: ['/assets/products/pumpkin-spice-cake/pumpkin-spice-cake.jpg'],
+    detailImageFrame: 'portrait',
+    detailImageFit: 'contain',
+    cardImagePosition: 'center 75%',
+    tags: ['De temporada', 'Calabaza y especias'],
+    featured: true
+  },
+  {
     name: 'Tortas personalizadas y mini cakes',
     slug: 'tortas-personalizadas-mini-cakes',
     category: 'tortas-mini-cakes',
